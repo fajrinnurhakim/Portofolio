@@ -1,10 +1,10 @@
-const AwardRepository = require("../repositories/awardRepository.js");
+const ExperienceRepository = require("../repositories/experienceRepository");
 
-class AwardService {
+class ExperienceService {
     static findAll = async (params, next) => {
         try {
-            const awards = await AwardRepository.findAll();
-            return awards;
+            const experiences = await ExperienceRepository.findAll();
+            return experiences;
         } catch (err) {
             next(err);
         }
@@ -13,8 +13,8 @@ class AwardService {
     static findOne = async (params, next) => {
         try {
             const { id } = params;
-            const awards = await AwardRepository.findOne(id, next);
-            return awards;
+            const experiences = await ExperienceRepository.findOne(id, next);
+            return experiences;
         } catch (err) {
             next(err);
         }
@@ -22,8 +22,8 @@ class AwardService {
 
     static create = async (data, next) => {
         try {
-            const createdAward = await AwardRepository.create(data);
-            return createdAward;
+            const createdExperience = await ExperienceRepository.create(data);
+            return createdExperience;
         } catch (err) {
             next(err);
         }
@@ -31,13 +31,13 @@ class AwardService {
 
     static update = async (id, data, next) => {
         try {
-            const updatedAward = await AwardRepository.update(id, data);
+            const updatedExperience = await ExperienceRepository.update(id, data);
 
-            if (!updatedAward) {
-                return null; // Award not found
+            if (!updatedExperience) {
+                return null; // Experience not found
             }
 
-            return updatedAward;
+            return updatedExperience;
         } catch (err) {
             next(err);
         }
@@ -45,10 +45,10 @@ class AwardService {
 
     static destroy = async (id, next) => {
         try {
-            const result = await AwardRepository.destroy(id);
+            const result = await ExperienceRepository.destroy(id);
 
             if (result === null) {
-                return null; // Award not found
+                return null; // Experience not found
             }
 
             return true; // Deletion successful
@@ -58,4 +58,4 @@ class AwardService {
     };
 }
 
-module.exports = AwardService;
+module.exports = ExperienceService;

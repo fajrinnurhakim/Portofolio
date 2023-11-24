@@ -1,10 +1,10 @@
-const AwardRepository = require("../repositories/awardRepository.js");
+const ToolRepository = require("../repositories/toolRepository.js");
 
-class AwardService {
+class ToolService {
     static findAll = async (params, next) => {
         try {
-            const awards = await AwardRepository.findAll();
-            return awards;
+            const tools = await ToolRepository.findAll();
+            return tools;
         } catch (err) {
             next(err);
         }
@@ -13,8 +13,8 @@ class AwardService {
     static findOne = async (params, next) => {
         try {
             const { id } = params;
-            const awards = await AwardRepository.findOne(id, next);
-            return awards;
+            const tools = await ToolRepository.findOne(id, next);
+            return tools;
         } catch (err) {
             next(err);
         }
@@ -22,8 +22,8 @@ class AwardService {
 
     static create = async (data, next) => {
         try {
-            const createdAward = await AwardRepository.create(data);
-            return createdAward;
+            const createdTool = await ToolRepository.create(data);
+            return createdTool;
         } catch (err) {
             next(err);
         }
@@ -31,13 +31,13 @@ class AwardService {
 
     static update = async (id, data, next) => {
         try {
-            const updatedAward = await AwardRepository.update(id, data);
+            const updatedTool = await ToolRepository.update(id, data);
 
-            if (!updatedAward) {
-                return null; // Award not found
+            if (!updatedTool) {
+                return null; // Tool not found
             }
 
-            return updatedAward;
+            return updatedTool;
         } catch (err) {
             next(err);
         }
@@ -45,10 +45,10 @@ class AwardService {
 
     static destroy = async (id, next) => {
         try {
-            const result = await AwardRepository.destroy(id);
+            const result = await ToolRepository.destroy(id);
 
             if (result === null) {
-                return null; // Award not found
+                return null; // Tool not found
             }
 
             return true; // Deletion successful
@@ -58,4 +58,4 @@ class AwardService {
     };
 }
 
-module.exports = AwardService;
+module.exports = ToolService;
