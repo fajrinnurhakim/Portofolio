@@ -13,13 +13,13 @@ module.exports = {
                 type: Sequelize.STRING,
             },
             tech_stack1: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.STRING,
             },
             tech_stack2: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.STRING,
             },
             tech_stack3: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.STRING,
             },
             description: {
                 type: Sequelize.STRING,

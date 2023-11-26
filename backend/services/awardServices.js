@@ -20,12 +20,18 @@ class AwardService {
         }
     };
 
-    static create = async (data, next) => {
+    static create = async (params) => {
         try {
-            const createdAward = await AwardRepository.create(data);
-            return createdAward;
+            const { award_name, institution_award, win_date } = params;
+
+            const award = await AwardRepository.create({
+                award_name,
+                institution_award,
+                win_date,
+            });
+            return award;
         } catch (err) {
-            next(err);
+            console.log(err);
         }
     };
 
@@ -34,7 +40,7 @@ class AwardService {
             const updatedAward = await AwardRepository.update(id, data);
 
             if (!updatedAward) {
-                return null; // Award not found
+                return null;
             }
 
             return updatedAward;

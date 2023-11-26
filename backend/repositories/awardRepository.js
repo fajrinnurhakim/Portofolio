@@ -26,12 +26,12 @@ class AwardRepository {
         }
     };
 
-    static create = async (data) => {
+    static create = async (payload) => {
         try {
-            const createdAward = await Award.create(data);
-            return createdAward;
+            const award = await Award.create(payload);
+            return award;
         } catch (err) {
-            throw err;
+            next(err);
         }
     };
 

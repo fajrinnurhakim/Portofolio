@@ -20,18 +20,41 @@ class ExperienceService {
         }
     };
 
-    static create = async (data, next) => {
+    static create = async (params) => {
         try {
-            const createdExperience = await ExperienceRepository.create(data);
-            return createdExperience;
+            const {
+                experience_name,
+                institution_name,
+                tech_stack1,
+                tech_stack2,
+                tech_stack3,
+                type,
+                start_date,
+                end_date,
+            } = params;
+
+            const experience = await ExperienceRepository.create({
+                experience_name,
+                institution_name,
+                tech_stack1,
+                tech_stack2,
+                tech_stack3,
+                type,
+                start_date,
+                end_date,
+            });
+            return experience;
         } catch (err) {
-            next(err);
+            console.log(err);
         }
     };
 
     static update = async (id, data, next) => {
         try {
-            const updatedExperience = await ExperienceRepository.update(id, data);
+            const updatedExperience = await ExperienceRepository.update(
+                id,
+                data
+            );
 
             if (!updatedExperience) {
                 return null; // Experience not found

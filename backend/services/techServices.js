@@ -20,12 +20,16 @@ class TechService {
         }
     };
 
-    static create = async (data, next) => {
+    static create = async (params) => {
         try {
-            const createdTech = await TechRepository.create(data);
-            return createdTech;
+            const { tech_name } = params;
+
+            const tech = await TechRepository.create({
+                tech_name,
+            });
+            return tech;
         } catch (err) {
-            next(err);
+            console.log(err);
         }
     };
 

@@ -20,12 +20,16 @@ class ToolService {
         }
     };
 
-    static create = async (data, next) => {
+    static create = async (params) => {
         try {
-            const createdTool = await ToolRepository.create(data);
-            return createdTool;
+            const { tool_name } = params;
+
+            const tool = await ToolRepository.create({
+                tool_name,
+            });
+            return tool;
         } catch (err) {
-            next(err);
+            console.log(err);
         }
     };
 

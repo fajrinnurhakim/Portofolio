@@ -17,7 +17,16 @@ class ToolController {
             next(err);
         }
     };
-    static create = async () => {};
+    static create = async (req, res, next) => {
+        try {
+            console.log(req.body, "cek");
+            const tool = await ToolService.create(req.body);
+
+            res.status(201).json({ message: "Tool created successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
     static update = async () => {};
     static destroy = async () => {};
 }

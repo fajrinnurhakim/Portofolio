@@ -24,6 +24,15 @@ class EducationRepository {
             next(err);
         }
     };
+    
+    static create = async (payload) => {
+        try {
+            const education = await Education.create(payload);
+            return education;
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = EducationRepository;

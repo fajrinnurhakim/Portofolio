@@ -24,6 +24,14 @@ class PortofolioRepository {
             next(err);
         }
     };
+    static create = async (payload) => {
+        try {
+            const portofolio = await Portofolio.create(payload);
+            return portofolio;
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = PortofolioRepository;

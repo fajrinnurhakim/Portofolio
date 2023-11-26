@@ -24,6 +24,14 @@ class RoleRepository {
             next(err);
         }
     };
+    static create = async (payload) => {
+        try {
+            const role = await Role.create(payload);
+            return role;
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = RoleRepository;

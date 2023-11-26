@@ -20,12 +20,16 @@ class RoleService {
         }
     };
 
-    static create = async (data, next) => {
+    static create = async (params) => {
         try {
-            const createdRole = await RoleRepository.create(data);
-            return createdRole;
+            const { role_name } = params;
+
+            const role = await RoleRepository.create({
+                role_name,
+            });
+            return role;
         } catch (err) {
-            next(err);
+            console.log(err);
         }
     };
 

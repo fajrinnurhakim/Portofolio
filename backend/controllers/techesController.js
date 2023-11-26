@@ -17,7 +17,16 @@ class TechController {
             next(err);
         }
     };
-    static create = async () => {};
+    static create = async (req, res, next) => {
+        try {
+            console.log(req.body, "cek");
+            const tech = await TechService.create(req.body);
+
+            res.status(201).json({ message: "Tech created successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
     static update = async () => {};
     static destroy = async () => {};
 }

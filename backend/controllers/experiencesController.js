@@ -14,14 +14,25 @@ class ExperienceController {
     };
     static findOne = async (req, res, next) => {
         try {
-            const experience = await ExperienceService.findOne(req.params, next);
+            const experience = await ExperienceService.findOne(
+                req.params,
+                next
+            );
             res.status(200).json(experience);
         } catch (err) {
             next(err);
         }
     };
-    st;
-    static create = async () => {};
+    static create = async (req, res, next) => {
+        try {
+            console.log(req.body, "cek");
+            const experience = await ExperienceService.create(req.body);
+
+            res.status(201).json({ message: "Experience created successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
     static update = async () => {};
     static destroy = async () => {};
 }

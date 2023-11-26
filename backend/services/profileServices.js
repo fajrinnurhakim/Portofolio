@@ -20,15 +20,39 @@ class ProfileService {
         }
     };
 
-    static create = async (data, next) => {
+    static create = async (params) => {
         try {
-            const createdProfile = await ProfileRepository.create(data);
-            return createdProfile;
+            const {
+                name,
+                address,
+                main_role,
+                description,
+                link_cv,
+                image,
+                image_two,
+                year_experience,
+                tech_stack,
+                success_project,
+            } = params;
+
+            const profile = await ProfileRepository.create({
+                name,
+                address,
+                main_role,
+                description,
+                link_cv,
+                image,
+                image_two,
+                year_experience,
+                tech_stack,
+                success_project,
+            });
+            return profile;
         } catch (err) {
-            next(err);
+            console.log(err);
         }
     };
-
+    
     static update = async (id, data, next) => {
         try {
             const updatedProfile = await ProfileRepository.update(id, data);

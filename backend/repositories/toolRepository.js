@@ -24,6 +24,14 @@ class ToolRepository {
             next(err);
         }
     };
+    static create = async (payload) => {
+        try {
+            const tool = await Tool.create(payload);
+            return tool;
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = ToolRepository;

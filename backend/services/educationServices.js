@@ -20,12 +20,26 @@ class EducationService {
         }
     };
 
-    static create = async (data, next) => {
+    static create = async (params) => {
         try {
-            const createdEducation = await EducationRepository.create(data);
-            return createdEducation;
+            const {
+                education_name,
+                institution_education,
+                type_education,
+                start_date,
+                end_date,
+            } = params;
+
+            const education = await EducationRepository.create({
+                education_name,
+                institution_education,
+                type_education,
+                start_date,
+                end_date,
+            });
+            return education;
         } catch (err) {
-            next(err);
+            console.log(err);
         }
     };
 

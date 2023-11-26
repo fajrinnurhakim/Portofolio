@@ -21,11 +21,10 @@ class AwardController {
 
     static create = async (req, res, next) => {
         try {
-            const newAwardData = req.body;
-            // console.log(body);
-            const createdAward = await AwardService.create(newAwardData, next);
+            console.log(req.body, "cek");
+            const award = await AwardService.create(req.body);
 
-            res.status(201).json(createdAward);
+            res.status(201).json({ message: "Award created successfully" });
         } catch (err) {
             next(err);
         }

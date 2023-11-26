@@ -24,6 +24,14 @@ class TechRepository {
             next(err);
         }
     };
+    static create = async (payload) => {
+        try {
+            const tech = await Tech.create(payload);
+            return tech;
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = TechRepository;

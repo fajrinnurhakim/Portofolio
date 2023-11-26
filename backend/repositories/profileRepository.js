@@ -8,7 +8,8 @@ class ProfileRepository {
         } catch (err) {
             next(err);
         }
-    };static findOne = async (id, next) => {
+    };
+    static findOne = async (id, next) => {
         try {
             const profiles = await Profile.findOne({
                 where: {
@@ -19,6 +20,14 @@ class ProfileRepository {
                 throw { name: "ErrorNotFound" };
             }
             return profiles;
+        } catch (err) {
+            next(err);
+        }
+    };
+    static create = async (payload) => {
+        try {
+            const profile = await Profile.create(payload);
+            return profile;
         } catch (err) {
             next(err);
         }

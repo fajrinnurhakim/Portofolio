@@ -17,7 +17,16 @@ class EducationController {
             next(err);
         }
     };
-    static create = async () => {};
+    static create = async (req, res, next) => {
+        try {
+            console.log(req.body, "cek");
+            const education = await EducationService.create(req.body);
+
+            res.status(201).json({ message: "Education created successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
     static update = async () => {};
     static destroy = async () => {};
 }

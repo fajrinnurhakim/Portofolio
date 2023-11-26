@@ -24,6 +24,14 @@ class ExperienceRepository {
             next(err);
         }
     };
+    static create = async (payload) => {
+        try {
+            const experience = await Experience.create(payload);
+            return experience;
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = ExperienceRepository;

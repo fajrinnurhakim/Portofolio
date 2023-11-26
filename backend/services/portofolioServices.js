@@ -19,16 +19,40 @@ class PortofolioService {
             next(err);
         }
     };
-
-    static create = async (data, next) => {
+    static create = async (params) => {
         try {
-            const createdPortofolio = await PortofolioRepository.create(data);
-            return createdPortofolio;
+            const {
+                portofolio_name,
+                tech_stack1,
+                tech_stack2,
+                tech_stack3,
+                description,
+                link_github,
+                link_demo,
+            } = params;
+
+            const portofolio = await PortofolioRepository.create({
+                portofolio_name,
+                tech_stack1,
+                tech_stack2,
+                tech_stack3,
+                description,
+                link_github,
+                link_demo,
+            });
+            return portofolio;
         } catch (err) {
-            next(err);
+            console.log(err);
         }
     };
 
+    // portofolio_name,
+    // tech_stack1,
+    // tech_stack2,
+    // tech_stack3,
+    // description,
+    // link_github,
+    // link_demo,
     static update = async (id, data, next) => {
         try {
             const updatedPortofolio = await PortofolioRepository.update(

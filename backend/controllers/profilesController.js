@@ -17,7 +17,16 @@ class ProfileController {
             next(err);
         }
     };
-    static create = async () => {};
+    static create = async (req, res, next) => {
+        try {
+            console.log(req.body, "cek");
+            const profile = await ProfileService.create(req.body);
+
+            res.status(201).json({ message: "Profile created successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
     static update = async () => {};
     static destroy = async () => {};
 }
