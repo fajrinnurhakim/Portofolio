@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = 8000;
+const port = 5000;
 const router = require("./routes");
 
 app.use(express.static("uploads"));
