@@ -3,6 +3,13 @@ const express = require("express");
 const app = express();
 const port = 5000;
 const router = require("./routes");
+const cors = require("cors");
+
+app.use(
+    cors({
+        origin: "*",
+    })
+);
 
 app.use(express.static("uploads"));
 app.use(express.json());
