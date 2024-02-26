@@ -32,6 +32,38 @@ class ExperienceRepository {
             next(err);
         }
     };
+    static update = async (id, data) => {
+        try {
+            const [rowsUpdated, updatedExperiences] = await Experience.update(data, {
+                where: { id },
+                returning: true,
+            });
+
+            if (rowsUpdated === 0) {
+                return null; // Experience not found
+            }
+
+            return updatedExperiences[0];
+        } catch (err) {
+            throw err;
+        }
+    };
+
+    static destroy = async (id) => {
+        try {
+            const deletedRowCount = await Experience.destroy({
+                where: { id },
+            });
+
+            if (deletedRowCount === 0) {
+                return null; // Experience not found
+            }
+
+            return true; // Deletion successful
+        } catch (err) {
+            throw err;
+        }
+    };
 }
 
 module.exports = ExperienceRepository;

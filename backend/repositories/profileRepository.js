@@ -32,6 +32,38 @@ class ProfileRepository {
             next(err);
         }
     };
+    static update = async (id, data) => {
+        try {
+            const [rowsUpdated, updatedProfiles] = await Profile.update(data, {
+                where: { id },
+                returning: true,
+            });
+
+            if (rowsUpdated === 0) {
+                return null; // Profile not found
+            }
+
+            return updatedProfiles[0];
+        } catch (err) {
+            throw err;
+        }
+    };
+
+    static destroy = async (id) => {
+        try {
+            const deletedRowCount = await Profile.destroy({
+                where: { id },
+            });
+
+            if (deletedRowCount === 0) {
+                return null; // Profile not found
+            }
+
+            return true; // Deletion successful
+        } catch (err) {
+            throw err;
+        }
+    };
 }
 
 module.exports = ProfileRepository;

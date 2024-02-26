@@ -32,6 +32,38 @@ class TechRepository {
             next(err);
         }
     };
+    static update = async (id, data) => {
+        try {
+            const [rowsUpdated, updatedTechs] = await Tech.update(data, {
+                where: { id },
+                returning: true,
+            });
+
+            if (rowsUpdated === 0) {
+                return null; // Tech not found
+            }
+
+            return updatedTechs[0];
+        } catch (err) {
+            throw err;
+        }
+    };
+
+    static destroy = async (id) => {
+        try {
+            const deletedRowCount = await Tech.destroy({
+                where: { id },
+            });
+
+            if (deletedRowCount === 0) {
+                return null; // Tech not found
+            }
+
+            return true; // Deletion successful
+        } catch (err) {
+            throw err;
+        }
+    };
 }
 
 module.exports = TechRepository;

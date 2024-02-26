@@ -27,7 +27,8 @@ class EducationController {
             next(err);
         }
     };
-    static update = async () => {
+
+    static update = async (req, res, next) => {
         try {
             const educationId = req.params.id;
             const updatedEducationData = req.body;
@@ -48,10 +49,15 @@ class EducationController {
             next(err);
         }
     };
-    static destroy = async () => {
+
+    static destroy = async (req, res, next) => {
         try {
             const educationId = req.params.id;
-            const deletedEducation = await EducationService.destroy(educationId, next);
+            console.log(educationId);
+            const deletedEducation = await EducationService.destroy(
+                educationId,
+                next
+            );
 
             if (!deletedEducation) {
                 res.status(404).json({ message: "Education not found" });

@@ -10,7 +10,7 @@ const techRouter = require("./tech.js");
 const toolRouter = require("./tool.js");
 
 router.use("/awards", awardRouter);
-router.use("/education", educationRouter);
+router.use("/educations", educationRouter);
 router.use("/experiences", experienceRouter);
 router.use("/portofolios", portofolioRouter);
 router.use("/profiles", profileRouter);
