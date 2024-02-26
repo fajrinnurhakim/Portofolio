@@ -11,6 +11,7 @@
     "scripts": {
         "start": "nodemon app.js",
         "create": "sequelize db:create",
-        "migrate": "sequelize db:migrate"
+        "migrate": "sequelize db:migrate",
+        "build": "npm i"
     }
 }
