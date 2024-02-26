@@ -27,8 +27,42 @@ class EducationController {
             next(err);
         }
     };
-    static update = async () => {};
-    static destroy = async () => {};
+    static update = async () => {
+        try {
+            const educationId = req.params.id;
+            const updatedEducationData = req.body;
+
+            const updatedEducation = await EducationService.update(
+                educationId,
+                updatedEducationData,
+                next
+            );
+
+            if (!updatedEducation) {
+                res.status(404).json({ message: "Education not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Education update successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
+    static destroy = async () => {
+        try {
+            const educationId = req.params.id;
+            const deletedEducation = await EducationService.destroy(educationId, next);
+
+            if (!deletedEducation) {
+                res.status(404).json({ message: "Education not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Education deleted successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = EducationController;

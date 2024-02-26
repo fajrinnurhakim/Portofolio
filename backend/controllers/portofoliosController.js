@@ -35,8 +35,42 @@ class PortofolioController {
             next(err);
         }
     };
-    static update = async () => {};
-    static destroy = async () => {};
+    static update = async () => {
+        try {
+            const portofolioId = req.params.id;
+            const updatedPortofolioData = req.body;
+
+            const updatedPortofolio = await PortofolioService.update(
+                portofolioId,
+                updatedPortofolioData,
+                next
+            );
+
+            if (!updatedPortofolio) {
+                res.status(404).json({ message: "Portofolio not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Portofolio update successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
+    static destroy = async () => {
+        try {
+            const portofolioId = req.params.id;
+            const deletedPortofolio = await PortofolioService.destroy(portofolioId, next);
+
+            if (!deletedPortofolio) {
+                res.status(404).json({ message: "Portofolio not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Portofolio deleted successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = PortofolioController;

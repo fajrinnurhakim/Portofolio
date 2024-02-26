@@ -46,7 +46,7 @@ class AwardController {
                 return;
             }
 
-            res.status(200).json(updatedAward);
+            res.status(200).json({ message: "Award update successfully" });
         } catch (err) {
             next(err);
         }
@@ -62,7 +62,7 @@ class AwardController {
                 return;
             }
 
-            res.status(204).json();
+            res.status(200).json({ message: "Award deleted successfully" });
         } catch (err) {
             next(err);
         }

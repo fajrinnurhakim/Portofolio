@@ -27,8 +27,42 @@ class ToolController {
             next(err);
         }
     };
-    static update = async () => {};
-    static destroy = async () => {};
+    static update = async () => {
+        try {
+            const toolId = req.params.id;
+            const updatedToolData = req.body;
+
+            const updatedTool = await ToolService.update(
+                toolId,
+                updatedToolData,
+                next
+            );
+
+            if (!updatedTool) {
+                res.status(404).json({ message: "Tool not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Tool update successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
+    static destroy = async () => {
+        try {
+            const toolId = req.params.id;
+            const deletedTool = await ToolService.destroy(toolId, next);
+
+            if (!deletedTool) {
+                res.status(404).json({ message: "Tool not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Tool deleted successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = ToolController;

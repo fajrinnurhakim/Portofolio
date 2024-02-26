@@ -27,8 +27,42 @@ class ProfileController {
             next(err);
         }
     };
-    static update = async () => {};
-    static destroy = async () => {};
+    static update = async () => {
+        try {
+            const profileId = req.params.id;
+            const updatedProfileData = req.body;
+
+            const updatedProfile = await ProfileService.update(
+                profileId,
+                updatedProfileData,
+                next
+            );
+
+            if (!updatedProfile) {
+                res.status(404).json({ message: "Profile not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Profile update successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
+    static destroy = async () => {
+        try {
+            const profileId = req.params.id;
+            const deletedProfile = await ProfileService.destroy(profileId, next);
+
+            if (!deletedProfile) {
+                res.status(404).json({ message: "Profile not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Profile deleted successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = ProfileController;

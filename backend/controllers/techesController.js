@@ -27,8 +27,42 @@ class TechController {
             next(err);
         }
     };
-    static update = async () => {};
-    static destroy = async () => {};
+    static update = async () => {
+        try {
+            const techId = req.params.id;
+            const updatedTechData = req.body;
+
+            const updatedTech = await TechService.update(
+                techId,
+                updatedTechData,
+                next
+            );
+
+            if (!updatedTech) {
+                res.status(404).json({ message: "Tech not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Tech update successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
+    static destroy = async () => {
+        try {
+            const techId = req.params.id;
+            const deletedTech = await TechService.destroy(techId, next);
+
+            if (!deletedTech) {
+                res.status(404).json({ message: "Tech not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Tech deleted successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = TechController;

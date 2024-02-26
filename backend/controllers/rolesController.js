@@ -27,8 +27,42 @@ class RoleController {
             next(err);
         }
     };
-    static update = async () => {};
-    static destroy = async () => {};
+    static update = async () => {
+        try {
+            const roleId = req.params.id;
+            const updatedRoleData = req.body;
+
+            const updatedRole = await RoleService.update(
+                roleId,
+                updatedRoleData,
+                next
+            );
+
+            if (!updatedRole) {
+                res.status(404).json({ message: "Role not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Role update successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
+    static destroy = async () => {
+        try {
+            const roleId = req.params.id;
+            const deletedRole = await RoleService.destroy(roleId, next);
+
+            if (!deletedRole) {
+                res.status(404).json({ message: "Role not found" });
+                return;
+            }
+
+            res.status(200).json({ message: "Role deleted successfully" });
+        } catch (err) {
+            next(err);
+        }
+    };
 }
 
 module.exports = RoleController;
