@@ -3,8 +3,8 @@ const ProfileService = require("../services/profileServices");
 class ProfileController {
     static findAll = async (req, res, next) => {
         try {
-            const profiles = await ProfileService.findAll(req.query, next);
-            res.status(200).json(profiles);
+            const profile = await ProfileService.findAll(req.query, next);
+            res.status(200).json(profile);
         } catch (err) {
             next(err);
         }
@@ -27,7 +27,8 @@ class ProfileController {
             next(err);
         }
     };
-    static update = async () => {
+
+    static update = async (req, res, next) => {
         try {
             const profileId = req.params.id;
             const updatedProfileData = req.body;
@@ -48,10 +49,15 @@ class ProfileController {
             next(err);
         }
     };
-    static destroy = async () => {
+
+    static destroy = async (req, res, next) => {
         try {
             const profileId = req.params.id;
-            const deletedProfile = await ProfileService.destroy(profileId, next);
+            console.log(profileId);
+            const deletedProfile = await ProfileService.destroy(
+                profileId,
+                next
+            );
 
             if (!deletedProfile) {
                 res.status(404).json({ message: "Profile not found" });
