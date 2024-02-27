@@ -16,7 +16,7 @@ module.exports = {
                 type: Sequelize.STRING,
             },
             win_date: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.STRING,
             },
             createdAt: {
                 allowNull: false,

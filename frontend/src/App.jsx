@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/dashboard/dashboard";
-import Home from "./pages/home/home";
-import Award from "./pages/dashboard/awards";
-import Education from "./pages/dashboard/educations";
-import Experience from "./pages/dashboard/experiences";
-import Portofolio from "./pages/dashboard/portofolios";
-import Profile from "./pages/dashboard/profiles";
-import Role from "./pages/dashboard/roles";
-import Tech from "./pages/dashboard/teches";
-import Tool from "./pages/dashboard/tools";
+import Dashboard from "./pages/dashboard";
+import Home from "./pages/home";
+import Education from "./pages/dashboard/education";
+import Experience from "./pages/dashboard/experience";
+import Portofolio from "./pages/dashboard/portofolio";
+import Profile from "./pages/dashboard/profile";
+import Role from "./pages/dashboard/role";
+import Tech from "./pages/dashboard/tech";
+import Tool from "./pages/dashboard/tool";
+import Award from "./pages/dashboard/award";
 
 function App() {
     return (
