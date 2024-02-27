@@ -3,8 +3,8 @@ const TechService = require("../services/techServices");
 class TechController {
     static findAll = async (req, res, next) => {
         try {
-            const teches = await TechService.findAll(req.query, next);
-            res.status(200).json(teches);
+            const tech = await TechService.findAll(req.query, next);
+            res.status(200).json(tech);
         } catch (err) {
             next(err);
         }
@@ -27,7 +27,8 @@ class TechController {
             next(err);
         }
     };
-    static update = async () => {
+
+    static update = async (req, res, next) => {
         try {
             const techId = req.params.id;
             const updatedTechData = req.body;
@@ -48,10 +49,15 @@ class TechController {
             next(err);
         }
     };
-    static destroy = async () => {
+
+    static destroy = async (req, res, next) => {
         try {
             const techId = req.params.id;
-            const deletedTech = await TechService.destroy(techId, next);
+            console.log(techId);
+            const deletedTech = await TechService.destroy(
+                techId,
+                next
+            );
 
             if (!deletedTech) {
                 res.status(404).json({ message: "Tech not found" });

@@ -3,11 +3,8 @@ const PortofolioService = require("../services/portofolioServices");
 class PortofolioController {
     static findAll = async (req, res, next) => {
         try {
-            const portofolios = await PortofolioService.findAll(
-                req.query,
-                next
-            );
-            res.status(200).json(portofolios);
+            const portofolio = await PortofolioService.findAll(req.query, next);
+            res.status(200).json(portofolio);
         } catch (err) {
             next(err);
         }
@@ -35,7 +32,8 @@ class PortofolioController {
             next(err);
         }
     };
-    static update = async () => {
+
+    static update = async (req, res, next) => {
         try {
             const portofolioId = req.params.id;
             const updatedPortofolioData = req.body;
@@ -56,17 +54,24 @@ class PortofolioController {
             next(err);
         }
     };
-    static destroy = async () => {
+
+    static destroy = async (req, res, next) => {
         try {
             const portofolioId = req.params.id;
-            const deletedPortofolio = await PortofolioService.destroy(portofolioId, next);
+            console.log(portofolioId);
+            const deletedPortofolio = await PortofolioService.destroy(
+                portofolioId,
+                next
+            );
 
             if (!deletedPortofolio) {
                 res.status(404).json({ message: "Portofolio not found" });
                 return;
             }
 
-            res.status(200).json({ message: "Portofolio deleted successfully" });
+            res.status(200).json({
+                message: "Portofolio deleted successfully",
+            });
         } catch (err) {
             next(err);
         }

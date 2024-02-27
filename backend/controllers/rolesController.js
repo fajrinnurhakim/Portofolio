@@ -3,8 +3,8 @@ const RoleService = require("../services/roleServices");
 class RoleController {
     static findAll = async (req, res, next) => {
         try {
-            const roles = await RoleService.findAll(req.query, next);
-            res.status(200).json(roles);
+            const role = await RoleService.findAll(req.query, next);
+            res.status(200).json(role);
         } catch (err) {
             next(err);
         }
@@ -27,7 +27,8 @@ class RoleController {
             next(err);
         }
     };
-    static update = async () => {
+
+    static update = async (req, res, next) => {
         try {
             const roleId = req.params.id;
             const updatedRoleData = req.body;
@@ -48,10 +49,15 @@ class RoleController {
             next(err);
         }
     };
-    static destroy = async () => {
+
+    static destroy = async (req, res, next) => {
         try {
             const roleId = req.params.id;
-            const deletedRole = await RoleService.destroy(roleId, next);
+            console.log(roleId);
+            const deletedRole = await RoleService.destroy(
+                roleId,
+                next
+            );
 
             if (!deletedRole) {
                 res.status(404).json({ message: "Role not found" });

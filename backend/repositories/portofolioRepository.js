@@ -34,10 +34,13 @@ class PortofolioRepository {
     };
     static update = async (id, data) => {
         try {
-            const [rowsUpdated, updatedPortofolios] = await Portofolio.update(data, {
-                where: { id },
-                returning: true,
-            });
+            const [rowsUpdated, updatedPortofolios] = await Portofolio.update(
+                data,
+                {
+                    where: { id },
+                    returning: true,
+                }
+            );
 
             if (rowsUpdated === 0) {
                 return null; // Portofolio not found

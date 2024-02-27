@@ -3,8 +3,8 @@ const ToolService = require("../services/toolServices");
 class ToolController {
     static findAll = async (req, res, next) => {
         try {
-            const tools = await ToolService.findAll(req.query, next);
-            res.status(200).json(tools);
+            const tool = await ToolService.findAll(req.query, next);
+            res.status(200).json(tool);
         } catch (err) {
             next(err);
         }
@@ -27,7 +27,8 @@ class ToolController {
             next(err);
         }
     };
-    static update = async () => {
+
+    static update = async (req, res, next) => {
         try {
             const toolId = req.params.id;
             const updatedToolData = req.body;
@@ -48,9 +49,11 @@ class ToolController {
             next(err);
         }
     };
-    static destroy = async () => {
+
+    static destroy = async (req, res, next) => {
         try {
             const toolId = req.params.id;
+            console.log(toolId);
             const deletedTool = await ToolService.destroy(toolId, next);
 
             if (!deletedTool) {
