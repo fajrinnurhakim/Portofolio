@@ -56,7 +56,7 @@ function stateEducation() {
             setShowModal(false);
             loadEducations();
             setNewEducationData({
-                eeducation_name: "",
+                education_name: "",
                 institution_education: "",
                 type_education: "",
                 start_date: "",

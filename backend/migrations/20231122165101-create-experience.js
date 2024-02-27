@@ -12,7 +12,7 @@ module.exports = {
             experience_name: {
                 type: Sequelize.STRING,
             },
-            Institution_name: {
+            institution_name: {
                 type: Sequelize.STRING,
             },
             tech_stack1: {
