@@ -1,13 +1,13 @@
 function NavbarHome() {
     return (
         <div className="shadow-lg bg-base-100">
-            <div class="navbar container mx-auto">
-                <div class="navbar-start">
-                    <details class="dropdown">
-                        <summary class="m-1 btn btn-ghost">
+            <div className="container mx-auto navbar">
+                <div className="navbar-start">
+                    <details className="dropdown">
+                        <summary className="m-1 btn btn-ghost">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5"
+                                className="w-5 h-5"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -20,7 +20,7 @@ function NavbarHome() {
                                 />
                             </svg>
                         </summary>
-                        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-96">
+                        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-96">
                             <li>
                                 <a href="#awards">Awards</a>
                             </li>
@@ -48,19 +48,19 @@ function NavbarHome() {
                         </ul>
                     </details>
                 </div>
-                <div class="navbar-center">
-                    <a class="btn btn-ghost text-xl">Fajrin Nurhakim</a>
+                <div className="navbar-center">
+                    <a className="text-xl btn btn-ghost">Fajrin Nurhakim</a>
                 </div>
-                <div class="navbar-end">
-                    <label class="swap swap-rotate">
+                <div className="navbar-end">
+                    <label className="swap swap-rotate">
                         <input
                             type="checkbox"
-                            class="theme-controller"
+                            className="theme-controller"
                             value="coffee"
                         />
 
                         <svg
-                            class="swap-on fill-current w-10 h-10"
+                            className="w-10 h-10 fill-current swap-on"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                         >
@@ -68,7 +68,7 @@ function NavbarHome() {
                         </svg>
 
                         <svg
-                            class="swap-off fill-current w-10 h-10"
+                            className="w-10 h-10 fill-current swap-off"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                         >
