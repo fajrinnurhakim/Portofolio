@@ -40,7 +40,7 @@ class ToolRepository {
             });
 
             if (rowsUpdated === 0) {
-                return null; // Tool not found
+                return null; 
             }
 
             return updatedTools[0];
@@ -56,10 +56,10 @@ class ToolRepository {
             });
 
             if (deletedRowCount === 0) {
-                return null; // Tool not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             throw err;
         }

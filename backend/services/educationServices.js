@@ -48,7 +48,7 @@ class EducationService {
             const updatedEducation = await EducationRepository.update(id, data);
 
             if (!updatedEducation) {
-                return null; // Education not found
+                return null; 
             }
 
             return updatedEducation;
@@ -62,10 +62,10 @@ class EducationService {
             const result = await EducationRepository.destroy(id);
 
             if (result === null) {
-                return null; // Education not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             next(err);
         }

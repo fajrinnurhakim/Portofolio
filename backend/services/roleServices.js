@@ -38,7 +38,7 @@ class RoleService {
             const updatedRole = await RoleRepository.update(id, data);
 
             if (!updatedRole) {
-                return null; // Role not found
+                return null;
             }
 
             return updatedRole;
@@ -52,10 +52,10 @@ class RoleService {
             const result = await RoleRepository.destroy(id);
 
             if (result === null) {
-                return null; // Role not found
+                return null;
             }
 
-            return true; // Deletion successful
+            return true;
         } catch (err) {
             next(err);
         }

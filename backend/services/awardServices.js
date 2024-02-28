@@ -54,10 +54,10 @@ class AwardService {
             const result = await AwardRepository.destroy(id);
 
             if (result === null) {
-                return null; // Award not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             next(err);
         }

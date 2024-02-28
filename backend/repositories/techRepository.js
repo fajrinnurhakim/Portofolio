@@ -40,7 +40,7 @@ class TechRepository {
             });
 
             if (rowsUpdated === 0) {
-                return null; // Tech not found
+                return null; 
             }
 
             return updatedTechs[0];
@@ -56,10 +56,10 @@ class TechRepository {
             });
 
             if (deletedRowCount === 0) {
-                return null; // Tech not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             throw err;
         }

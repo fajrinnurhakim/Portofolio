@@ -46,13 +46,6 @@ class PortofolioService {
         }
     };
 
-    // portofolio_name,
-    // tech_stack1,
-    // tech_stack2,
-    // tech_stack3,
-    // description,
-    // link_github,
-    // link_demo,
     static update = async (id, data, next) => {
         try {
             const updatedPortofolio = await PortofolioRepository.update(
@@ -61,7 +54,7 @@ class PortofolioService {
             );
 
             if (!updatedPortofolio) {
-                return null; // Portofolio not found
+                return null; 
             }
 
             return updatedPortofolio;
@@ -75,10 +68,10 @@ class PortofolioService {
             const result = await PortofolioRepository.destroy(id);
 
             if (result === null) {
-                return null; // Portofolio not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             next(err);
         }

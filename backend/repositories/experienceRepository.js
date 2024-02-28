@@ -43,7 +43,7 @@ class ExperienceRepository {
             );
 
             if (rowsUpdated === 0) {
-                return null; // Experience not found
+                return null; 
             }
 
             return updatedExperiences[0];
@@ -59,10 +59,10 @@ class ExperienceRepository {
             });
 
             if (deletedRowCount === 0) {
-                return null; // Experience not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             throw err;
         }

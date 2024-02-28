@@ -40,7 +40,7 @@ class ProfileRepository {
             });
 
             if (rowsUpdated === 0) {
-                return null; // Profile not found
+                return null; 
             }
 
             return updatedProfiles[0];
@@ -56,10 +56,10 @@ class ProfileRepository {
             });
 
             if (deletedRowCount === 0) {
-                return null; // Profile not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             throw err;
         }
