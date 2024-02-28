@@ -58,7 +58,7 @@ class ProfileService {
             const updatedProfile = await ProfileRepository.update(id, data);
 
             if (!updatedProfile) {
-                return null; // Profile not found
+                return null; 
             }
 
             return updatedProfile;
@@ -72,10 +72,10 @@ class ProfileService {
             const result = await ProfileRepository.destroy(id);
 
             if (result === null) {
-                return null; // Profile not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true;
         } catch (err) {
             next(err);
         }

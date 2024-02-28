@@ -57,7 +57,7 @@ class ExperienceService {
             );
 
             if (!updatedExperience) {
-                return null; // Experience not found
+                return null; 
             }
 
             return updatedExperience;
@@ -71,10 +71,10 @@ class ExperienceService {
             const result = await ExperienceRepository.destroy(id);
 
             if (result === null) {
-                return null; // Experience not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             next(err);
         }

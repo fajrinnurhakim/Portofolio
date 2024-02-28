@@ -42,7 +42,7 @@ class EducationRepository {
             });
 
             if (rowsUpdated === 0) {
-                return null; // Education not found
+                return null; 
             }
 
             return updatedEducations[0];
@@ -58,10 +58,10 @@ class EducationRepository {
             });
 
             if (deletedRowCount === 0) {
-                return null; // Education not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             throw err;
         }

@@ -40,7 +40,7 @@ class RoleRepository {
             });
 
             if (rowsUpdated === 0) {
-                return null; // Role not found
+                return null; 
             }
 
             return updatedRoles[0];
@@ -56,10 +56,10 @@ class RoleRepository {
             });
 
             if (deletedRowCount === 0) {
-                return null; // Role not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             throw err;
         }

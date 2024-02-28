@@ -43,7 +43,7 @@ class PortofolioRepository {
             );
 
             if (rowsUpdated === 0) {
-                return null; // Portofolio not found
+                return null; 
             }
 
             return updatedPortofolios[0];
@@ -59,10 +59,10 @@ class PortofolioRepository {
             });
 
             if (deletedRowCount === 0) {
-                return null; // Portofolio not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             throw err;
         }

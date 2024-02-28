@@ -43,7 +43,7 @@ class AwardRepository {
             });
 
             if (rowsUpdated === 0) {
-                return null; // Award not found
+                return null; 
             }
 
             return updatedAwards[0];
@@ -59,10 +59,10 @@ class AwardRepository {
             });
 
             if (deletedRowCount === 0) {
-                return null; // Award not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             throw err;
         }

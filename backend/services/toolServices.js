@@ -38,7 +38,7 @@ class ToolService {
             const updatedTool = await ToolRepository.update(id, data);
 
             if (!updatedTool) {
-                return null; // Tool not found
+                return null;
             }
 
             return updatedTool;
@@ -52,10 +52,10 @@ class ToolService {
             const result = await ToolRepository.destroy(id);
 
             if (result === null) {
-                return null; // Tool not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true; 
         } catch (err) {
             next(err);
         }

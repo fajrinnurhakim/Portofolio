@@ -97,135 +97,138 @@ function Experience() {
             </section>
             {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="p-6 bg-white rounded-lg">
+                    <div className="w-6/12 p-6 bg-white rounded-lg">
                         <h2 className="mb-4 text-xl font-bold">
                             {updateIndex !== null
                                 ? "Update Experience"
                                 : "Create New Experience"}
                         </h2>
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="experience_name"
-                            >
-                                Experience Name
-                            </label>
-                            <input
-                                type="text"
-                                id="experience_name"
-                                name="experience_name"
-                                value={
-                                    updateIndex !== null
-                                        ? updateExperienceData.experience_name
-                                        : newExperienceData.experience_name
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
-                        </div>
+                        <div className="flex mb-4 space-x-2">
+                            <div className="w-1/2">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="experience_name"
+                                >
+                                    Experience Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="experience_name"
+                                    name="experience_name"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateExperienceData.experience_name
+                                            : newExperienceData.experience_name
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
 
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="institution_name"
-                            >
-                                Institution Name
-                            </label>
-                            <input
-                                type="text"
-                                id="institution_name"
-                                name="institution_name"
-                                value={
-                                    updateIndex !== null
-                                        ? updateExperienceData.institution_name
-                                        : newExperienceData.institution_name
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
+                            <div className="w-1/2">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="institution_name"
+                                >
+                                    Institution Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="institution_name"
+                                    name="institution_name"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateExperienceData.institution_name
+                                            : newExperienceData.institution_name
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
                         </div>
+                        <div className="flex mb-4 space-x-2">
+                            <div className="mb-4">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="tech_stack1"
+                                >
+                                    Tech Stack
+                                </label>
+                                <input
+                                    type="text"
+                                    id="tech_stack1"
+                                    name="tech_stack1"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateExperienceData.tech_stack1
+                                            : newExperienceData.tech_stack1
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
 
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="tech_stack1"
-                            >
-                                Tech Stack
-                            </label>
-                            <input
-                                type="text"
-                                id="tech_stack1"
-                                name="tech_stack1"
-                                value={
-                                    updateIndex !== null
-                                        ? updateExperienceData.tech_stack1
-                                        : newExperienceData.tech_stack1
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
-                        </div>
-                        
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="tech_stack2"
-                            >
-                                Tech Stack 2
-                            </label>
-                            <input
-                                type="text"
-                                id="tech_stack2"
-                                name="tech_stack2"
-                                value={
-                                    updateIndex !== null
-                                        ? updateExperienceData.tech_stack2
-                                        : newExperienceData.tech_stack2
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
-                        </div>
-                        
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="tech_stack3"
-                            >
-                                Tech Stack 3
-                            </label>
-                            <input
-                                type="text"
-                                id="tech_stack3"
-                                name="tech_stack3"
-                                value={
-                                    updateIndex !== null
-                                        ? updateExperienceData.tech_stack3
-                                        : newExperienceData.tech_stack3
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
+                            <div className="mb-4">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="tech_stack2"
+                                >
+                                    Tech Stack 2
+                                </label>
+                                <input
+                                    type="text"
+                                    id="tech_stack2"
+                                    name="tech_stack2"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateExperienceData.tech_stack2
+                                            : newExperienceData.tech_stack2
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
+
+                            <div className="mb-4">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="tech_stack3"
+                                >
+                                    Tech Stack 3
+                                </label>
+                                <input
+                                    type="text"
+                                    id="tech_stack3"
+                                    name="tech_stack3"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateExperienceData.tech_stack3
+                                            : newExperienceData.tech_stack3
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
                         </div>
 
                         <div className="mb-4">
@@ -248,8 +251,9 @@ function Experience() {
                                         ? handleUpdateInputChange
                                         : handleInputChange
                                 }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                                className="w-full px-3 select select-bordered"
                             >
+                                <option value="">Select</option>
                                 <option value="intern">Intern</option>
                                 <option value="fulltime">Fultime</option>
                                 <option value="freelance">Freelance</option>
@@ -277,7 +281,7 @@ function Experience() {
                                         ? handleUpdateInputChange
                                         : handleInputChange
                                 }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                                className="w-full px-3 py-2 input input-bordered"
                             />
                         </div>
                         <div className="mb-4">
@@ -301,7 +305,7 @@ function Experience() {
                                         ? handleUpdateInputChange
                                         : handleInputChange
                                 }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                                className="w-full px-3 py-2 input input-bordered"
                             />
                         </div>
                         <div className="flex justify-end">

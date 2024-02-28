@@ -38,7 +38,7 @@ class TechService {
             const updatedTech = await TechRepository.update(id, data);
 
             if (!updatedTech) {
-                return null; // Tech not found
+                return null; 
             }
 
             return updatedTech;
@@ -52,10 +52,10 @@ class TechService {
             const result = await TechRepository.destroy(id);
 
             if (result === null) {
-                return null; // Tech not found
+                return null; 
             }
 
-            return true; // Deletion successful
+            return true;
         } catch (err) {
             next(err);
         }
