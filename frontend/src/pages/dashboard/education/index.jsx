@@ -118,7 +118,7 @@ function Education() {
                                         ? handleUpdateInputChange
                                         : handleInputChange
                                 }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                                className="w-full px-3 py-2 input input-bordered"
                             />
                         </div>
                         <div className="mb-4">
@@ -142,7 +142,7 @@ function Education() {
                                         ? handleUpdateInputChange
                                         : handleInputChange
                                 }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                                className="w-full px-3 py-2 input input-bordered"
                             />
                         </div>
                         <div className="mb-4">
@@ -165,7 +165,7 @@ function Education() {
                                         ? handleUpdateInputChange
                                         : handleInputChange
                                 }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                                className="w-full px-3 py-2 select select-bordered"
                             >
                                 <option value="formal">Formal</option>
                                 <option value="informal">Informal</option>
@@ -193,7 +193,7 @@ function Education() {
                                         ? handleUpdateInputChange
                                         : handleInputChange
                                 }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                                className="w-full px-3 py-2 input input-bordered"
                             />
                         </div>
                         <div className="mb-4">
@@ -217,7 +217,7 @@ function Education() {
                                         ? handleUpdateInputChange
                                         : handleInputChange
                                 }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                                className="w-full px-3 py-2 input input-borderedd"
                             />
                         </div>
                         <div className="flex justify-end">

@@ -67,9 +67,26 @@ function Profile() {
                                     <td>{profile.address}</td>
                                     <td>{profile.main_role}</td>
                                     <td>{profile.description}</td>
-                                    <td>{profile.link_cv}</td>
-                                    <td>{profile.image}</td>
-                                    <td>{profile.image_two}</td>
+                                    <td>
+                                        <a
+                                            href={profile.link_cv}
+                                            className="btn btn-sm btn-primary"
+                                        ></a>
+                                    </td>
+                                    <td>
+                                        <img
+                                            src={profile.image}
+                                            alt="image1"
+                                            className="w-10 h-12"
+                                        />
+                                    </td>
+                                    <td>
+                                        <img
+                                            src={profile.image_two}
+                                            alt="image2"
+                                            className="w-10 h-12"
+                                        />
+                                    </td>
                                     <td>{profile.year_experience}</td>
                                     <td>{profile.tech_stack}</td>
                                     <td>{profile.success_project}</td>
@@ -98,86 +115,113 @@ function Profile() {
                 </div>
             </section>
             {showModal && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="p-6 bg-white rounded-lg">
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 ">
+                    <div className="w-6/12 p-6 bg-white rounded-lg">
                         <h2 className="mb-4 text-xl font-bold">
                             {updateIndex !== null
                                 ? "Update Profile"
                                 : "Create New Profile"}
                         </h2>
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="name"
-                            >
-                                Name
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={
-                                    updateIndex !== null
-                                        ? updateProfileData.name
-                                        : newProfileData.name
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
-                        </div>
+                        <div className="flex mb-4 space-x-2">
+                            <div className="w-6/12">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="name"
+                                >
+                                    Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateProfileData.name
+                                            : newProfileData.name
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
 
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="address"
-                            >
-                                Address
-                            </label>
-                            <input
-                                type="text"
-                                id="address"
-                                name="address"
-                                value={
-                                    updateIndex !== null
-                                        ? updateProfileData.address
-                                        : newProfileData.address
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
+                            <div className="w-6/12">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="address"
+                                >
+                                    Address
+                                </label>
+                                <input
+                                    type="text"
+                                    id="address"
+                                    name="address"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateProfileData.address
+                                            : newProfileData.address
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
                         </div>
-
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="main_role"
-                            >
-                                Main Role
-                            </label>
-                            <input
-                                type="text"
-                                id="main_role"
-                                name="main_role"
-                                value={
-                                    updateIndex !== null
-                                        ? updateProfileData.main_role
-                                        : newProfileData.main_role
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
+                        <div className="flex mb-4 space-x-2">
+                            <div className="w-1/2">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="main_role"
+                                >
+                                    Main Role
+                                </label>
+                                <input
+                                    type="text"
+                                    id="main_role"
+                                    name="main_role"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateProfileData.main_role
+                                            : newProfileData.main_role
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
+                            <div className="w-1/2">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="link_cv"
+                                >
+                                    Link CV
+                                </label>
+                                <input
+                                    type="text"
+                                    id="link_cv"
+                                    name="link_cv"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateProfileData.link_cv
+                                            : newProfileData.link_cv
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
                         </div>
 
                         <div className="mb-4">
@@ -187,7 +231,7 @@ function Profile() {
                             >
                                 Description
                             </label>
-                            <input
+                            <textarea
                                 type="text"
                                 id="description"
                                 name="description"
@@ -201,156 +245,135 @@ function Profile() {
                                         ? handleUpdateInputChange
                                         : handleInputChange
                                 }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                                className="w-full border-gray-300 textarea textarea-bordered"
                             />
                         </div>
 
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="link_cv"
-                            >
-                                Link CV
-                            </label>
-                            <input
-                                type="text"
-                                id="link_cv"
-                                name="link_cv"
-                                value={
-                                    updateIndex !== null
-                                        ? updateProfileData.link_cv
-                                        : newProfileData.link_cv
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
+                        <div className="flex mb-4 space-x-2">
+                            <div className="w-6/12">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="image"
+                                >
+                                    Image
+                                </label>
+                                <input
+                                    type="text"
+                                    id="image"
+                                    name="image"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateProfileData.image
+                                            : newProfileData.image
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
+                            <div className="w-6/12">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="image_two"
+                                >
+                                    Image Two
+                                </label>
+                                <input
+                                    type="text"
+                                    id="image_two"
+                                    name="image_two"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateProfileData.image_two
+                                            : newProfileData.image_two
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
                         </div>
 
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="image"
-                            >
-                                Image
-                            </label>
-                            <input
-                                type="text"
-                                id="image"
-                                name="image"
-                                value={
-                                    updateIndex !== null
-                                        ? updateProfileData.image
-                                        : newProfileData.image
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
-                        </div>
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="image_two"
-                            >
-                                Image Two
-                            </label>
-                            <input
-                                type="text"
-                                id="image_two"
-                                name="image_two"
-                                value={
-                                    updateIndex !== null
-                                        ? updateProfileData.image_two
-                                        : newProfileData.image_two
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
-                        </div>
+                        <div className="flex mb-4 space-x-2">
+                            <div className="w-1/3">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="year_experience"
+                                >
+                                    Year Experience
+                                </label>
+                                <input
+                                    type="number"
+                                    id="year_experience"
+                                    name="year_experience"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateProfileData.year_experience
+                                            : newProfileData.year_experience
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
+                            <div className="w-1/3">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="tech_stack"
+                                >
+                                    Tech Stack
+                                </label>
+                                <input
+                                    type="number"
+                                    id="tech_stack"
+                                    name="tech_stack"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateProfileData.tech_stack
+                                            : newProfileData.tech_stack
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
 
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="year_experience"
-                            >
-                                Year Experience
-                            </label>
-                            <input
-                                type="number"
-                                id="year_experience"
-                                name="year_experience"
-                                value={
-                                    updateIndex !== null
-                                        ? updateProfileData.year_experience
-                                        : newProfileData.year_experience
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
-                        </div>
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="tech_stack"
-                            >
-                                Tech Stack
-                            </label>
-                            <input
-                                type="number"
-                                id="tech_stack"
-                                name="tech_stack"
-                                value={
-                                    updateIndex !== null
-                                        ? updateProfileData.tech_stack
-                                        : newProfileData.tech_stack
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
-                        </div>
-
-                        <div className="mb-4">
-                            <label
-                                className="block mb-2 text-sm font-bold"
-                                htmlFor="success_project"
-                            >
-                                Success Project
-                            </label>
-                            <input
-                                type="number"
-                                id="success_project"
-                                name="success_project"
-                                value={
-                                    updateIndex !== null
-                                        ? updateProfileData.success_project
-                                        : newProfileData.success_project
-                                }
-                                onChange={
-                                    updateIndex !== null
-                                        ? handleUpdateInputChange
-                                        : handleInputChange
-                                }
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
+                            <div className="w-1/3">
+                                <label
+                                    className="block mb-2 text-sm font-bold"
+                                    htmlFor="success_project"
+                                >
+                                    Success Project
+                                </label>
+                                <input
+                                    type="number"
+                                    id="success_project"
+                                    name="success_project"
+                                    value={
+                                        updateIndex !== null
+                                            ? updateProfileData.success_project
+                                            : newProfileData.success_project
+                                    }
+                                    onChange={
+                                        updateIndex !== null
+                                            ? handleUpdateInputChange
+                                            : handleInputChange
+                                    }
+                                    className="w-full px-3 py-2 input input-bordered"
+                                />
+                            </div>
                         </div>
 
                         <div className="flex justify-end">
