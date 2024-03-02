@@ -143,13 +143,15 @@ function NavbarHome() {
                             </li>
                             <li>
                                 <a
-                                    href="#profies"
+                                    href="#profiles"
                                     className={
-                                        activeMenu === "profies" ? "active" : ""
+                                        activeMenu === "profiles"
+                                            ? "active"
+                                            : ""
                                     }
-                                    onClick={() => handleMenuClick("profies")}
+                                    onClick={() => handleMenuClick("profiles")}
                                 >
-                                    Profies
+                                    Profiles
                                 </a>
                             </li>
                             <li>
