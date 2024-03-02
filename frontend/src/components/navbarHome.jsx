@@ -4,17 +4,44 @@ import stateProfile from "../hooks/profile";
 function NavbarHome() {
     const { profiles, loadProfiles } = stateProfile();
     const [activeMenu, setActiveMenu] = useState("awards");
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior: "smooth",
+            });
+        });
+    });
 
     useEffect(() => {
         loadProfiles();
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
     const handleMenuClick = (menu) => {
         setActiveMenu(menu);
     };
 
+    const handleScroll = () => {
+        if (window.scrollY > 1) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+    };
+
     return (
-        <div className="shadow-lg bg-base-100">
+        <div
+            className={`shadow-lg bg-base-100 ${
+                isScrolled ? "fixed top-0 left-0 right-0 z-10" : ""
+            }`}
+        >
             <div className="container flex mx-auto navbar">
                 <div className="w-1/3 navbar-start">
                     <a className="hidden text-xl btn btn-ghost md:inline-flex">
@@ -233,13 +260,13 @@ function NavbarHome() {
                         </li>
                         <li>
                             <a
-                                href="#profies"
+                                href="#profiles"
                                 className={
-                                    activeMenu === "profies" ? "active" : ""
+                                    activeMenu === "profiles" ? "active" : ""
                                 }
-                                onClick={() => handleMenuClick("profies")}
+                                onClick={() => handleMenuClick("profiles")}
                             >
-                                Profies
+                                Profiles
                             </a>
                         </li>
                         <li>
