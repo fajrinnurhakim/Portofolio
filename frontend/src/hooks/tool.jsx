@@ -11,10 +11,14 @@ function stateTool() {
     const [showModal, setShowModal] = useState(false);
     const [newToolData, setNewToolData] = useState({
         tool_name: "",
+        tool_image: "",
+        tool_level: "",
     });
     const [updateIndex, setUpdateIndex] = useState(null);
     const [updateToolData, setUpdateToolData] = useState({
         tool_name: "",
+        tool_image: "",
+        tool_level: "",
     });
 
     const loadTools = async () => {
@@ -49,6 +53,8 @@ function stateTool() {
             loadTools();
             setNewToolData({
                 tool_name: "",
+                tool_image: "",
+                tool_level: "",
             });
         } catch (error) {
             console.error("Error creating tool:", error);
@@ -65,6 +71,8 @@ function stateTool() {
             setUpdateIndex(null);
             setUpdateToolData({
                 tool_name: "",
+                tool_image: "",
+                tool_level: "",
             });
         } catch (error) {
             console.error("Error updating tool:", error);
@@ -76,6 +84,8 @@ function stateTool() {
         setShowModal(true);
         setUpdateToolData({
             tool_name: tools[index].tool_name,
+            tool_image: tools[index].tool_image,
+            tool_level: tools[index].tool_level,
         });
     };
 

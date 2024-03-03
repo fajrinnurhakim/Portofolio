@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     Education.init(
         {
             education_name: DataTypes.STRING,
+            education_image: DataTypes.STRING,
             institution_education: DataTypes.STRING,
             type_education: DataTypes.STRING,
             start_date: DataTypes.INTEGER,

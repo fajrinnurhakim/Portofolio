@@ -11,6 +11,7 @@ function stateEducation() {
     const [showModal, setShowModal] = useState(false);
     const [newEducationData, setNewEducationData] = useState({
         education_name: "",
+        education_image: "",
         institution_education: "",
         type_education: "",
         start_date: "",
@@ -19,6 +20,7 @@ function stateEducation() {
     const [updateIndex, setUpdateIndex] = useState(null);
     const [updateEducationData, setUpdateEducationData] = useState({
         education_name: "",
+        education_image: "",
         institution_education: "",
         type_education: "",
         start_date: "",
@@ -57,6 +59,7 @@ function stateEducation() {
             loadEducations();
             setNewEducationData({
                 education_name: "",
+                education_image: "",
                 institution_education: "",
                 type_education: "",
                 start_date: "",
@@ -77,6 +80,7 @@ function stateEducation() {
             setUpdateIndex(null);
             setUpdateEducationData({
                 education_name: "",
+                education_image: "",
                 institution_education: "",
                 type_education: "",
                 start_date: "",
@@ -92,6 +96,7 @@ function stateEducation() {
         setShowModal(true);
         setUpdateEducationData({
             education_name: educations[index].education_name,
+            education_image: educations[index].education_image,
             institution_education: educations[index].institution_education,
             type_education: educations[index].type_education,
             start_date: educations[index].start_date,

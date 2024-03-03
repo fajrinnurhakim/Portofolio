@@ -14,6 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     Tool.init(
         {
             tool_name: DataTypes.STRING,
+            tool_image: DataTypes.STRING,
+            tool_level: DataTypes.STRING,
         },
         {
             sequelize,

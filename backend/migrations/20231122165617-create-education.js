@@ -12,6 +12,9 @@ module.exports = {
             education_name: {
                 type: Sequelize.STRING,
             },
+            education_image: {
+                type: Sequelize.STRING,
+            },
             institution_education: {
                 type: Sequelize.STRING,
             },

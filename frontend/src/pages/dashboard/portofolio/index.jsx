@@ -47,6 +47,7 @@ function Portofolio() {
                             <tr className="text-center">
                                 <th>No</th>
                                 <th>Portofolio</th>
+                                <th>Portofolio Image</th>
                                 <th>Tech Stack 1</th>
                                 <th>Tech Stack 2</th>
                                 <th>Tech Stack 3</th>
@@ -61,6 +62,7 @@ function Portofolio() {
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>{portofolio.portofolio_name}</td>
+                                    <td>{portofolio.portofolio_image}</td>
                                     <td>{portofolio.tech_stack1}</td>
                                     <td>{portofolio.tech_stack2}</td>
                                     <td>{portofolio.tech_stack3}</td>
@@ -116,6 +118,30 @@ function Portofolio() {
                                     updateIndex !== null
                                         ? updatePortofolioData.portofolio_name
                                         : newPortofolioData.portofolio_name
+                                }
+                                onChange={
+                                    updateIndex !== null
+                                        ? handleUpdateInputChange
+                                        : handleInputChange
+                                }
+                                className="w-full px-3 py-2 input input-bordered"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label
+                                className="block mb-2 text-sm font-bold"
+                                htmlFor="portofolio_image"
+                            >
+                                Portofolio Image
+                            </label>
+                            <input
+                                type="text"
+                                id="portofolio_image"
+                                name="portofolio_image"
+                                value={
+                                    updateIndex !== null
+                                        ? updatePortofolioData.portofolio_image
+                                        : newPortofolioData.portofolio_image
                                 }
                                 onChange={
                                     updateIndex !== null
@@ -295,6 +321,7 @@ function Portofolio() {
                                     setUpdateIndex(null);
                                     setUpdatePortofolioData({
                                         portofolio_name: "",
+                                        portofolio_image: "",
                                         institution_portofolio: "",
                                         type_portofolio: "",
                                         start_date: "",

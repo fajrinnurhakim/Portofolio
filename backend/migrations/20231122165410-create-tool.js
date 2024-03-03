@@ -12,6 +12,12 @@ module.exports = {
             tool_name: {
                 type: Sequelize.STRING,
             },
+            tool_image: {
+                type: Sequelize.STRING,
+            },
+            tool_level: {
+                type: Sequelize.STRING,
+            },
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE,

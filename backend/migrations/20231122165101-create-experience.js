@@ -9,6 +9,9 @@ module.exports = {
                 primaryKey: true,
                 type: Sequelize.INTEGER,
             },
+            experience_image: {
+                type: Sequelize.STRING,
+            },
             experience_name: {
                 type: Sequelize.STRING,
             },

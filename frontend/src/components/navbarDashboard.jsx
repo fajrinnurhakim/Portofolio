@@ -37,7 +37,7 @@ function NavbarDashboard() {
                                 <a href="/dashboard/portofolios">Portofolios</a>
                             </li>
                             <li>
-                                <a href="/dashboard/profiles">Profies</a>
+                                <a href="/dashboard/profiles">Profiles</a>
                             </li>
                             <li>
                                 <a href="/dashboard/roles">Roles</a>
