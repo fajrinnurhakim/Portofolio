@@ -24,6 +24,7 @@ class ExperienceService {
         try {
             const {
                 experience_name,
+                experience_image,
                 institution_name,
                 tech_stack1,
                 tech_stack2,
@@ -35,6 +36,7 @@ class ExperienceService {
 
             const experience = await ExperienceRepository.create({
                 experience_name,
+                experience_image,
                 institution_name,
                 tech_stack1,
                 tech_stack2,

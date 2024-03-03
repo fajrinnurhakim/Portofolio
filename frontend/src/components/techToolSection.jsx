@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import stateTech from "../hooks/tech";
+import stateTool from "../hooks/tool";
 
 const TechToolSection = () => {
+    const { teches, loadTeches } = stateTech();
+    const { tools, loadTools } = stateTool();
+
+    useEffect(() => {
+        loadTeches();
+        loadTools();
+    }, []);
+
     return (
         <div className="container flex items-center h-screen p-5 mx-auto space-y-5">
             <div className="w-full space-y-5">
@@ -22,6 +32,22 @@ const TechToolSection = () => {
                         <p className="text-center">
                             <i class="fa-solid fa-code"></i> Tech
                         </p>
+
+                        <div className="flex justify-evenly">
+                            {teches.map((teches) => (
+                                <div className="items-center text-center card-body">
+                                    <img
+                                        src={teches.tech_image}
+                                        alt="tech_image"
+                                        className="w-12"
+                                    />
+                                    <p className="font-bold">
+                                        {teches.tech_name}
+                                    </p>
+                                    <p>{teches.tech_level}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     <input
@@ -40,15 +66,19 @@ const TechToolSection = () => {
                             <i class="fa-solid fa-screwdriver-wrench"></i> Tools
                         </p>
                         <div className="flex justify-evenly">
-                            <div>
-                                <div class="avatar">
-                                    <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                    </div>
+                            {tools.map((tools) => (
+                                <div className="items-center text-center card-body">
+                                    <img
+                                        src={tools.tool_image}
+                                        alt="tools_image"
+                                        className="w-12"
+                                    />
+                                    <p className="font-bold">
+                                        {tools.tool_name}
+                                    </p>
+                                    <p>{tools.tool_level}</p>
                                 </div>
-                                <p className="font-bold text-center">Html</p>
-                                <p className="text-center">Basic</p>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>

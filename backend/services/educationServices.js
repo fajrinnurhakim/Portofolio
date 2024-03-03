@@ -24,6 +24,7 @@ class EducationService {
         try {
             const {
                 education_name,
+                education_image,
                 institution_education,
                 type_education,
                 start_date,
@@ -32,6 +33,7 @@ class EducationService {
 
             const education = await EducationRepository.create({
                 education_name,
+                education_image,
                 institution_education,
                 type_education,
                 start_date,

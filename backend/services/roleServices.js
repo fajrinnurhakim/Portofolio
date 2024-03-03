@@ -26,6 +26,7 @@ class RoleService {
 
             const role = await RoleRepository.create({
                 role_name,
+                role_level,
             });
             return role;
         } catch (err) {

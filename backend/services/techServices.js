@@ -22,10 +22,12 @@ class TechService {
 
     static create = async (params) => {
         try {
-            const { tech_name } = params;
+            const { tech_name, tech_image, tech_level } = params;
 
             const tech = await TechRepository.create({
                 tech_name,
+                tech_image,
+                tech_level,
             });
             return tech;
         } catch (err) {
@@ -38,7 +40,7 @@ class TechService {
             const updatedTech = await TechRepository.update(id, data);
 
             if (!updatedTech) {
-                return null; 
+                return null;
             }
 
             return updatedTech;
@@ -52,7 +54,7 @@ class TechService {
             const result = await TechRepository.destroy(id);
 
             if (result === null) {
-                return null; 
+                return null;
             }
 
             return true;

@@ -23,6 +23,7 @@ class PortofolioService {
         try {
             const {
                 portofolio_name,
+                portofolio_image,
                 tech_stack1,
                 tech_stack2,
                 tech_stack3,
@@ -33,6 +34,7 @@ class PortofolioService {
 
             const portofolio = await PortofolioRepository.create({
                 portofolio_name,
+                portofolio_image,
                 tech_stack1,
                 tech_stack2,
                 tech_stack3,
@@ -54,7 +56,7 @@ class PortofolioService {
             );
 
             if (!updatedPortofolio) {
-                return null; 
+                return null;
             }
 
             return updatedPortofolio;
@@ -68,10 +70,10 @@ class PortofolioService {
             const result = await PortofolioRepository.destroy(id);
 
             if (result === null) {
-                return null; 
+                return null;
             }
 
-            return true; 
+            return true;
         } catch (err) {
             next(err);
         }

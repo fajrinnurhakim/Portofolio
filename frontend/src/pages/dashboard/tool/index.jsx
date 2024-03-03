@@ -57,7 +57,13 @@ function Tool() {
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>{tool.tool_name}</td>
-                                    <td>{tool.tool_image}</td>
+                                    <td>
+                                        <img
+                                            src={tool.tool_image}
+                                            alt="tool_image"
+                                            className="w-12"
+                                        />
+                                    </td>
                                     <td>{tool.tool_level}</td>
                                     <td className="flex justify-center space-x-2">
                                         <button
@@ -129,7 +135,7 @@ function Tool() {
                                 name="tool_image"
                                 value={
                                     updateIndex !== null
-                                        ? updateToolData.tool_natool_imageme
+                                        ? updateToolData.tool_image
                                         : newToolData.tool_image
                                 }
                                 onChange={
@@ -185,10 +191,6 @@ function Tool() {
                                         tool_name: "",
                                         tool_image: "",
                                         tool_level: "",
-                                        institution_tool: "",
-                                        type_tool: "",
-                                        start_date: "",
-                                        end_date: "",
                                     });
                                 }}
                             >
