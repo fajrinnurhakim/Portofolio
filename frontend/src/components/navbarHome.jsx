@@ -3,7 +3,7 @@ import stateProfile from "../hooks/profile";
 
 function NavbarHome() {
     const { profiles, loadProfiles } = stateProfile();
-    const [activeMenu, setActiveMenu] = useState("awards");
+    const [activeMenu, setActiveMenu] = useState("home");
     const [isScrolled, setIsScrolled] = useState(false);
 
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -107,17 +107,6 @@ function NavbarHome() {
                                     onClick={() => handleMenuClick("skills")}
                                 >
                                     Skills
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#awards"
-                                    className={
-                                        activeMenu === "awards" ? "active" : ""
-                                    }
-                                    onClick={() => handleMenuClick("awards")}
-                                >
-                                    Awards
                                 </a>
                             </li>
                             <li>
@@ -228,17 +217,7 @@ function NavbarHome() {
                                 Skills
                             </a>
                         </li>
-                        <li>
-                            <a
-                                href="#awards"
-                                className={
-                                    activeMenu === "awards" ? "active" : ""
-                                }
-                                onClick={() => handleMenuClick("awards")}
-                            >
-                                Awards
-                            </a>
-                        </li>
+
                         <li>
                             <a
                                 href="#educations"
