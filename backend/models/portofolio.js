@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     Portofolio.init(
         {
             portofolio_name: DataTypes.STRING,
+            portofolio_image: DataTypes.STRING,
             tech_stack1: DataTypes.INTEGER,
             tech_stack2: DataTypes.INTEGER,
             tech_stack3: DataTypes.INTEGER,

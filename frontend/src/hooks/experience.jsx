@@ -11,6 +11,7 @@ function stateExperience() {
     const [showModal, setShowModal] = useState(false);
     const [newExperienceData, setNewExperienceData] = useState({
         experience_name: "",
+        experience_image: "",
         institution_name: "",
         tech_stack1: "",
         tech_stack2: "",
@@ -21,6 +22,7 @@ function stateExperience() {
     const [updateIndex, setUpdateIndex] = useState(null);
     const [updateExperienceData, setUpdateExperienceData] = useState({
         experience_name: "",
+        experience_image: "",
         institution_name: "",
         tech_stack1: "",
         tech_stack2: "",
@@ -61,6 +63,7 @@ function stateExperience() {
             loadExperiences();
             setNewExperienceData({
                 experience_name: "",
+                experience_image: "",
                 institution_name: "",
                 tech_stack1: "",
                 tech_stack2: "",
@@ -83,6 +86,7 @@ function stateExperience() {
             setUpdateIndex(null);
             setUpdateExperienceData({
                 experience_name: "",
+                experience_image: "",
                 institution_name: "",
                 tech_stack1: "",
                 tech_stack2: "",
@@ -100,6 +104,7 @@ function stateExperience() {
         setShowModal(true);
         setUpdateExperienceData({
             experience_name: experiences[index].experience_name,
+            experience_image: experiences[index].experience_image,
             institution_name: experiences[index].institution_name,
             tech_stack1: experiences[index].tech_stack1,
             tech_stack2: experiences[index].tech_stack2,

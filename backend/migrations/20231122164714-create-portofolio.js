@@ -12,6 +12,9 @@ module.exports = {
             portofolio_name: {
                 type: Sequelize.STRING,
             },
+            portofolio_image: {
+                type: Sequelize.STRING,
+            },
             tech_stack1: {
                 type: Sequelize.STRING,
             },

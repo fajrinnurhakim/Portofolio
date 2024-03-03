@@ -47,6 +47,7 @@ function Role() {
                             <tr className="text-center">
                                 <th>No</th>
                                 <th>Role Name</th>
+                                <th>Role Level</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -55,6 +56,7 @@ function Role() {
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>{role.role_name}</td>
+                                    <td>{role.role_level}</td>
                                     <td className="flex justify-center space-x-2">
                                         <button
                                             className="btn btn-accent"
@@ -111,6 +113,30 @@ function Role() {
                                 className="w-full px-3 py-2 input input-bordered"
                             />
                         </div>
+                        <div className="mb-4">
+                            <label
+                                className="block mb-2 text-sm font-bold"
+                                htmlFor="role_level"
+                            >
+                                Role Level
+                            </label>
+                            <input
+                                type="text"
+                                id="role_level"
+                                name="role_level"
+                                value={
+                                    updateIndex !== null
+                                        ? updateRoleData.role_level
+                                        : newRoleData.role_level
+                                }
+                                onChange={
+                                    updateIndex !== null
+                                        ? handleUpdateInputChange
+                                        : handleInputChange
+                                }
+                                className="w-full px-3 py-2 input input-bordered"
+                            />
+                        </div>
 
                         <div className="flex justify-end">
                             <button
@@ -130,6 +156,7 @@ function Role() {
                                     setUpdateIndex(null);
                                     setUpdateRoleData({
                                         role_name: "",
+                                        role_level: "",
                                         institution_role: "",
                                         type_role: "",
                                         start_date: "",

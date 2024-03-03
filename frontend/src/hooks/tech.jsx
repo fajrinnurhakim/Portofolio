@@ -11,10 +11,14 @@ function stateTech() {
     const [showModal, setShowModal] = useState(false);
     const [newTechData, setNewTechData] = useState({
         tech_name: "",
+        tech_image: "",
+        tech_level: "",
     });
     const [updateIndex, setUpdateIndex] = useState(null);
     const [updateTechData, setUpdateTechData] = useState({
         tech_name: "",
+        tech_image: "",
+        tech_level: "",
     });
 
     const loadTeches = async () => {
@@ -49,6 +53,8 @@ function stateTech() {
             loadTeches();
             setNewTechData({
                 tech_name: "",
+                tech_image: "",
+                tech_level: "",
             });
         } catch (error) {
             console.error("Error creating tech:", error);
@@ -65,6 +71,8 @@ function stateTech() {
             setUpdateIndex(null);
             setUpdateTechData({
                 tech_name: "",
+                tech_image: "",
+                tech_level: "",
             });
         } catch (error) {
             console.error("Error updating tech:", error);
@@ -76,6 +84,8 @@ function stateTech() {
         setShowModal(true);
         setUpdateTechData({
             tech_name: teches[index].tech_name,
+            tech_image: teches[index].tech_image,
+            tech_level: teches[index].tech_level,
         });
     };
 

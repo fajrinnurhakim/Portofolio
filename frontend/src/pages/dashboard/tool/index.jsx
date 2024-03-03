@@ -47,6 +47,8 @@ function Tool() {
                             <tr className="text-center">
                                 <th>No</th>
                                 <th>Tool Name</th>
+                                <th>Tool Image</th>
+                                <th>Tool Level</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -55,6 +57,8 @@ function Tool() {
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>{tool.tool_name}</td>
+                                    <td>{tool.tool_image}</td>
+                                    <td>{tool.tool_level}</td>
                                     <td className="flex justify-center space-x-2">
                                         <button
                                             className="btn btn-accent"
@@ -112,6 +116,55 @@ function Tool() {
                             />
                         </div>
 
+                        <div className="mb-4">
+                            <label
+                                className="block mb-2 text-sm font-bold"
+                                htmlFor="tool_image"
+                            >
+                                Tool Image
+                            </label>
+                            <input
+                                type="text"
+                                id="tool_image"
+                                name="tool_image"
+                                value={
+                                    updateIndex !== null
+                                        ? updateToolData.tool_natool_imageme
+                                        : newToolData.tool_image
+                                }
+                                onChange={
+                                    updateIndex !== null
+                                        ? handleUpdateInputChange
+                                        : handleInputChange
+                                }
+                                className="w-full px-3 py-2 input input-bordered"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label
+                                className="block mb-2 text-sm font-bold"
+                                htmlFor="tool_level"
+                            >
+                                Tool Level
+                            </label>
+                            <input
+                                type="text"
+                                id="tool_level"
+                                name="tool_level"
+                                value={
+                                    updateIndex !== null
+                                        ? updateToolData.tool_level
+                                        : newToolData.tool_level
+                                }
+                                onChange={
+                                    updateIndex !== null
+                                        ? handleUpdateInputChange
+                                        : handleInputChange
+                                }
+                                className="w-full px-3 py-2 input input-bordered"
+                            />
+                        </div>
+
                         <div className="flex justify-end">
                             <button
                                 className="btn btn-primary"
@@ -130,6 +183,8 @@ function Tool() {
                                     setUpdateIndex(null);
                                     setUpdateToolData({
                                         tool_name: "",
+                                        tool_image: "",
+                                        tool_level: "",
                                         institution_tool: "",
                                         type_tool: "",
                                         start_date: "",

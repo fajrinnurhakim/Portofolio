@@ -47,6 +47,8 @@ function Tech() {
                             <tr className="text-center">
                                 <th>No</th>
                                 <th>Tech Name</th>
+                                <th>Tech Image</th>
+                                <th>Tech Level</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -55,6 +57,8 @@ function Tech() {
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>{tech.tech_name}</td>
+                                    <td>{tech.tech_image}</td>
+                                    <td>{tech.tech_level}</td>
                                     <td className="flex justify-center space-x-2">
                                         <button
                                             className="btn btn-accent"
@@ -111,6 +115,54 @@ function Tech() {
                                 className="w-full px-3 py-2 input input-bordered"
                             />
                         </div>
+                        <div className="mb-4">
+                            <label
+                                className="block mb-2 text-sm font-bold"
+                                htmlFor="tech_image"
+                            >
+                                Tech Image
+                            </label>
+                            <input
+                                type="text"
+                                id="tech_image"
+                                name="tech_image"
+                                value={
+                                    updateIndex !== null
+                                        ? updateTechData.tech_image
+                                        : newTechData.tech_image
+                                }
+                                onChange={
+                                    updateIndex !== null
+                                        ? handleUpdateInputChange
+                                        : handleInputChange
+                                }
+                                className="w-full px-3 py-2 input input-bordered"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label
+                                className="block mb-2 text-sm font-bold"
+                                htmlFor="tech_name"
+                            >
+                                Tech Level
+                            </label>
+                            <input
+                                type="text"
+                                id="tech_level"
+                                name="tech_level"
+                                value={
+                                    updateIndex !== null
+                                        ? updateTechData.tech_level
+                                        : newTechData.tech_level
+                                }
+                                onChange={
+                                    updateIndex !== null
+                                        ? handleUpdateInputChange
+                                        : handleInputChange
+                                }
+                                className="w-full px-3 py-2 input input-bordered"
+                            />
+                        </div>
 
                         <div className="flex justify-end">
                             <button
@@ -130,6 +182,8 @@ function Tech() {
                                     setUpdateIndex(null);
                                     setUpdateTechData({
                                         tech_name: "",
+                                        tech_image: "",
+                                        tech_level: "",
                                         institution_tech: "",
                                         type_tech: "",
                                         start_date: "",

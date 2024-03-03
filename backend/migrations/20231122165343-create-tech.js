@@ -12,6 +12,12 @@ module.exports = {
             tech_name: {
                 type: Sequelize.STRING,
             },
+            tech_image: {
+                type: Sequelize.STRING,
+            },
+            tech_level: {
+                type: Sequelize.STRING,
+            },
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE,

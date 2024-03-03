@@ -87,6 +87,30 @@ function NavbarHome() {
                             </li>
                             <li>
                                 <a
+                                    href="#profiles"
+                                    className={
+                                        activeMenu === "profiles"
+                                            ? "active"
+                                            : ""
+                                    }
+                                    onClick={() => handleMenuClick("profiles")}
+                                >
+                                    Profiles
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#skills"
+                                    className={
+                                        activeMenu === "skills" ? "active" : ""
+                                    }
+                                    onClick={() => handleMenuClick("skills")}
+                                >
+                                    Skills
+                                </a>
+                            </li>
+                            <li>
+                                <a
                                     href="#awards"
                                     className={
                                         activeMenu === "awards" ? "active" : ""
@@ -141,19 +165,7 @@ function NavbarHome() {
                                     Portofolios
                                 </a>
                             </li>
-                            <li>
-                                <a
-                                    href="#profiles"
-                                    className={
-                                        activeMenu === "profiles"
-                                            ? "active"
-                                            : ""
-                                    }
-                                    onClick={() => handleMenuClick("profiles")}
-                                >
-                                    Profiles
-                                </a>
-                            </li>
+
                             <li>
                                 <a
                                     href="#roles"
@@ -163,28 +175,6 @@ function NavbarHome() {
                                     onClick={() => handleMenuClick("roles")}
                                 >
                                     Roles
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#teches"
-                                    className={
-                                        activeMenu === "teches" ? "active" : ""
-                                    }
-                                    onClick={() => handleMenuClick("teches")}
-                                >
-                                    Teches
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#tools"
-                                    className={
-                                        activeMenu === "tools" ? "active" : ""
-                                    }
-                                    onClick={() => handleMenuClick("tools")}
-                                >
-                                    Tools
                                 </a>
                             </li>
                         </ul>
@@ -214,6 +204,28 @@ function NavbarHome() {
                                 onClick={() => handleMenuClick("home")}
                             >
                                 Home
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#profiles"
+                                className={
+                                    activeMenu === "profiles" ? "active" : ""
+                                }
+                                onClick={() => handleMenuClick("profiles")}
+                            >
+                                Profiles
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#skills"
+                                className={
+                                    activeMenu === "skills" ? "active" : ""
+                                }
+                                onClick={() => handleMenuClick("skills")}
+                            >
+                                Skills
                             </a>
                         </li>
                         <li>
@@ -260,17 +272,7 @@ function NavbarHome() {
                                 Portofolios
                             </a>
                         </li>
-                        <li>
-                            <a
-                                href="#profiles"
-                                className={
-                                    activeMenu === "profiles" ? "active" : ""
-                                }
-                                onClick={() => handleMenuClick("profiles")}
-                            >
-                                Profiles
-                            </a>
-                        </li>
+
                         <li>
                             <a
                                 href="#roles"
@@ -280,28 +282,6 @@ function NavbarHome() {
                                 onClick={() => handleMenuClick("roles")}
                             >
                                 Roles
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#teches"
-                                className={
-                                    activeMenu === "teches" ? "active" : ""
-                                }
-                                onClick={() => handleMenuClick("teches")}
-                            >
-                                Teches
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#tools"
-                                className={
-                                    activeMenu === "tools" ? "active" : ""
-                                }
-                                onClick={() => handleMenuClick("tools")}
-                            >
-                                Tools
                             </a>
                         </li>
                     </ul>

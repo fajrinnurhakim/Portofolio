@@ -11,10 +11,12 @@ function stateRole() {
     const [showModal, setShowModal] = useState(false);
     const [newRoleData, setNewRoleData] = useState({
         role_name: "",
+        role_level: "",
     });
     const [updateIndex, setUpdateIndex] = useState(null);
     const [updateRoleData, setUpdateRoleData] = useState({
         role_name: "",
+        role_level: "",
     });
 
     const loadRoles = async () => {
@@ -49,6 +51,7 @@ function stateRole() {
             loadRoles();
             setNewRoleData({
                 role_name: "",
+                role_level: "",
             });
         } catch (error) {
             console.error("Error creating role:", error);
@@ -65,6 +68,7 @@ function stateRole() {
             setUpdateIndex(null);
             setUpdateRoleData({
                 role_name: "",
+                role_level: "",
             });
         } catch (error) {
             console.error("Error updating role:", error);
@@ -76,6 +80,7 @@ function stateRole() {
         setShowModal(true);
         setUpdateRoleData({
             role_name: roles[index].role_name,
+            role_level: roles[index].role_level,
         });
     };
 

@@ -11,6 +11,7 @@ function statePortofolio() {
     const [showModal, setShowModal] = useState(false);
     const [newPortofolioData, setNewPortofolioData] = useState({
         portofolio_name: "",
+        portofolio_image: "",
         tech_stack1: "",
         tech_stack2: "",
         tech_stack3: "",
@@ -21,6 +22,7 @@ function statePortofolio() {
     const [updateIndex, setUpdateIndex] = useState(null);
     const [updatePortofolioData, setUpdatePortofolioData] = useState({
         portofolio_name: "",
+        portofolio_image: "",
         tech_stack1: "",
         tech_stack2: "",
         tech_stack3: "",
@@ -61,6 +63,7 @@ function statePortofolio() {
             loadPortofolios();
             setNewPortofolioData({
                 portofolio_name: "",
+                portofolio_image: "",
                 tech_stack1: "",
                 tech_stack2: "",
                 tech_stack3: "",
@@ -83,6 +86,7 @@ function statePortofolio() {
             setUpdateIndex(null);
             setUpdatePortofolioData({
                 portofolio_name: "",
+                portofolio_image: "",
                 tech_stack1: "",
                 tech_stack2: "",
                 tech_stack3: "",
@@ -100,6 +104,7 @@ function statePortofolio() {
         setShowModal(true);
         setUpdatePortofolioData({
             portofolio_name: portofolios[index].portofolio_name,
+            portofolio_image: portofolios[index].portofolio_image,
             tech_stack1: portofolios[index].tech_stack1,
             tech_stack2: portofolios[index].tech_stack2,
             tech_stack3: portofolios[index].tech_stack3,

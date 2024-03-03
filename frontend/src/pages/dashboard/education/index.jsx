@@ -47,6 +47,7 @@ function Education() {
                             <tr className="text-center">
                                 <th>No</th>
                                 <th>Education</th>
+                                <th>Education Image</th>
                                 <th>Institution</th>
                                 <th>Type Education</th>
                                 <th>Start Date</th>
@@ -59,6 +60,7 @@ function Education() {
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>{education.education_name}</td>
+                                    <td>{education.education_image}</td>
                                     <td>{education.institution_education}</td>
                                     <td>{education.type_education}</td>
                                     <td>{education.start_date}</td>
@@ -112,6 +114,30 @@ function Education() {
                                     updateIndex !== null
                                         ? updateEducationData.education_name
                                         : newEducationData.education_name
+                                }
+                                onChange={
+                                    updateIndex !== null
+                                        ? handleUpdateInputChange
+                                        : handleInputChange
+                                }
+                                className="w-full px-3 py-2 input input-bordered"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label
+                                className="block mb-2 text-sm font-bold"
+                                htmlFor="education_image"
+                            >
+                                Education Image
+                            </label>
+                            <input
+                                type="text"
+                                id="education_image"
+                                name="education_image"
+                                value={
+                                    updateIndex !== null
+                                        ? updateEducationData.education_image
+                                        : newEducationData.education_image
                                 }
                                 onChange={
                                     updateIndex !== null
@@ -238,6 +264,7 @@ function Education() {
                                     setUpdateIndex(null);
                                     setUpdateEducationData({
                                         education_name: "",
+                                        education_image: "",
                                         institution_education: "",
                                         type_education: "",
                                         start_date: "",
