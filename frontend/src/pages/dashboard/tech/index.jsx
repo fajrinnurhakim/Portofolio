@@ -57,7 +57,13 @@ function Tech() {
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>{tech.tech_name}</td>
-                                    <td>{tech.tech_image}</td>
+                                    <td>
+                                        <img
+                                            src={tech.tech_image}
+                                            alt="techImage"
+                                            className="w-12"
+                                        />
+                                    </td>
                                     <td>{tech.tech_level}</td>
                                     <td className="flex justify-center space-x-2">
                                         <button
@@ -142,7 +148,7 @@ function Tech() {
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
-                                htmlFor="tech_name"
+                                htmlFor="tech_level"
                             >
                                 Tech Level
                             </label>
@@ -184,10 +190,6 @@ function Tech() {
                                         tech_name: "",
                                         tech_image: "",
                                         tech_level: "",
-                                        institution_tech: "",
-                                        type_tech: "",
-                                        start_date: "",
-                                        end_date: "",
                                     });
                                 }}
                             >

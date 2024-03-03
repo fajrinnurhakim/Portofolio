@@ -22,10 +22,12 @@ class ToolService {
 
     static create = async (params) => {
         try {
-            const { tool_name } = params;
+            const { tool_name, tool_image, tool_level } = params;
 
             const tool = await ToolRepository.create({
                 tool_name,
+                tool_image,
+                tool_level,
             });
             return tool;
         } catch (err) {
@@ -52,10 +54,10 @@ class ToolService {
             const result = await ToolRepository.destroy(id);
 
             if (result === null) {
-                return null; 
+                return null;
             }
 
-            return true; 
+            return true;
         } catch (err) {
             next(err);
         }
