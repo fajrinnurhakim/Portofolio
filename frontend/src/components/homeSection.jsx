@@ -13,10 +13,8 @@ const HomeSection = () => {
             {profiles.map((profile) => (
                 <>
                     <div className="flex-row w-full space-y-3 md:w-1/2">
-                        <p className="text-xl font-bold text-primary">
-                            hi there
-                        </p>
-                        <h1 className="font-bold text-7xl md:text-9xl text-primary">
+                        <p className="text-xl font-bold ">hi there</p>
+                        <h1 className="font-bold text-7xl md:text-9xl ">
                             {profile.name}
                         </h1>
                         <p className="text-neutral-content">
@@ -26,7 +24,7 @@ const HomeSection = () => {
                         </p>
                         <a
                             href={profile.link_cv}
-                            className="btn btn-primary"
+                            className="btn btn-outline"
                             download="Fajrin Nurhakim-CV-FE.pdf"
                         >
                             Curriculum Vitae{" "}

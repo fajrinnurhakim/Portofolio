@@ -14,7 +14,7 @@ const TechToolSection = () => {
     return (
         <div className="container flex items-center h-screen p-5 mx-auto space-y-5">
             <div className="w-full space-y-5">
-                <h1 className="mb-12 text-2xl font-bold text-center underline md:text-4xl text-primary decoration-wavy">
+                <h1 className="mb-12 text-2xl font-bold text-center underline md:text-4xl decoration-wavy">
                     Skills
                 </h1>
                 <div role="tablist" class="tabs tabs-lifted w-full">
