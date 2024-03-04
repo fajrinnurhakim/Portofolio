@@ -11,8 +11,8 @@ const ProfileSection = () => {
     return (
         <div className="container flex items-center h-screen p-5 mx-auto space-y-5">
             <div className="space-y-5">
-                <h1 className="mb-12 text-2xl font-bold text-center underline md:text-4xl decoration-wavy">
-                    Profile
+                <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
+                    Profile <i class="fa-solid fa-id-badge"></i>
                 </h1>
 
                 {profiles.map((profile) => (

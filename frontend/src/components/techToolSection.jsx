@@ -12,10 +12,10 @@ const TechToolSection = () => {
     }, []);
 
     return (
-        <div className="container flex items-center h-screen p-5 mx-auto space-y-5">
+        <div className="container flex items-center h-auto px-5 py-24 mx-auto space-y-5 py-">
             <div className="w-full space-y-5">
-                <h1 className="mb-12 text-2xl font-bold text-center underline md:text-4xl decoration-wavy">
-                    Skills
+                <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
+                    Skills <i class="fa-solid fa-gears"></i>
                 </h1>
                 <div role="tablist" class="tabs tabs-lifted w-full">
                     <input
