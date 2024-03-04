@@ -1,4 +1,5 @@
 import EducationSection from "../../components/educationSection";
+import ExperienceSection from "../../components/experienceSection";
 import HomeSection from "../../components/homeSection";
 import NavbarHome from "../../components/navbarHome";
 import ProfileSection from "../../components/profileSection";
@@ -19,6 +20,9 @@ function Home() {
             </section>
             <section id="educations" className="bg-base-300">
                 <EducationSection />
+            </section>
+            <section id="experiences">
+                <ExperienceSection />
             </section>
         </div>
     );

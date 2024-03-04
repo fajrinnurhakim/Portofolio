@@ -22,7 +22,7 @@ class RoleService {
 
     static create = async (params) => {
         try {
-            const { role_name } = params;
+            const { role_name, role_level } = params;
 
             const role = await RoleRepository.create({
                 role_name,
