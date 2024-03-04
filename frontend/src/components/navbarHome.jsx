@@ -45,8 +45,8 @@ function NavbarHome() {
             <div className="container flex mx-auto navbar">
                 <div className="w-1/3 navbar-start">
                     <a className="hidden text-xl btn btn-ghost md:inline-flex">
-                        {profiles.map((profile) => (
-                            <span>
+                        {profiles.map((profile, index) => (
+                            <span key={index}>
                                 <img
                                     src={profile.image}
                                     alt="image"
@@ -161,7 +161,7 @@ function NavbarHome() {
                 <div className="w-2/3 navbar-end">
                     <a className="flex text-xl btn btn-ghost md:hidden">
                         {profiles.map((profile) => (
-                            <span>
+                            <span key={profile.id}>
                                 <img
                                     src={profile.image}
                                     alt="image"

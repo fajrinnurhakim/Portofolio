@@ -71,7 +71,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/dashboard/roles"
+                    path="/dashboard/socmeds"
                     element={
                         <>
                             <Role />

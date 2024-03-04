@@ -1,22 +1,25 @@
 import React, { useEffect } from "react";
 import stateProfile from "../hooks/profile";
+import stateRole from "../hooks/role";
 
 const ProfileSection = () => {
     const { profiles, loadProfiles } = stateProfile();
+    const { roles, loadRoles } = stateRole();
 
     useEffect(() => {
         loadProfiles();
+        loadRoles();
     }, []);
 
     return (
         <div className="container flex items-center h-screen p-5 mx-auto space-y-5">
             <div className="space-y-5">
                 <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
-                    Profile <i class="fa-solid fa-id-badge"></i>
+                    Profile <i className="fa-solid fa-id-badge"></i>
                 </h1>
 
                 {profiles.map((profile) => (
-                    <div className="flex items-center">
+                    <div key={profile.id} className="flex items-center">
                         <div className="flex w-1/2 justify-left">
                             <img
                                 src={profile.image_two}
@@ -41,7 +44,7 @@ const ProfileSection = () => {
                             <div className="flex space-x-2">
                                 <div className="w-1/3 shadow-xl card card-compact bg-base-content">
                                     <div className="text-center text-black card-body">
-                                        <i class="fa-solid fa-star"></i>
+                                        <i className="fa-solid fa-star"></i>
                                         <h2 className="text-xl font-bold">
                                             {profile.year_experience} +
                                         </h2>
@@ -50,7 +53,7 @@ const ProfileSection = () => {
                                 </div>
                                 <div className="w-1/3 shadow-xl card card-compact bg-base-content">
                                     <div className="text-center text-black card-body">
-                                        <i class="fa-solid fa-microchip"></i>
+                                        <i className="fa-solid fa-microchip"></i>
                                         <h2 className="text-xl font-bold">
                                             {profile.tech_stack} +
                                         </h2>
@@ -59,13 +62,25 @@ const ProfileSection = () => {
                                 </div>
                                 <div className="w-1/3 shadow-xl card card-compact bg-base-content">
                                     <div className="text-center text-black card-body">
-                                        <i class="fa-solid fa-sheet-plastic"></i>
+                                        <i className="fa-solid fa-sheet-plastic"></i>
                                         <h2 className="text-xl font-bold">
                                             {profile.year_experience} +
                                         </h2>
                                         <p>Successed Projects</p>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div className="space-x-2">
+                                {roles.map((role, index) => (
+                                    <a
+                                        key={index}
+                                        href={role.role_level}
+                                        className="text-2xl btn btn-ghost btn-circle"
+                                    >
+                                        <i className={role.role_name}></i>
+                                    </a>
+                                ))}
                             </div>
                         </div>
                     </div>

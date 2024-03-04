@@ -15,27 +15,31 @@ const TechToolSection = () => {
         <div className="container flex items-center h-auto px-5 py-24 mx-auto space-y-5 py-">
             <div className="w-full space-y-5">
                 <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
-                    Skills <i class="fa-solid fa-gears"></i>
+                    Skills <i className="fa-solid fa-gears"></i>
                 </h1>
-                <div role="tablist" class="tabs tabs-lifted w-full">
+                <div role="tablist" className="w-full tabs tabs-lifted">
                     <input
                         type="radio"
                         name="my_tabs_2"
                         role="tab"
-                        class="tab"
+                        className="tab"
                         aria-label="Tech"
+                        defaultChecked
                     />
                     <div
                         role="tabpanel"
-                        class="tab-content bg-base-300 border-base-300 rounded-box p-6"
+                        className="p-6 tab-content bg-base-300 border-base-300 rounded-box"
                     >
                         <p className="text-center">
-                            <i class="fa-solid fa-code"></i> Tech
+                            <i className="fa-solid fa-code"></i> Tech
                         </p>
 
                         <div className="flex justify-evenly">
-                            {teches.map((teches) => (
-                                <div className="items-center text-center card-body">
+                            {teches.map((teches, index) => (
+                                <div
+                                    key={index}
+                                    className="items-center text-center card-body"
+                                >
                                     <img
                                         src={teches.tech_image}
                                         alt="tech_image"
@@ -54,20 +58,23 @@ const TechToolSection = () => {
                         type="radio"
                         name="my_tabs_2"
                         role="tab"
-                        class="tab"
+                        className="tab"
                         aria-label="Tools"
-                        checked
                     />
                     <div
                         role="tabpanel"
-                        class="tab-content bg-base-300 border-base-300 rounded-box p-6"
+                        className="p-6 tab-content bg-base-300 border-base-300 rounded-box"
                     >
                         <p className="mb-5 text-center">
-                            <i class="fa-solid fa-screwdriver-wrench"></i> Tools
+                            <i className="fa-solid fa-screwdriver-wrench"></i>{" "}
+                            Tools
                         </p>
                         <div className="flex justify-evenly">
-                            {tools.map((tools) => (
-                                <div className="items-center text-center card-body">
+                            {tools.map((tools, index) => (
+                                <div
+                                    key={index}
+                                    className="items-center text-center card-body"
+                                >
                                     <img
                                         src={tools.tool_image}
                                         alt="tools_image"
