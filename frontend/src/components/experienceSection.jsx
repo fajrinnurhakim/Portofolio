@@ -38,13 +38,13 @@ const ExperienceSection = () => {
                         className="btn btn-circle btn-ghost"
                         onClick={handlePrev}
                     >
-                        <i class="fa-solid fa-arrow-left"></i>
+                        <i className="fa-solid fa-arrow-left"></i>
                     </button>
                     <button
                         className="btn btn-ghost btn-circle"
                         onClick={handleNext}
                     >
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i className="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
                 <div
@@ -57,8 +57,8 @@ const ExperienceSection = () => {
                                 new Date(b.start_date) - new Date(a.start_date)
                         )
                         .map((experience, index) => (
-                            <div key={index}>
-                                <div className="shadow-xl card w-80 bg-base-100">
+                            <div key={index} className="w-1/4">
+                                <div className="shadow-xl card bg-base-100">
                                     <figure>
                                         <img
                                             src={experience.experience_image}
