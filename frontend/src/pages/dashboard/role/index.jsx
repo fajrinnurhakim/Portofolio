@@ -32,7 +32,7 @@ function Role() {
                 id="title"
                 className="container flex justify-between mx-auto mt-2"
             >
-                <h3 className="text-4xl font-bold">Roles</h3>
+                <h3 className="text-4xl font-bold">Social Media</h3>
                 <button
                     className="btn btn-primary"
                     onClick={() => setShowModal(true)}
@@ -46,8 +46,8 @@ function Role() {
                         <thead>
                             <tr className="text-center">
                                 <th>No</th>
-                                <th>Role Name</th>
-                                <th>Role Level</th>
+                                <th>Icon</th>
+                                <th>Link</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -55,7 +55,9 @@ function Role() {
                             {roles.map((role, index) => (
                                 <tr key={index}>
                                     <th>{index + 1}</th>
-                                    <td>{role.role_name}</td>
+                                    <td>
+                                        <i className={role.role_name}></i>
+                                    </td>
                                     <td>{role.role_level}</td>
                                     <td className="flex justify-center space-x-2">
                                         <button
@@ -94,7 +96,7 @@ function Role() {
                                 className="block mb-2 text-sm font-bold"
                                 htmlFor="role_name"
                             >
-                                Role Name
+                                Icon
                             </label>
                             <input
                                 type="text"
@@ -118,7 +120,7 @@ function Role() {
                                 className="block mb-2 text-sm font-bold"
                                 htmlFor="role_level"
                             >
-                                Role Level
+                                Link
                             </label>
                             <input
                                 type="text"
@@ -157,10 +159,6 @@ function Role() {
                                     setUpdateRoleData({
                                         role_name: "",
                                         role_level: "",
-                                        institution_role: "",
-                                        type_role: "",
-                                        start_date: "",
-                                        end_date: "",
                                     });
                                 }}
                             >

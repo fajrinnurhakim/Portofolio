@@ -82,7 +82,7 @@ const EducationSection = () => {
                                                                 education.education_image
                                                             }
                                                             alt="educationImage"
-                                                            className="w-4 h-5 me-2"
+                                                            className="h-4 me-2"
                                                         />
                                                         <p>
                                                             {

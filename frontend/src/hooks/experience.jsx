@@ -16,6 +16,7 @@ function stateExperience() {
         tech_stack1: "",
         tech_stack2: "",
         tech_stack3: "",
+        type: "",
         start_date: "",
         end_date: "",
     });
@@ -27,6 +28,7 @@ function stateExperience() {
         tech_stack1: "",
         tech_stack2: "",
         tech_stack3: "",
+        type: "",
         start_date: "",
         end_date: "",
     });
@@ -68,6 +70,7 @@ function stateExperience() {
                 tech_stack1: "",
                 tech_stack2: "",
                 tech_stack3: "",
+                type: "",
                 start_date: "",
                 end_date: "",
             });
@@ -91,6 +94,7 @@ function stateExperience() {
                 tech_stack1: "",
                 tech_stack2: "",
                 tech_stack3: "",
+                type: "",
                 start_date: "",
                 end_date: "",
             });
@@ -109,6 +113,7 @@ function stateExperience() {
             tech_stack1: experiences[index].tech_stack1,
             tech_stack2: experiences[index].tech_stack2,
             tech_stack3: experiences[index].tech_stack3,
+            type: experiences[index].type,
             start_date: experiences[index].start_date,
             end_date: experiences[index].end_date,
         });

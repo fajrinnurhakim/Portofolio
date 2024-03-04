@@ -40,7 +40,7 @@ function NavbarDashboard() {
                                 <a href="/dashboard/profiles">Profiles</a>
                             </li>
                             <li>
-                                <a href="/dashboard/roles">Roles</a>
+                                <a href="/dashboard/socmeds">Socmed</a>
                             </li>
                             <li>
                                 <a href="/dashboard/teches">Teches</a>
