@@ -13,10 +13,15 @@ const HomeSection = () => {
             {profiles.map((profile, index) => (
                 <div
                     key={index}
-                    className="container flex items-center h-screen p-5 mx-auto "
+                    className="container flex items-center h-auto p-5 px-5 py-24 mx-auto"
                 >
                     <>
                         <div className="flex-row w-full space-y-3 md:w-1/2">
+                            <img
+                                src={profile.image}
+                                alt="image"
+                                className="h-12 md:hidden"
+                            />
                             <p className="text-xl font-bold ">hi there</p>
                             <h1 className="font-bold text-7xl md:text-9xl ">
                                 {profile.name}

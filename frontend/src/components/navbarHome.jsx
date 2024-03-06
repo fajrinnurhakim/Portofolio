@@ -82,6 +82,9 @@ function NavbarHome() {
                                     }
                                     onClick={() => handleMenuClick("home")}
                                 >
+                                    <div className="w-4">
+                                        <i class="fa-solid fa-house"></i>{" "}
+                                    </div>
                                     Home
                                 </a>
                             </li>
@@ -95,6 +98,9 @@ function NavbarHome() {
                                     }
                                     onClick={() => handleMenuClick("profiles")}
                                 >
+                                    <div className="w-4">
+                                        <i className="fa-solid fa-id-badge"></i>{" "}
+                                    </div>
                                     Profiles
                                 </a>
                             </li>
@@ -106,6 +112,10 @@ function NavbarHome() {
                                     }
                                     onClick={() => handleMenuClick("skills")}
                                 >
+                                    {" "}
+                                    <div className="w-4">
+                                        <i className="fa-solid fa-gears"></i>{" "}
+                                    </div>
                                     Skills
                                 </a>
                             </li>
@@ -121,6 +131,9 @@ function NavbarHome() {
                                         handleMenuClick("educations")
                                     }
                                 >
+                                    <div className="w-4">
+                                        <i className="fa-solid fa-user-graduate"></i>
+                                    </div>
                                     Educations
                                 </a>
                             </li>
@@ -136,6 +149,9 @@ function NavbarHome() {
                                         handleMenuClick("experiences")
                                     }
                                 >
+                                    <div className="w-4">
+                                        <i className="fa-solid fa-briefcase"></i>
+                                    </div>
                                     Experiences
                                 </a>
                             </li>
@@ -151,6 +167,9 @@ function NavbarHome() {
                                         handleMenuClick("portofolios")
                                     }
                                 >
+                                    <div className="w-4">
+                                        <i className="fa-solid fa-file-contract"></i>
+                                    </div>
                                     Portofolios
                                 </a>
                             </li>

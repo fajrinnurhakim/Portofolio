@@ -57,8 +57,8 @@ const ExperienceSection = () => {
                                 new Date(b.start_date) - new Date(a.start_date)
                         )
                         .map((experience, index) => (
-                            <div key={index} className="w-1/4">
-                                <div className="shadow-xl card bg-base-100">
+                            <div key={index} className="">
+                                <div className="shadow-xl card bg-base-100 w-72">
                                     <figure>
                                         <img
                                             src={experience.experience_image}

@@ -29,10 +29,9 @@ const PortofolioSection = () => {
                                     />
                                 </figure>
                                 <div className="p-4 card-body">
-                                    <h2 className="card-title">
+                                    <h2 className="text-base font-bold md:card-title">
                                         {portofolio.portofolio_name}
                                     </h2>
-
                                     <div className="flex space-x-2">
                                         <img
                                             src={portofolio.tech_stack1}
@@ -50,7 +49,9 @@ const PortofolioSection = () => {
                                             className="h-5"
                                         />
                                     </div>
-                                    <p>{portofolio.description}</p>
+                                    <p className="text-sm">
+                                        {portofolio.description}
+                                    </p>
                                     <div className="flex space-x-1">
                                         <a
                                             href={portofolio.link_github}

@@ -12,7 +12,7 @@ const ProfileSection = () => {
     }, []);
 
     return (
-        <div className="container flex items-center h-screen p-5 mx-auto space-y-5">
+        <div className="container flex items-center h-auto p-5 px-5 py-24 mx-auto">
             <div className="space-y-5">
                 <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                     Profile <i className="fa-solid fa-id-badge"></i>
@@ -20,14 +20,14 @@ const ProfileSection = () => {
 
                 {profiles.map((profile) => (
                     <div key={profile.id} className="flex items-center">
-                        <div className="flex w-1/2 justify-left">
+                        <div className="hidden w-1/2 justify-left md:inline">
                             <img
                                 src={profile.image_two}
                                 alt="image_two"
                                 className="w-80 h-96"
                             />
                         </div>
-                        <div className="flex-row content-center w-1/2 space-y-3">
+                        <div className="flex-row content-center w-full space-y-3 md:w-1/2">
                             <p className="text-xl font-bold md:text-2xl ">
                                 Hello i'm {profile.name}
                             </p>
