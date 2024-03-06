@@ -1,0 +1,107 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Award {
+  id            Int      @id @default(autoincrement())
+  award_name    String
+  institution_award String
+  win_date      String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now()) @updatedAt
+}
+
+model Education {
+  id                   Int      @id @default(autoincrement())
+  education_name       String
+  education_image      String
+  institution_education String
+  type_education       String
+  start_date           String
+  end_date             String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now()) @updatedAt
+}
+
+model Experience {
+  id                     Int      @id @default(autoincrement())
+  experience_name        String
+  experience_description String
+  institution_name       String
+  tech_stack1            String
+  tech_stack2            String
+  tech_stack3            String
+  type                   String
+  start_date             String
+  end_date               String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now()) @updatedAt
+}
+
+model Portofolio {
+  id           Int      @id @default(autoincrement())
+  portofolio_name  String
+  portofolio_image String
+  tech_stack1     String
+  tech_stack2     String
+  tech_stack3     String
+  description     String
+  link_github    String
+  link_demo      String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now()) @updatedAt
+}
+
+model Profile {
+  id                Int      @id @default(autoincrement())
+  name              String
+  address           String
+  main_role         String
+  description       String
+  link_cv           String
+  image             String
+  image_two         String
+  year_experience  Int
+  tech_stack       Int
+  success_project  Int
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now()) @updatedAt
+}
+
+model Socmed {
+  id          Int      @id @default(autoincrement())
+  socmed_image String
+  socmed_link  String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now()) @updatedAt
+}
+
+model Tech {
+  id         Int      @id @default(autoincrement())
+  tech_name  String
+  tech_image String
+  tech_level String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now()) @updatedAt
+}
+
+model Tool {
+  id          Int      @id @default(autoincrement())
+  tool_name   String
+  tool_image  String
+  tool_level  String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now()) @updatedAt
+}
+
