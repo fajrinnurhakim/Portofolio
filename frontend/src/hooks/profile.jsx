@@ -46,17 +46,31 @@ function stateProfile() {
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
+        const parsedValue = [
+            "year_experience",
+            "tech_stack",
+            "success_project",
+        ].includes(name)
+            ? parseInt(value, 10)
+            : value;
         setNewProfileData({
             ...newProfileData,
-            [name]: value,
+            [name]: parsedValue,
         });
     };
 
     const handleUpdateInputChange = (event) => {
         const { name, value } = event.target;
+        const parsedValue = [
+            "year_experience",
+            "tech_stack",
+            "success_project",
+        ].includes(name)
+            ? parseInt(value, 10)
+            : value;
         setUpdateProfileData({
             ...updateProfileData,
-            [name]: value,
+            [name]: parsedValue,
         });
     };
 
