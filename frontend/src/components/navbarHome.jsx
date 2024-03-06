@@ -83,7 +83,7 @@ function NavbarHome() {
                                     onClick={() => handleMenuClick("home")}
                                 >
                                     <div className="w-4">
-                                        <i class="fa-solid fa-house"></i>{" "}
+                                        <i className="fa-solid fa-house"></i>{" "}
                                     </div>
                                     Home
                                 </a>

@@ -1,28 +1,28 @@
 import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
-import stateRole from "../../../hooks/role";
+import stateSocmed from "../../../hooks/socmed";
 
-function Role() {
+function Socmed() {
     const {
-        roles,
+        socmeds,
         showModal,
-        newRoleData,
+        newSocmedData,
         updateIndex,
-        updateRoleData,
-        loadRoles,
+        updateSocmedData,
+        loadSocmeds,
         handleInputChange,
         handleUpdateInputChange,
-        handleCreateRole,
-        handleUpdateRole,
+        handleCreateSocmed,
+        handleUpdateSocmed,
         handleOpenUpdateModal,
-        handleDeleteRole,
+        handleDeleteSocmed,
         setShowModal,
         setUpdateIndex,
-        setUpdateRoleData,
-    } = stateRole();
+        setUpdateSocmedData,
+    } = stateSocmed();
 
     useEffect(() => {
-        loadRoles();
+        loadSocmeds();
     }, []);
 
     return (
@@ -52,13 +52,13 @@ function Role() {
                             </tr>
                         </thead>
                         <tbody>
-                            {roles.map((role, index) => (
+                            {socmeds.map((socmed, index) => (
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>
-                                        <i className={role.role_name}></i>
+                                        <i className={socmed.socmed_image}></i>
                                     </td>
-                                    <td>{role.role_level}</td>
+                                    <td>{socmed.socmed_link}</td>
                                     <td className="flex justify-center space-x-2">
                                         <button
                                             className="btn btn-accent"
@@ -71,7 +71,7 @@ function Role() {
                                         <button
                                             className="btn btn-secondary"
                                             onClick={() =>
-                                                handleDeleteRole(role.id)
+                                                handleDeleteSocmed(socmed.id)
                                             }
                                         >
                                             Delete
@@ -88,24 +88,24 @@ function Role() {
                     <div className="p-6 bg-white rounded-lg">
                         <h2 className="mb-4 text-xl font-bold">
                             {updateIndex !== null
-                                ? "Update Role"
-                                : "Create New Role"}
+                                ? "Update Socmed"
+                                : "Create New Socmed"}
                         </h2>
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
-                                htmlFor="role_name"
+                                htmlFor="socmed_image"
                             >
                                 Icon
                             </label>
                             <input
                                 type="text"
-                                id="role_name"
-                                name="role_name"
+                                id="socmed_image"
+                                name="socmed_image"
                                 value={
                                     updateIndex !== null
-                                        ? updateRoleData.role_name
-                                        : newRoleData.role_name
+                                        ? updateSocmedData.socmed_image
+                                        : newSocmedData.socmed_image
                                 }
                                 onChange={
                                     updateIndex !== null
@@ -118,18 +118,18 @@ function Role() {
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
-                                htmlFor="role_level"
+                                htmlFor="socmed_link"
                             >
                                 Link
                             </label>
                             <input
                                 type="text"
-                                id="role_level"
-                                name="role_level"
+                                id="socmed_link"
+                                name="socmed_link"
                                 value={
                                     updateIndex !== null
-                                        ? updateRoleData.role_level
-                                        : newRoleData.role_level
+                                        ? updateSocmedData.socmed_link
+                                        : newSocmedData.socmed_link
                                 }
                                 onChange={
                                     updateIndex !== null
@@ -145,8 +145,8 @@ function Role() {
                                 className="btn btn-primary"
                                 onClick={
                                     updateIndex !== null
-                                        ? handleUpdateRole
-                                        : handleCreateRole
+                                        ? handleUpdateSocmed
+                                        : handleCreateSocmed
                                 }
                             >
                                 {updateIndex !== null ? "Update" : "Create"}
@@ -156,9 +156,9 @@ function Role() {
                                 onClick={() => {
                                     setShowModal(false);
                                     setUpdateIndex(null);
-                                    setUpdateRoleData({
-                                        role_name: "",
-                                        role_level: "",
+                                    setUpdateSocmedData({
+                                        socmed_image: "",
+                                        socmed_link: "",
                                     });
                                 }}
                             >
@@ -172,4 +172,4 @@ function Role() {
     );
 }
 
-export default Role;
+export default Socmed;

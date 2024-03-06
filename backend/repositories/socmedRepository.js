@@ -1,40 +1,40 @@
-const { Role } = require("../models");
+const { Socmed } = require("../models");
 
-class RoleRepository {
+class SocmedRepository {
     static findAll = async (params, next) => {
         try {
-            const roles = await Role.findAll();
-            return roles;
+            const socmeds = await Socmed.findAll();
+            return socmeds;
         } catch (err) {
             next(err);
         }
     };
     static findOne = async (id, next) => {
         try {
-            const roles = await Role.findOne({
+            const socmeds = await Socmed.findOne({
                 where: {
                     id,
                 },
             });
-            if (!roles) {
+            if (!socmeds) {
                 throw { name: "ErrorNotFound" };
             }
-            return roles;
+            return socmeds;
         } catch (err) {
             next(err);
         }
     };
     static create = async (payload) => {
         try {
-            const role = await Role.create(payload);
-            return role;
+            const socmed = await Socmed.create(payload);
+            return socmed;
         } catch (err) {
             next(err);
         }
     };
     static update = async (id, data) => {
         try {
-            const [rowsUpdated, updatedRoles] = await Role.update(data, {
+            const [rowsUpdated, updatedSocmeds] = await Socmed.update(data, {
                 where: { id },
                 returning: true,
             });
@@ -43,7 +43,7 @@ class RoleRepository {
                 return null; 
             }
 
-            return updatedRoles[0];
+            return updatedSocmeds[0];
         } catch (err) {
             throw err;
         }
@@ -51,7 +51,7 @@ class RoleRepository {
 
     static destroy = async (id) => {
         try {
-            const deletedRowCount = await Role.destroy({
+            const deletedRowCount = await Socmed.destroy({
                 where: { id },
             });
 
@@ -66,4 +66,4 @@ class RoleRepository {
     };
 }
 
-module.exports = RoleRepository;
+module.exports = SocmedRepository;

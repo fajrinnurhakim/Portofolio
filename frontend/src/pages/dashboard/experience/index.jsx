@@ -47,7 +47,7 @@ function Experience() {
                             <tr className="text-center">
                                 <th>No</th>
                                 <th>Experience</th>
-                                <th>Experience Image</th>
+                                <th>Description</th>
                                 <th>Institution</th>
                                 <th>Tech Stack 1</th>
                                 <th>Tech Stack 2</th>
@@ -63,7 +63,7 @@ function Experience() {
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>{experience.experience_name}</td>
-                                    <td>{experience.experience_image}</td>
+                                    <td>{experience.experience_description}</td>
                                     <td>{experience.institution_name}</td>
                                     <td>{experience.tech_stack1}</td>
                                     <td>{experience.tech_stack2}</td>
@@ -133,18 +133,18 @@ function Experience() {
                             <div className="w-1/2">
                                 <label
                                     className="block mb-2 text-sm font-bold"
-                                    htmlFor="experience_image"
+                                    htmlFor="experience_description"
                                 >
                                     Experience Image
                                 </label>
                                 <input
                                     type="text"
-                                    id="experience_image"
-                                    name="experience_image"
+                                    id="experience_description"
+                                    name="experience_description"
                                     value={
                                         updateIndex !== null
-                                            ? updateExperienceData.experience_image
-                                            : newExperienceData.experience_image
+                                            ? updateExperienceData.experience_description
+                                            : newExperienceData.experience_description
                                     }
                                     onChange={
                                         updateIndex !== null
@@ -352,7 +352,7 @@ function Experience() {
                                     setUpdateIndex(null);
                                     setUpdateExperienceData({
                                         experience_name: "",
-                                        experience_image: "",
+                                        experience_description: "",
                                         institution_experience: "",
                                         type_experience: "",
                                         start_date: "",

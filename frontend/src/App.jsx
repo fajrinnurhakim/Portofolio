@@ -5,7 +5,7 @@ import Education from "./pages/dashboard/education";
 import Experience from "./pages/dashboard/experience";
 import Portofolio from "./pages/dashboard/portofolio";
 import Profile from "./pages/dashboard/profile";
-import Role from "./pages/dashboard/role";
+import Socmed from "./pages/dashboard/socmed";
 import Tech from "./pages/dashboard/tech";
 import Tool from "./pages/dashboard/tool";
 import Award from "./pages/dashboard/award";
@@ -74,7 +74,7 @@ function App() {
                     path="/dashboard/socmeds"
                     element={
                         <>
-                            <Role />
+                            <Socmed />
                         </>
                     }
                 />

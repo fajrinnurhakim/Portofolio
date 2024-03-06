@@ -59,13 +59,6 @@ const ExperienceSection = () => {
                         .map((experience, index) => (
                             <div key={index} className="">
                                 <div className="shadow-xl card bg-base-100 w-72">
-                                    <figure>
-                                        <img
-                                            src={experience.experience_image}
-                                            alt="experienceImage"
-                                            className="w-full h-32"
-                                        />
-                                    </figure>
                                     <div className="p-4 card-body">
                                         <h2 className="card-title">
                                             {experience.experience_name}
@@ -74,6 +67,9 @@ const ExperienceSection = () => {
                                             </div>
                                         </h2>
                                         <p>{experience.institution_name}</p>
+                                        <p>
+                                            {experience.experience_description}
+                                        </p>
                                         <div className="flex space-x-2">
                                             <img
                                                 src={experience.tech_stack1}

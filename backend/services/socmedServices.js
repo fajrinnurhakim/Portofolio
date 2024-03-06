@@ -1,10 +1,10 @@
-const RoleRepository = require("../repositories/roleRepository.js");
+const SocmedRepository = require("../repositories/socmedRepository.js");
 
-class RoleService {
+class SocmedService {
     static findAll = async (params, next) => {
         try {
-            const roles = await RoleRepository.findAll();
-            return roles;
+            const socmeds = await SocmedRepository.findAll();
+            return socmeds;
         } catch (err) {
             next(err);
         }
@@ -13,8 +13,8 @@ class RoleService {
     static findOne = async (params, next) => {
         try {
             const { id } = params;
-            const roles = await RoleRepository.findOne(id, next);
-            return roles;
+            const socmeds = await SocmedRepository.findOne(id, next);
+            return socmeds;
         } catch (err) {
             next(err);
         }
@@ -22,13 +22,13 @@ class RoleService {
 
     static create = async (params) => {
         try {
-            const { role_name, role_level } = params;
+            const { socmed_image, socmed_link } = params;
 
-            const role = await RoleRepository.create({
-                role_name,
-                role_level,
+            const socmed = await SocmedRepository.create({
+                socmed_image,
+                socmed_link,
             });
-            return role;
+            return socmed;
         } catch (err) {
             console.log(err);
         }
@@ -36,13 +36,13 @@ class RoleService {
 
     static update = async (id, data, next) => {
         try {
-            const updatedRole = await RoleRepository.update(id, data);
+            const updatedSocmed = await SocmedRepository.update(id, data);
 
-            if (!updatedRole) {
+            if (!updatedSocmed) {
                 return null;
             }
 
-            return updatedRole;
+            return updatedSocmed;
         } catch (err) {
             next(err);
         }
@@ -50,7 +50,7 @@ class RoleService {
 
     static destroy = async (id, next) => {
         try {
-            const result = await RoleRepository.destroy(id);
+            const result = await SocmedRepository.destroy(id);
 
             if (result === null) {
                 return null;
@@ -63,4 +63,4 @@ class RoleService {
     };
 }
 
-module.exports = RoleService;
+module.exports = SocmedService;

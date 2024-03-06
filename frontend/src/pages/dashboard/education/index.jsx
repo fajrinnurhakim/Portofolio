@@ -193,6 +193,7 @@ function Education() {
                                 }
                                 className="w-full px-3 py-2 select select-bordered"
                             >
+                                <option>Option</option>
                                 <option value="formal">Formal</option>
                                 <option value="informal">Informal</option>
                             </select>

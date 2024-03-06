@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import stateProfile from "../hooks/profile";
-import stateRole from "../hooks/role";
+import stateSocmed from "../hooks/socmed";
 
 const ProfileSection = () => {
     const { profiles, loadProfiles } = stateProfile();
-    const { roles, loadRoles } = stateRole();
+    const { socmeds, loadSocmeds } = stateSocmed();
 
     useEffect(() => {
         loadProfiles();
-        loadRoles();
+        loadSocmeds();
     }, []);
 
     return (
@@ -36,7 +36,7 @@ const ProfileSection = () => {
                                 {profile.address}
                             </p>
                             <p className="font-medium text-neutral-content">
-                                {profile.main_role}
+                                {profile.main_socmed}
                             </p>
                             <p className="text-justify text-neutral-content">
                                 {profile.description}
@@ -72,13 +72,13 @@ const ProfileSection = () => {
                             </div>
 
                             <div className="space-x-2">
-                                {roles.map((role, index) => (
+                                {socmeds.map((socmed, index) => (
                                     <a
                                         key={index}
-                                        href={role.role_level}
+                                        href={socmed.socmed_link}
                                         className="text-2xl btn btn-ghost btn-circle"
                                     >
-                                        <i className={role.role_name}></i>
+                                        <i className={socmed.socmed_image}></i>
                                     </a>
                                 ))}
                             </div>

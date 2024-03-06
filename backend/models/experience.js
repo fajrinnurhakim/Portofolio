@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     Experience.init(
         {
             experience_name: DataTypes.STRING,
-            experience_image: DataTypes.STRING,
+            experience_description: DataTypes.STRING,
             institution_name: DataTypes.STRING,
             tech_stack1: DataTypes.STRING,
             tech_stack2: DataTypes.STRING,

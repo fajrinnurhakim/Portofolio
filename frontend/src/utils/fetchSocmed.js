@@ -2,30 +2,30 @@ import axios from "axios";
 const baseUrl = import.meta.env.VITE_REACT_API_URL;
 import Swal from "sweetalert2";
 
-export const fetchRoles = async () => {
+export const fetchSocmeds = async () => {
     try {
-        const response = await axios.get(`${baseUrl}/roles`);
+        const response = await axios.get(`${baseUrl}/socmeds`);
         return response.data;
     } catch (error) {
-        console.error("Error fetching roles:", error);
+        console.error("Error fetching socmeds:", error);
         throw error;
     }
 };
 
-export const createRole = async (roleData) => {
+export const createSocmed = async (socmedData) => {
     try {
         const response = await axios.post(
-            `${baseUrl}/roles`,
-            roleData
+            `${baseUrl}/socmeds`,
+            socmedData
         );
         Swal.fire({
             icon: "success",
             title: "Success",
-            text: `Create Role Successfully`,
+            text: `Create Socmed Successfully`,
         });
         return response.data;
     } catch (error) {
-        console.error("Error adding role:", error);
+        console.error("Error adding socmed:", error);
         Swal.fire({
             icon: "error",
             title: "Error!",
@@ -35,16 +35,16 @@ export const createRole = async (roleData) => {
     }
 };
 
-export const updateRole = async (roleId, updatedRoleData) => {
+export const updateSocmed = async (socmedId, updatedSocmedData) => {
     try {
         const response = await axios.put(
-            `${baseUrl}/roles/${roleId}`,
-            updatedRoleData
+            `${baseUrl}/socmeds/${socmedId}`,
+            updatedSocmedData
         );
         Swal.fire({
             icon: "success",
             title: "Success",
-            text: `Update Role Successfully`,
+            text: `Update Socmed Successfully`,
         });
         return response.data;
     } catch (error) {
@@ -57,15 +57,15 @@ export const updateRole = async (roleId, updatedRoleData) => {
     }
 };
 
-export const deleteRole = async (roleId) => {
+export const deleteSocmed = async (socmedId) => {
     try {
         const response = await axios.delete(
-            `${baseUrl}/roles/${roleId}`
+            `${baseUrl}/socmeds/${socmedId}`
         );
         Swal.fire({
             icon: "success",
             title: "Success",
-            text: `Delete Role Successfully`,
+            text: `Delete Socmed Successfully`,
         });
         return response.data;
     } catch (error) {
@@ -78,15 +78,15 @@ export const deleteRole = async (roleId) => {
     }
 };
 
-export const fetchRoleById = async (roleId) => {
+export const fetchSocmedById = async (socmedId) => {
     try {
         const response = await axios.get(
-            `${baseUrl}/roles/${roleId}`
+            `${baseUrl}/socmeds/${socmedId}`
         );
         return response.data;
     } catch (error) {
         console.error(
-            `Error fetching role with ID ${roleId}:`,
+            `Error fetching socmed with ID ${socmedId}:`,
             error
         );
         throw error;
