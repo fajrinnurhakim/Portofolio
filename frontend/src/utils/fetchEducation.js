@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = import.meta.env.VITE_REACT_API_URL;
+const baseUrl = "https://fajrin-api.vercel.app";
 import Swal from "sweetalert2";
 
 export const fetchEducations = async () => {

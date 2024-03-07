@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = import.meta.env.VITE_REACT_API_URL;
+const baseUrl = "https://fajrin-api.vercel.app";
 import Swal from "sweetalert2";
 
 export const fetchTools = async () => {
@@ -14,10 +14,7 @@ export const fetchTools = async () => {
 
 export const createTool = async (toolData) => {
     try {
-        const response = await axios.post(
-            `${baseUrl}/tools`,
-            toolData
-        );
+        const response = await axios.post(`${baseUrl}/tools`, toolData);
         Swal.fire({
             icon: "success",
             title: "Success",
@@ -59,9 +56,7 @@ export const updateTool = async (toolId, updatedToolData) => {
 
 export const deleteTool = async (toolId) => {
     try {
-        const response = await axios.delete(
-            `${baseUrl}/tools/${toolId}`
-        );
+        const response = await axios.delete(`${baseUrl}/tools/${toolId}`);
         Swal.fire({
             icon: "success",
             title: "Success",
@@ -80,15 +75,10 @@ export const deleteTool = async (toolId) => {
 
 export const fetchToolById = async (toolId) => {
     try {
-        const response = await axios.get(
-            `${baseUrl}/tools/${toolId}`
-        );
+        const response = await axios.get(`${baseUrl}/tools/${toolId}`);
         return response.data;
     } catch (error) {
-        console.error(
-            `Error fetching tool with ID ${toolId}:`,
-            error
-        );
+        console.error(`Error fetching tool with ID ${toolId}:`, error);
         throw error;
     }
 };
