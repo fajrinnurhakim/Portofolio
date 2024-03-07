@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import stateProfile from "../hooks/profile";
+import { motion } from "framer-motion";
 
 function NavbarHome() {
     const { profiles, loadProfiles } = stateProfile();
     const [activeMenu, setActiveMenu] = useState("home");
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
@@ -26,6 +28,7 @@ function NavbarHome() {
 
     const handleMenuClick = (menu) => {
         setActiveMenu(menu);
+        setIsDropdownOpen(false);
     };
 
     const handleScroll = () => {
@@ -36,11 +39,18 @@ function NavbarHome() {
         }
     };
 
+    const toggleDropdown = () => {
+        setIsDropdownOpen((prev) => !prev);
+    };
+
     return (
-        <div
+        <motion.div
             className={`shadow-lg bg-base-100 ${
                 isScrolled ? "fixed top-0 left-0 right-0 z-10" : ""
             }`}
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
         >
             <div className="container flex mx-auto navbar">
                 <div className="w-1/3 navbar-start">
@@ -73,7 +83,10 @@ function NavbarHome() {
                                 />
                             </svg>
                         </summary>
-                        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-96">
+                        <motion.ul
+                            className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-96"
+                            transition={{ duration: 1 }}
+                        >
                             <li>
                                 <a
                                     href="#home"
@@ -173,7 +186,7 @@ function NavbarHome() {
                                     Portofolios
                                 </a>
                             </li>
-                        </ul>
+                        </motion.ul>
                     </details>
                 </div>
 
@@ -261,7 +274,7 @@ function NavbarHome() {
                     </ul>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

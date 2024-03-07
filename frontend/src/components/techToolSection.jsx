@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import stateTech from "../hooks/tech";
 import stateTool from "../hooks/tool";
+import { motion } from "framer-motion";
 
 const TechToolSection = () => {
     const { teches, loadTeches } = stateTech();
@@ -40,11 +41,14 @@ const TechToolSection = () => {
                                     key={index}
                                     className="items-center text-center card-body"
                                 >
-                                    <img
-                                        src={teches.tech_image}
-                                        alt="tech_image"
-                                        className="h-10 md:h-12"
-                                    />
+                                    <motion.div whileHover={{ scale: 1.05 }}>
+                                        <img
+                                            src={teches.tech_image}
+                                            alt="tech_image"
+                                            className="h-10 md:h-12"
+                                        />
+                                    </motion.div>
+
                                     <p className="font-bold">
                                         {teches.tech_name}
                                     </p>
