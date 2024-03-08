@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateSocmed from "../../../hooks/socmed";
 import { Helmet } from "react-helmet";
+import Footer from "../../../components/footer";
 
 function Socmed() {
     const {

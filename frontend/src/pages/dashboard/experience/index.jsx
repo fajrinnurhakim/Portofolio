@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateExperience from "../../../hooks/experience";
 import { Helmet } from "react-helmet";
+import Footer from "../../../components/footer";
 
 function Experience() {
     const {

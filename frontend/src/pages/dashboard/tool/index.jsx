@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateTool from "../../../hooks/tool";
 import { Helmet } from "react-helmet";
+import Footer from "../../../components/footer";
 
 function Tool() {
     const {

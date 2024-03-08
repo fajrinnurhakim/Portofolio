@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateAward from "../../../hooks/award";
 import { Helmet } from "react-helmet";
+import Footer from "../../../components/footer";
 
 function Award() {
     const {

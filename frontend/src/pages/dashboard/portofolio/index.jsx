@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import statePortofolio from "../../../hooks/portofolio";
 import { Helmet } from "react-helmet";
+import Footer from "../../../components/footer";
 
 function Portofolio() {
     const {

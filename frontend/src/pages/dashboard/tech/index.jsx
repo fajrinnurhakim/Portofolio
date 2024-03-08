@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateTech from "../../../hooks/tech";
 import { Helmet } from "react-helmet";
+import Footer from "../../../components/footer";
 
 function Tech() {
     const {
