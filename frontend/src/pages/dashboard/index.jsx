@@ -1,10 +1,18 @@
+import { Helmet } from "react-helmet";
 import NavbarDashboard from "../../components/navbarDashboard";
 
 function Dashboard() {
     return (
-        <div>
-            <NavbarDashboard />
-        </div>
+        <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Dashboard | Fajrin Nurhakim</title>
+            </Helmet>
+            <div>
+                <NavbarDashboard />
+                <Footer />
+            </div>
+        </>
     );
 }
 

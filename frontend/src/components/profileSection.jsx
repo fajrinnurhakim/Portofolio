@@ -70,7 +70,6 @@ const ProfileSection = () => {
                                     </div>
                                 </div>
                             </div>
-
                             <div className="space-x-2">
                                 {socmeds.map((socmed, index) => (
                                     <a

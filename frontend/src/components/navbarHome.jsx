@@ -6,7 +6,6 @@ function NavbarHome() {
     const { profiles, loadProfiles } = stateProfile();
     const [activeMenu, setActiveMenu] = useState("home");
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
@@ -39,9 +38,6 @@ function NavbarHome() {
         }
     };
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen((prev) => !prev);
-    };
 
     return (
         <motion.div
@@ -54,7 +50,10 @@ function NavbarHome() {
         >
             <div className="container flex mx-auto navbar">
                 <div className="w-1/3 navbar-start">
-                    <a className="hidden text-xl btn btn-ghost md:inline-flex">
+                    <a
+                        href="/"
+                        className="hidden text-xl text-white btn btn-ghost md:inline-flex"
+                    >
                         {profiles.map((profile, index) => (
                             <span key={index}>
                                 <img

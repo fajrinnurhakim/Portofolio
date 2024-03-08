@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateSocmed from "../../../hooks/socmed";
+import { Helmet } from "react-helmet";
 
 function Socmed() {
     const {
@@ -27,6 +28,10 @@ function Socmed() {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Socmed | Fajrin Nurhakim</title>
+            </Helmet>
             <NavbarDashboard />
             <section
                 id="title"
@@ -168,6 +173,7 @@ function Socmed() {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }

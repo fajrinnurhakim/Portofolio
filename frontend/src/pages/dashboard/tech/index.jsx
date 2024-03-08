@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateTech from "../../../hooks/tech";
+import { Helmet } from "react-helmet";
 
 function Tech() {
     const {
@@ -27,6 +28,10 @@ function Tech() {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Teches | Fajrin Nurhakim</title>
+            </Helmet>
             <NavbarDashboard />
             <section
                 id="title"
@@ -199,6 +204,7 @@ function Tech() {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }

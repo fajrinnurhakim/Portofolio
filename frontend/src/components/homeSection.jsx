@@ -20,17 +20,21 @@ const HomeSection = () => {
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                 >
                     <>
-                        <div className="flex-row w-full space-y-3 text-center">
+                        <div className="flex-row w-full space-y-5 text-center">
                             <p className="w-auto text-xl font-bold ">
-                                hi there
+                                Hello there! 👋🏼
                             </p>
-                            <h1 className="font-bold text-7xl md:text-9xl ">
-                                {profile.name}
-                            </h1>
-                            <p className="text-neutral-content w-full md:w-2/3 mx-auto">
+                            <div className="mx-auto w-max">
+                                <h1 className="pr-5 overflow-hidden text-5xl font-bold text-white border-r-4 md:text-8xl animate-typing whitespace-nowrap border-r-white">
+                                    {profile.name}
+                                </h1>
+                            </div>
+
+                            <p className="w-full mx-auto text-base-content md:w-2/3 ">
                                 Combining expertise in developing captivating
                                 user interfaces with a keen attention to detail
-                                to ensure optimal product quality
+                                to ensure optimal product quality, Let's create
+                                something extraordinary together!
                             </p>
                             <a
                                 href={profile.link_cv}

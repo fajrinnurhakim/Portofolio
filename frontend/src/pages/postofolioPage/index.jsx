@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import statePortofolio from "../hooks/portofolio";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import statePortofolio from "../../hooks/portofolio";
 
-const PortofolioSection = () => {
+const PortofolioPage = () => {
     const { portofolios, loadPortofolios } = statePortofolio();
 
     useEffect(() => {
@@ -11,13 +12,23 @@ const PortofolioSection = () => {
 
     return (
         <div className="container flex items-center h-auto px-5 py-24 mx-auto space-y-5">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Portofolios | Fajrin Nurhakim</title>
+            </Helmet>
             <div className="w-full space-y-5">
                 <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                     Portofolio <i className="fa-solid fa-file-contract"></i>
                 </h1>
-                <div className="w-full p-5 rounded-box bg-base-100">
+                <div className="w-full p-5 rounded-box bg-base-300">
+                    <div className="flex justify-start mb-4">
+                        <Link to="/" className="btn">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Back{" "}
+                        </Link>
+                    </div>
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
-                        {portofolios.slice(0, 4).map((portofolio, index) => (
+                        {portofolios.map((portofolio, index) => (
                             <div
                                 key={index}
                                 className="shadow-xl card bg-base-300"
@@ -79,16 +90,10 @@ const PortofolioSection = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="flex justify-end mt-4">
-                        <Link to="/portofolio" className="btn">
-                            View More{" "}
-                            <i className="fa-solid fa-external-link-alt"></i>
-                        </Link>
-                    </div>
                 </div>
             </div>
         </div>
     );
 };
 
-export default PortofolioSection;
+export default PortofolioPage;

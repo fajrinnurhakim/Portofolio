@@ -9,6 +9,8 @@ import Socmed from "./pages/dashboard/socmed";
 import Tech from "./pages/dashboard/tech";
 import Tool from "./pages/dashboard/tool";
 import Award from "./pages/dashboard/award";
+import PortofolioPage from "./pages/postofolioPage";
+import ExperiencePage from "./pages/experiencePage";
 
 function App() {
     return (
@@ -19,6 +21,22 @@ function App() {
                     element={
                         <>
                             <Home />
+                        </>
+                    }
+                />
+                <Route
+                    path="/portofolio"
+                    element={
+                        <>
+                            <PortofolioPage />
+                        </>
+                    }
+                />
+                <Route
+                    path="/experiences"
+                    element={
+                        <>
+                            <ExperiencePage />
                         </>
                     }
                 />

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateEducation from "../../../hooks/education";
+import { Helmet } from "react-helmet";
 
 function Education() {
     const {
@@ -27,6 +28,10 @@ function Education() {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Education | Fajrin Nurhakim</title>
+            </Helmet>
             <NavbarDashboard />
             <section
                 id="title"
@@ -279,6 +284,7 @@ function Education() {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }

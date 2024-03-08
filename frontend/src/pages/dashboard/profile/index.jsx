@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateProfile from "../../../hooks/profile";
+import { Helmet } from "react-helmet";
 
 function Profile() {
     const {
@@ -27,6 +28,10 @@ function Profile() {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Profiles | Fajrin Nurhakim</title>
+            </Helmet>
             <NavbarDashboard />
             <section
                 id="title"
@@ -407,6 +412,7 @@ function Profile() {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }

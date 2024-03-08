@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateAward from "../../../hooks/award";
+import { Helmet } from "react-helmet";
 
 function Award() {
     const {
@@ -27,6 +28,10 @@ function Award() {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Award | Fajrin Nurhakim</title>
+            </Helmet>
             <NavbarDashboard />
             <section
                 id="title"
@@ -192,6 +197,7 @@ function Award() {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }

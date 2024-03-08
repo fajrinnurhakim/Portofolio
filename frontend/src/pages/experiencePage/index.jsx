@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import stateExperience from "../hooks/experience";
+import stateExperience from "../../hooks/experience";
+import { Helmet } from "react-helmet";
 
-const ExperienceSection = () => {
+const ExperiencePage = () => {
     const { experiences, loadExperiences } = stateExperience();
     const snapContainer = useRef(null);
 
@@ -29,24 +30,36 @@ const ExperienceSection = () => {
 
     return (
         <div className="container h-auto px-5 py-24 mx-auto space-y-5">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Experiences | Fajrin Nurhakim</title>
+            </Helmet>
             <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                 Experiences <i className="fa-solid fa-briefcase"></i>
             </h1>
             <div className="w-full h-auto p-5 rounded-box bg-base-300">
-                <div className="flex flex-row justify-end mb-2">
-                    <button
-                        className="btn btn-circle btn-ghost"
-                        onClick={handlePrev}
-                    >
-                        <i className="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <button
-                        className="btn btn-ghost btn-circle"
-                        onClick={handleNext}
-                    >
-                        <i className="fa-solid fa-arrow-right"></i>
-                    </button>
+                <div className="flex">
+                    <div className="flex justify-start w-1/2">
+                        <a href="/" className="btn">
+                            <i className="fa-solid fa-arrow-left"></i>back
+                        </a>
+                    </div>
+                    <div className="flex justify-end w-1/2 mb-2">
+                        <button
+                            className="btn btn-circle btn-ghost"
+                            onClick={handlePrev}
+                        >
+                            <i className="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button
+                            className="btn btn-ghost btn-circle"
+                            onClick={handleNext}
+                        >
+                            <i className="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
+
                 <div
                     ref={snapContainer}
                     className="flex flex-row space-x-2 overflow-hidden snap-x-mandatory smooth-scroll"
@@ -107,20 +120,10 @@ const ExperienceSection = () => {
                                 </div>
                             </div>
                         ))}
-                    <a href="/experiences">
-                        <div className="flex items-center justify-center h-64 p-4 shadow-xl w-80 card bg-base-100 card-body">
-                            <div>
-                                <p className="text-center">
-                                    More experiences{" "}
-                                    <i className="fa-solid fa-external-link-alt"></i>
-                                </p>
-                            </div>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
     );
 };
 
-export default ExperienceSection;
+export default ExperiencePage;

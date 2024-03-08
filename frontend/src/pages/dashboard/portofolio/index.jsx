@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import statePortofolio from "../../../hooks/portofolio";
+import { Helmet } from "react-helmet";
 
 function Portofolio() {
     const {
@@ -27,6 +28,10 @@ function Portofolio() {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Portofolio | Fajrin Nurhakim</title>
+            </Helmet>
             <NavbarDashboard />
             <section
                 id="title"
@@ -335,6 +340,7 @@ function Portofolio() {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }

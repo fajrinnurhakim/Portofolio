@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import NavbarDashboard from "../../../components/navbarDashboard";
 import stateExperience from "../../../hooks/experience";
+import { Helmet } from "react-helmet";
 
 function Experience() {
     const {
@@ -27,6 +28,10 @@ function Experience() {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Experience | Fajrin Nurhakim</title>
+            </Helmet>
             <NavbarDashboard />
             <section
                 id="title"
@@ -366,6 +371,7 @@ function Experience() {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }
