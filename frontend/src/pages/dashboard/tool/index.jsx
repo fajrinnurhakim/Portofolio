@@ -125,6 +125,7 @@ function Tool() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
 
@@ -150,6 +151,7 @@ function Tool() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -174,6 +176,7 @@ function Tool() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
 

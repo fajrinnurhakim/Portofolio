@@ -134,6 +134,7 @@ function Experience() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                             <div className="w-1/2">
@@ -158,6 +159,7 @@ function Experience() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
 
@@ -183,6 +185,7 @@ function Experience() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                         </div>
@@ -209,6 +212,7 @@ function Experience() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
 
@@ -234,6 +238,7 @@ function Experience() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
 
@@ -259,6 +264,7 @@ function Experience() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                         </div>
@@ -284,6 +290,7 @@ function Experience() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 select select-bordered"
+                                required
                             >
                                 <option value="">Select</option>
                                 <option value="intern">Intern</option>
@@ -314,6 +321,7 @@ function Experience() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -338,6 +346,7 @@ function Experience() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="flex justify-end">

@@ -131,6 +131,7 @@ function Portofolio() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -155,6 +156,7 @@ function Portofolio() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="flex mb-4 space-x-2">
@@ -180,6 +182,7 @@ function Portofolio() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                             <div className="w-1/3">
@@ -204,6 +207,7 @@ function Portofolio() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
 
@@ -229,6 +233,7 @@ function Portofolio() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                         </div>
@@ -256,6 +261,7 @@ function Portofolio() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
 
@@ -281,6 +287,7 @@ function Portofolio() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
 
@@ -306,6 +313,7 @@ function Portofolio() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
 

@@ -119,6 +119,7 @@ function Socmed() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -143,6 +144,7 @@ function Socmed() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
 

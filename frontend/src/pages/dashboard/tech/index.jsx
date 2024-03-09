@@ -125,6 +125,7 @@ function Tech() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -149,6 +150,7 @@ function Tech() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -173,6 +175,7 @@ function Tech() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
 

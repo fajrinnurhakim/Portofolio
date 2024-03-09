@@ -127,6 +127,7 @@ function Education() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -151,6 +152,7 @@ function Education() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -175,6 +177,7 @@ function Education() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -198,6 +201,7 @@ function Education() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 select select-bordered"
+                                required
                             >
                                 <option>Option</option>
                                 <option value="formal">Formal</option>
@@ -227,6 +231,7 @@ function Education() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-bordered"
+                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -251,6 +256,7 @@ function Education() {
                                         : handleInputChange
                                 }
                                 className="w-full px-3 py-2 input input-borderedd"
+                                required
                             />
                         </div>
                         <div className="flex justify-end">

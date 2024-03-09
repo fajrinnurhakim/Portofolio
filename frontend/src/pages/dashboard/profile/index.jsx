@@ -151,6 +151,7 @@ function Profile() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
 
@@ -176,6 +177,7 @@ function Profile() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                         </div>
@@ -202,6 +204,7 @@ function Profile() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                             <div className="w-1/2">
@@ -226,6 +229,7 @@ function Profile() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                         </div>
@@ -252,6 +256,7 @@ function Profile() {
                                         : handleInputChange
                                 }
                                 className="w-full border-gray-300 textarea textarea-bordered"
+                                required
                             />
                         </div>
 
@@ -278,6 +283,7 @@ function Profile() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                             <div className="w-6/12">
@@ -302,6 +308,7 @@ function Profile() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                         </div>
@@ -329,6 +336,7 @@ function Profile() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                             <div className="w-1/3">
@@ -353,6 +361,7 @@ function Profile() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
 
@@ -378,6 +387,7 @@ function Profile() {
                                             : handleInputChange
                                     }
                                     className="w-full px-3 py-2 input input-bordered"
+                                    required
                                 />
                             </div>
                         </div>
