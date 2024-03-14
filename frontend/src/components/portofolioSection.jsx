@@ -25,6 +25,7 @@ const PortofolioSection = () => {
                 <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                     Portofolio <i className="fa-solid fa-file-contract"></i>
                 </h1>
+                
                 <div className="w-full p-5 rounded-box bg-base-100">
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
                         {portofolios.slice(0, 4).map((portofolio, index) => (
@@ -39,6 +40,7 @@ const PortofolioSection = () => {
                                         className="w-full h-40"
                                     />
                                 </figure>
+                                
                                 <div className="p-4 card-body">
                                     <h2
                                         className="text-base font-bold cursor-pointer md:card-title link-hover link"
@@ -46,23 +48,27 @@ const PortofolioSection = () => {
                                     >
                                         {portofolio.portofolio_name}
                                     </h2>
+                                    
                                     <div className="flex space-x-2">
                                         <img
                                             src={portofolio.tech_stack1}
                                             alt="portofolio1"
                                             className="h-5"
                                         />
+                                        
                                         <img
                                             src={portofolio.tech_stack2}
                                             alt="portofolio1"
                                             className="h-5"
                                         />
+                                        
                                         <img
                                             src={portofolio.tech_stack3}
                                             alt="portofolio1"
                                             className="h-5"
                                         />
                                     </div>
+                                    
                                     <p className="text-sm">
                                         {" "}
                                         {portofolio.description.length > 50
@@ -72,6 +78,7 @@ const PortofolioSection = () => {
                                               ) + "..."
                                             : portofolio.description}
                                     </p>
+                                    
                                     <div className="flex space-x-1">
                                         <a
                                             href={portofolio.link_github}
@@ -80,6 +87,7 @@ const PortofolioSection = () => {
                                             Repository{" "}
                                             <i className="fa-solid fa-code"></i>
                                         </a>
+                                        
                                         <a
                                             href={portofolio.link_demo}
                                             className="w-1/2 btn btn-square"

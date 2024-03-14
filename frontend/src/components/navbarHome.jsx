@@ -65,6 +65,7 @@ function NavbarHome() {
                         ))}
                         Fajrin Nurhakim
                     </a>
+                    
                     <details className="inline-flex dropdown md:hidden">
                         <summary className="m-1 btn btn-ghost">
                             <svg
@@ -82,6 +83,7 @@ function NavbarHome() {
                                 />
                             </svg>
                         </summary>
+                        
                         <motion.ul
                             className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-96"
                             transition={{ duration: 1 }}
@@ -100,6 +102,7 @@ function NavbarHome() {
                                     Home
                                 </a>
                             </li>
+                            
                             <li>
                                 <a
                                     href="#profiles"
@@ -116,6 +119,7 @@ function NavbarHome() {
                                     Profiles
                                 </a>
                             </li>
+                            
                             <li>
                                 <a
                                     href="#skills"
@@ -131,6 +135,7 @@ function NavbarHome() {
                                     Skills
                                 </a>
                             </li>
+                            
                             <li>
                                 <a
                                     href="#educations"
@@ -149,6 +154,7 @@ function NavbarHome() {
                                     Educations
                                 </a>
                             </li>
+                            
                             <li>
                                 <a
                                     href="#experiences"
@@ -167,6 +173,7 @@ function NavbarHome() {
                                     Experiences
                                 </a>
                             </li>
+                            
                             <li>
                                 <a
                                     href="#portofolios"
@@ -202,6 +209,7 @@ function NavbarHome() {
                         ))}
                         Fajrin Nurhakim
                     </a>
+                    
                     <ul className="hidden space-x-2 menu menu-horizontal md:inline-flex md:justify-end">
                         <li>
                             <a
@@ -214,6 +222,7 @@ function NavbarHome() {
                                 Home
                             </a>
                         </li>
+                        
                         <li>
                             <a
                                 href="#profiles"
@@ -225,6 +234,7 @@ function NavbarHome() {
                                 Profiles
                             </a>
                         </li>
+                        
                         <li>
                             <a
                                 href="#skills"
@@ -248,6 +258,7 @@ function NavbarHome() {
                                 Educations
                             </a>
                         </li>
+                        
                         <li>
                             <a
                                 href="#experiences"
@@ -259,6 +270,7 @@ function NavbarHome() {
                                 Experiences
                             </a>
                         </li>
+                        
                         <li>
                             <a
                                 href="#portofolios"

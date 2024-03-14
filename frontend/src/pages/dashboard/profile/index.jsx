@@ -33,12 +33,15 @@ function Profile() {
                 <meta charSet="utf-8" />
                 <title>Profiles | Fajrin Nurhakim</title>
             </Helmet>
+
             <NavbarDashboard />
+
             <section
                 id="title"
                 className="container flex justify-between mx-auto mt-2"
             >
                 <h3 className="text-4xl font-bold">Profiles</h3>
+
                 <button
                     className="btn btn-primary"
                     onClick={() => setShowModal(true)}
@@ -46,6 +49,7 @@ function Profile() {
                     Create
                 </button>
             </section>
+
             <section id="table" className="container mx-auto">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
@@ -65,6 +69,7 @@ function Profile() {
                                 <th>Action</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             {profiles.map((profile, index) => (
                                 <tr key={index}>
@@ -120,6 +125,7 @@ function Profile() {
                     </table>
                 </div>
             </section>
+
             {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 ">
                     <div className="w-6/12 p-6 bg-white rounded-lg">
@@ -128,6 +134,7 @@ function Profile() {
                                 ? "Update Profile"
                                 : "Create New Profile"}
                         </h2>
+
                         <div className="flex mb-4 space-x-2">
                             <div className="w-6/12">
                                 <label
@@ -136,6 +143,7 @@ function Profile() {
                                 >
                                     Name
                                 </label>
+
                                 <input
                                     type="text"
                                     id="name"
@@ -162,6 +170,7 @@ function Profile() {
                                 >
                                     Address
                                 </label>
+
                                 <input
                                     type="text"
                                     id="address"
@@ -189,6 +198,7 @@ function Profile() {
                                 >
                                     Main Role
                                 </label>
+
                                 <input
                                     type="text"
                                     id="main_role"
@@ -207,6 +217,7 @@ function Profile() {
                                     required
                                 />
                             </div>
+
                             <div className="w-1/2">
                                 <label
                                     className="block mb-2 text-sm font-bold"
@@ -214,6 +225,7 @@ function Profile() {
                                 >
                                     Link CV
                                 </label>
+
                                 <input
                                     type="text"
                                     id="link_cv"
@@ -241,6 +253,7 @@ function Profile() {
                             >
                                 Description
                             </label>
+
                             <textarea
                                 type="text"
                                 id="description"
@@ -268,6 +281,7 @@ function Profile() {
                                 >
                                     Image
                                 </label>
+
                                 <input
                                     type="text"
                                     id="image"
@@ -293,6 +307,7 @@ function Profile() {
                                 >
                                     Image Two
                                 </label>
+
                                 <input
                                     type="text"
                                     id="image_two"
@@ -321,6 +336,7 @@ function Profile() {
                                 >
                                     Year Experience
                                 </label>
+
                                 <input
                                     type="number"
                                     id="year_experience"
@@ -346,6 +362,7 @@ function Profile() {
                                 >
                                     Tech Stack
                                 </label>
+
                                 <input
                                     type="number"
                                     id="tech_stack"
@@ -372,6 +389,7 @@ function Profile() {
                                 >
                                     Success Project
                                 </label>
+
                                 <input
                                     type="number"
                                     id="success_project"
@@ -403,6 +421,7 @@ function Profile() {
                             >
                                 {updateIndex !== null ? "Update" : "Create"}
                             </button>
+
                             <button
                                 className="ml-2 btn btn-secondary"
                                 onClick={() => {

@@ -33,12 +33,15 @@ function Socmed() {
                 <meta charSet="utf-8" />
                 <title>Socmed | Fajrin Nurhakim</title>
             </Helmet>
+            
             <NavbarDashboard />
+            
             <section
                 id="title"
                 className="container flex justify-between mx-auto mt-2"
             >
                 <h3 className="text-4xl font-bold">Social Media</h3>
+                
                 <button
                     className="btn btn-primary"
                     onClick={() => setShowModal(true)}
@@ -46,6 +49,7 @@ function Socmed() {
                     Create
                 </button>
             </section>
+            
             <section id="table" className="container mx-auto">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
@@ -56,15 +60,15 @@ function Socmed() {
                                 <th>Link</th>
                                 <th>Action</th>
                             </tr>
-                        </thead>
+                        </thead>                        
                         <tbody>
                             {socmeds.map((socmed, index) => (
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>
                                         <i className={socmed.socmed_image}></i>
-                                    </td>
-                                    <td>{socmed.socmed_link}</td>
+                                    </td>                                   
+                                    <td>{socmed.socmed_link}</td>                                   
                                     <td className="flex justify-center space-x-2">
                                         <button
                                             className="btn btn-accent"
@@ -74,6 +78,7 @@ function Socmed() {
                                         >
                                             Update
                                         </button>
+                                        
                                         <button
                                             className="btn btn-secondary"
                                             onClick={() =>
@@ -89,6 +94,7 @@ function Socmed() {
                     </table>
                 </div>
             </section>
+            
             {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="p-6 bg-white rounded-lg">
@@ -97,6 +103,7 @@ function Socmed() {
                                 ? "Update Socmed"
                                 : "Create New Socmed"}
                         </h2>
+                        
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -104,6 +111,7 @@ function Socmed() {
                             >
                                 Icon
                             </label>
+                            
                             <input
                                 type="text"
                                 id="socmed_image"
@@ -122,6 +130,7 @@ function Socmed() {
                                 required
                             />
                         </div>
+                        
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -129,6 +138,7 @@ function Socmed() {
                             >
                                 Link
                             </label>
+                            
                             <input
                                 type="text"
                                 id="socmed_link"
@@ -159,6 +169,7 @@ function Socmed() {
                             >
                                 {updateIndex !== null ? "Update" : "Create"}
                             </button>
+                            
                             <button
                                 className="ml-2 btn btn-secondary"
                                 onClick={() => {

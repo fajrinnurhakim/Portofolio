@@ -32,6 +32,7 @@ const ExperienceSection = () => {
             <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                 Experiences <i className="fa-solid fa-briefcase"></i>
             </h1>
+            
             <div className="w-full h-auto p-5 rounded-box bg-base-300">
                 <div className="flex flex-row justify-end mb-2">
                     <button
@@ -40,6 +41,7 @@ const ExperienceSection = () => {
                     >
                         <i className="fa-solid fa-arrow-left"></i>
                     </button>
+                    
                     <button
                         className="btn btn-ghost btn-circle"
                         onClick={handleNext}
@@ -47,6 +49,7 @@ const ExperienceSection = () => {
                         <i className="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
+                
                 <div
                     ref={snapContainer}
                     className="flex flex-row space-x-2 overflow-hidden snap-x-mandatory smooth-scroll"
@@ -67,26 +70,31 @@ const ExperienceSection = () => {
                                                 {experience.type}
                                             </div>
                                         </h2>
+                                        
                                         <p className="font-bold">
                                             {experience.institution_name}
                                         </p>
+                                        
                                         <div className="flex space-x-2">
                                             <img
                                                 src={experience.tech_stack1}
                                                 alt="experience1"
                                                 className="h-5"
                                             />
+                                            
                                             <img
                                                 src={experience.tech_stack2}
                                                 alt="experience1"
                                                 className="h-5"
                                             />
+                                            
                                             <img
                                                 src={experience.tech_stack3}
                                                 alt="experience1"
                                                 className="h-5"
                                             />
                                         </div>
+                                        
                                         <p>
                                             {experience.experience_description
                                                 .length > 75

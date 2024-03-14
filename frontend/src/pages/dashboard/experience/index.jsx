@@ -33,7 +33,9 @@ function Experience() {
                 <meta charSet="utf-8" />
                 <title>Experience | Fajrin Nurhakim</title>
             </Helmet>
+            
             <NavbarDashboard />
+            
             <section
                 id="title"
                 className="container flex justify-between mx-auto mt-2"
@@ -46,6 +48,7 @@ function Experience() {
                     Create
                 </button>
             </section>
+            
             <section id="table" className="container mx-auto">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
@@ -64,6 +67,7 @@ function Experience() {
                                 <th>Action</th>
                             </tr>
                         </thead>
+                        
                         <tbody>
                             {experiences.map((experience, index) => (
                                 <tr key={index}>
@@ -86,6 +90,7 @@ function Experience() {
                                         >
                                             Update
                                         </button>
+                                        
                                         <button
                                             className="btn btn-secondary"
                                             onClick={() =>
@@ -103,6 +108,7 @@ function Experience() {
                     </table>
                 </div>
             </section>
+            
             {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="w-6/12 p-6 bg-white rounded-lg">
@@ -111,6 +117,7 @@ function Experience() {
                                 ? "Update Experience"
                                 : "Create New Experience"}
                         </h2>
+                        
                         <div className="flex mb-4 space-x-2">
                             <div className="w-1/2">
                                 <label
@@ -119,6 +126,7 @@ function Experience() {
                                 >
                                     Experience Name
                                 </label>
+                                
                                 <input
                                     type="text"
                                     id="experience_name"
@@ -137,6 +145,7 @@ function Experience() {
                                     required
                                 />
                             </div>
+                            
                             <div className="w-1/2">
                                 <label
                                     className="block mb-2 text-sm font-bold"
@@ -144,6 +153,7 @@ function Experience() {
                                 >
                                     Experience Image
                                 </label>
+                                
                                 <input
                                     type="text"
                                     id="experience_description"
@@ -170,6 +180,7 @@ function Experience() {
                                 >
                                     Institution Name
                                 </label>
+                                
                                 <input
                                     type="text"
                                     id="institution_name"
@@ -189,6 +200,7 @@ function Experience() {
                                 />
                             </div>
                         </div>
+                        
                         <div className="flex mb-4 space-x-2">
                             <div className="mb-4">
                                 <label
@@ -197,6 +209,7 @@ function Experience() {
                                 >
                                     Tech Stack
                                 </label>
+                                
                                 <input
                                     type="text"
                                     id="tech_stack1"
@@ -223,6 +236,7 @@ function Experience() {
                                 >
                                     Tech Stack 2
                                 </label>
+                                
                                 <input
                                     type="text"
                                     id="tech_stack2"
@@ -249,6 +263,7 @@ function Experience() {
                                 >
                                     Tech Stack 3
                                 </label>
+                                
                                 <input
                                     type="text"
                                     id="tech_stack3"
@@ -276,6 +291,7 @@ function Experience() {
                             >
                                 Type
                             </label>
+                            
                             <select
                                 id="type"
                                 name="type"
@@ -306,6 +322,7 @@ function Experience() {
                             >
                                 Start Date
                             </label>
+                            
                             <input
                                 type="date"
                                 id="start_date"
@@ -324,6 +341,7 @@ function Experience() {
                                 required
                             />
                         </div>
+                        
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -331,6 +349,7 @@ function Experience() {
                             >
                                 End Date
                             </label>
+                            
                             <input
                                 type="date"
                                 id="end_date"
@@ -349,6 +368,7 @@ function Experience() {
                                 required
                             />
                         </div>
+                        
                         <div className="flex justify-end">
                             <button
                                 className="btn btn-primary"
@@ -360,6 +380,7 @@ function Experience() {
                             >
                                 {updateIndex !== null ? "Update" : "Create"}
                             </button>
+                            
                             <button
                                 className="ml-2 btn btn-secondary"
                                 onClick={() => {

@@ -15,26 +15,34 @@ function Home() {
                 <meta charSet="utf-8" />
                 <title>Home | Fajrin Nurhakim</title>
             </Helmet>
+
             <NavbarHome />
+
             <section id="home">
                 <HomeSection />
             </section>
+
             <section id="profiles" className="bg-base-300">
                 <ProfileSection />
             </section>
+
             <section id="skills">
                 <TechToolSection />
             </section>
+
             <section id="educations" className="bg-base-300">
                 <EducationSection />
             </section>
+
             <section id="experiences">
                 <ExperienceSection />
             </section>
+
             <section id="portofolios" className="bg-base-300">
                 <PortofolioSection />
             </section>
-            <Footer/>
+
+            <Footer />
         </div>
     );
 }

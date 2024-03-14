@@ -34,9 +34,11 @@ const ExperiencePage = () => {
                 <meta charSet="utf-8" />
                 <title>Experiences | Fajrin Nurhakim</title>
             </Helmet>
+            
             <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                 Experiences <i className="fa-solid fa-briefcase"></i>
             </h1>
+            
             <div className="w-full h-auto p-5 rounded-box bg-base-300">
                 <div className="flex">
                     <div className="flex justify-start w-1/2">
@@ -44,6 +46,7 @@ const ExperiencePage = () => {
                             <i className="fa-solid fa-arrow-left"></i>back
                         </a>
                     </div>
+                    
                     <div className="flex justify-end w-1/2 mb-2">
                         <button
                             className="btn btn-circle btn-ghost"
@@ -51,6 +54,7 @@ const ExperiencePage = () => {
                         >
                             <i className="fa-solid fa-arrow-left"></i>
                         </button>
+                        
                         <button
                             className="btn btn-ghost btn-circle"
                             onClick={handleNext}
@@ -74,32 +78,38 @@ const ExperiencePage = () => {
                             <div key={index} className="">
                                 <div className="h-64 shadow-xl w-80 card bg-base-100">
                                     <div className="p-4 card-body">
+                                        
                                         <h2 className="card-title">
                                             {experience.experience_name}
                                             <div className="badge badge-secondary">
                                                 {experience.type}
                                             </div>
                                         </h2>
+                                        
                                         <p className="font-bold">
                                             {experience.institution_name}
                                         </p>
+                                        
                                         <div className="flex space-x-2">
                                             <img
                                                 src={experience.tech_stack1}
                                                 alt="experience1"
                                                 className="h-5"
                                             />
+
                                             <img
                                                 src={experience.tech_stack2}
                                                 alt="experience1"
                                                 className="h-5"
                                             />
+                                            
                                             <img
                                                 src={experience.tech_stack3}
                                                 alt="experience1"
                                                 className="h-5"
                                             />
                                         </div>
+                                        
                                         <p>
                                             {experience.experience_description
                                                 .length > 75

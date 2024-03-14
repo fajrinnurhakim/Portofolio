@@ -27,6 +27,7 @@ const EducationSection = () => {
                 <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                     Educations <i className="fa-solid fa-user-graduate"></i>
                 </h1>
+
                 <div className="flex items-center">
                     <div className="hidden w-1/3 md:inline">
                         <p className="text-2xl font-semibold ">
@@ -40,6 +41,7 @@ const EducationSection = () => {
                             education
                         </p>
                     </div>
+
                     <div className="w-auto p-5 md:w-2/3 rounded-box bg-base-100">
                         <div className="flex space-x-2">
                             <div className="w-1/2">
@@ -79,6 +81,7 @@ const EducationSection = () => {
                                                         />
                                                     </svg>
                                                 </div>
+
                                                 <div
                                                     className={
                                                         index % 2 === 0
@@ -90,6 +93,7 @@ const EducationSection = () => {
                                                         {education.start_date} -{" "}
                                                         {education.end_date}
                                                     </time>
+
                                                     <div
                                                         className={
                                                             index % 2 === 0
@@ -105,6 +109,7 @@ const EducationSection = () => {
                                                                 alt="educationImage"
                                                                 className="h-4 me-2"
                                                             />
+
                                                             <p>
                                                                 {
                                                                     education.institution_education
@@ -112,11 +117,13 @@ const EducationSection = () => {
                                                             </p>
                                                         </div>
                                                     </div>
+
                                                     <div className="text-sm font-bold">
                                                         {
                                                             education.education_name
                                                         }
                                                     </div>
+
                                                     <div className="text-sm">
                                                         {
                                                             education.type_education
@@ -128,6 +135,7 @@ const EducationSection = () => {
                                             </li>
                                         </ul>
                                     ))}
+
                                 {!showAllEducations &&
                                     educations.length > 4 && (
                                         <button onClick={toggleEducations}>
@@ -135,11 +143,13 @@ const EducationSection = () => {
                                         </button>
                                     )}
                             </div>
+
                             <div className="w-1/2">
                                 <p className="text-2xl font-semibold text-center">
                                     Achievements{" "}
                                     <i className="fa-solid fa-award"></i>
                                 </p>
+
                                 {awards
                                     .sort(
                                         (a, b) =>
@@ -167,6 +177,7 @@ const EducationSection = () => {
                                                         />
                                                     </svg>
                                                 </div>
+
                                                 <div
                                                     className={
                                                         index % 2 === 0
@@ -186,6 +197,7 @@ const EducationSection = () => {
                                                         {award.award_name}
                                                     </div>
                                                 </div>
+
                                                 <hr />
                                             </li>
                                         </ul>

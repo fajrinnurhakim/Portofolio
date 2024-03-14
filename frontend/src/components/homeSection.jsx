@@ -24,6 +24,7 @@ const HomeSection = () => {
                             <p className="w-auto text-xl font-bold ">
                                 Hello there! 👋🏼
                             </p>
+                            
                             <div className="mx-auto w-max">
                                 <h1 className="pr-5 overflow-hidden text-5xl font-bold text-white border-r-4 md:text-8xl animate-typing whitespace-nowrap border-r-white">
                                     {profile.name}
@@ -36,6 +37,7 @@ const HomeSection = () => {
                                 to ensure optimal product quality, Let's create
                                 something extraordinary together!
                             </p>
+                            
                             <a
                                 href={profile.link_cv}
                                 className="btn btn-outline"

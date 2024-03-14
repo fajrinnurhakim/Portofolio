@@ -26,6 +26,7 @@ const Footer = () => {
                     ))}
                     Copyright © 2024 - Fajrin Nurhakim
                 </p>
+                
                 <p class="">
                     {socmeds.map((socmed, index) => (
                         <a

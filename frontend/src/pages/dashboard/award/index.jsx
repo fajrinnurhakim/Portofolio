@@ -33,7 +33,9 @@ function Award() {
                 <meta charSet="utf-8" />
                 <title>Award | Fajrin Nurhakim</title>
             </Helmet>
+            
             <NavbarDashboard />
+            
             <section
                 id="title"
                 className="container flex justify-between mx-auto mt-2"
@@ -46,6 +48,7 @@ function Award() {
                     Create
                 </button>
             </section>
+            
             <section id="table" className="container mx-auto">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
@@ -58,6 +61,7 @@ function Award() {
                                 <th>Action</th>
                             </tr>
                         </thead>
+                        
                         <tbody>
                             {awards.map((award, index) => (
                                 <tr key={index}>
@@ -89,6 +93,7 @@ function Award() {
                     </table>
                 </div>
             </section>
+            
             {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="p-6 bg-white rounded-lg">
@@ -97,6 +102,7 @@ function Award() {
                                 ? "Update Award"
                                 : "Create New Award"}
                         </h2>
+                        
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -104,6 +110,7 @@ function Award() {
                             >
                                 Award Name
                             </label>
+                            
                             <input
                                 type="text"
                                 id="award_name"
@@ -122,6 +129,7 @@ function Award() {
                                 required
                             />
                         </div>
+                        
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -129,6 +137,7 @@ function Award() {
                             >
                                 Institution
                             </label>
+                            
                             <input
                                 type="text"
                                 id="institution_award"
@@ -147,6 +156,7 @@ function Award() {
                                 required
                             />
                         </div>
+                        
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -154,6 +164,7 @@ function Award() {
                             >
                                 Win Date
                             </label>
+                            
                             <input
                                 type="date"
                                 id="win_date"
@@ -172,6 +183,7 @@ function Award() {
                                 required
                             />
                         </div>
+                        
                         <div className="flex justify-end">
                             <button
                                 className="btn btn-primary"
@@ -183,6 +195,7 @@ function Award() {
                             >
                                 {updateIndex !== null ? "Update" : "Create"}
                             </button>
+                            
                             <button
                                 className="ml-2 btn btn-secondary"
                                 onClick={() => {

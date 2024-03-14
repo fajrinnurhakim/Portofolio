@@ -18,6 +18,7 @@ const TechToolSection = () => {
                 <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                     Skills <i className="fa-solid fa-gears"></i>
                 </h1>
+                
                 <div role="tablist" className="w-full tabs tabs-lifted">
                     <input
                         type="radio"
@@ -27,6 +28,7 @@ const TechToolSection = () => {
                         aria-label="Tech"
                         defaultChecked
                     />
+                    
                     <div
                         role="tabpanel"
                         className="p-6 tab-content bg-base-300 border-base-300 rounded-box"
@@ -73,6 +75,7 @@ const TechToolSection = () => {
                             <i className="fa-solid fa-screwdriver-wrench"></i>{" "}
                             Tools
                         </p>
+                        
                         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                             {tools.map((tools, index) => (
                                 <div

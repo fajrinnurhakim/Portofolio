@@ -33,6 +33,7 @@ function Education() {
                 <meta charSet="utf-8" />
                 <title>Education | Fajrin Nurhakim</title>
             </Helmet>
+            
             <NavbarDashboard />
             <section
                 id="title"
@@ -46,6 +47,7 @@ function Education() {
                     Create
                 </button>
             </section>
+            
             <section id="table" className="container mx-auto">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
@@ -61,6 +63,7 @@ function Education() {
                                 <th>Action</th>
                             </tr>
                         </thead>
+                        
                         <tbody>
                             {educations.map((education, index) => (
                                 <tr key={index}>
@@ -97,6 +100,7 @@ function Education() {
                     </table>
                 </div>
             </section>
+            
             {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="p-6 bg-white rounded-lg">
@@ -105,6 +109,7 @@ function Education() {
                                 ? "Update Education"
                                 : "Create New Education"}
                         </h2>
+                        
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -112,6 +117,7 @@ function Education() {
                             >
                                 Education Name
                             </label>
+                            
                             <input
                                 type="text"
                                 id="education_name"
@@ -130,6 +136,7 @@ function Education() {
                                 required
                             />
                         </div>
+                        
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -137,6 +144,7 @@ function Education() {
                             >
                                 Education Image
                             </label>
+                            
                             <input
                                 type="text"
                                 id="education_image"
@@ -155,6 +163,7 @@ function Education() {
                                 required
                             />
                         </div>
+
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -162,6 +171,7 @@ function Education() {
                             >
                                 Institution Education
                             </label>
+
                             <input
                                 type="text"
                                 id="institution_education"
@@ -180,6 +190,7 @@ function Education() {
                                 required
                             />
                         </div>
+                        
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -187,6 +198,7 @@ function Education() {
                             >
                                 Education Type
                             </label>
+                            
                             <select
                                 id="type_education"
                                 name="type_education"
@@ -216,6 +228,7 @@ function Education() {
                             >
                                 Start Date
                             </label>
+                            
                             <input
                                 type="date"
                                 id="start_date"
@@ -234,6 +247,7 @@ function Education() {
                                 required
                             />
                         </div>
+                        
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -241,6 +255,7 @@ function Education() {
                             >
                                 End Date
                             </label>
+                            
                             <input
                                 type="date"
                                 id="end_date"
@@ -259,6 +274,7 @@ function Education() {
                                 required
                             />
                         </div>
+                        
                         <div className="flex justify-end">
                             <button
                                 className="btn btn-primary"
@@ -270,6 +286,7 @@ function Education() {
                             >
                                 {updateIndex !== null ? "Update" : "Create"}
                             </button>
+                            
                             <button
                                 className="ml-2 btn btn-secondary"
                                 onClick={() => {
