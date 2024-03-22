@@ -35,7 +35,7 @@ const ExperienceSection = () => {
                     Experiences <i className="fa-solid fa-briefcase"></i>
                 </h1>
             </Fade>
-            <Fade direction="right">
+            <Fade direction="down">
                 <div className="w-full h-auto p-5 rounded-box bg-base-300">
                     <div className="flex flex-row justify-end mb-2">
                         <button

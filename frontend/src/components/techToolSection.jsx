@@ -20,7 +20,7 @@ const TechToolSection = () => {
                         Skills <i className="fa-solid fa-gears"></i>
                     </h1>
                 </Fade>
-                <Slide direction="right">
+                <Slide direction="down">
                     <div role="tablist" className="w-full tabs tabs-lifted">
                         <input
                             type="radio"
