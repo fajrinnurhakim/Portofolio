@@ -15,7 +15,7 @@ const ProfileSection = () => {
     return (
         <div className="container flex items-center h-auto p-5 px-5 py-24 mx-auto">
             <div className="space-y-5">
-                <Fade>
+                <Fade direction="down">
                     <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                         Profile <i className="fa-solid fa-id-badge"></i>
                     </h1>

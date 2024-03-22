@@ -28,7 +28,7 @@ const PortofolioSection = () => {
                         Portofolio <i className="fa-solid fa-file-contract"></i>
                     </h1>
                 </Fade>
-                <Fade direction="down">
+                <Fade direction="left">
                     <div className="w-full p-5 rounded-box bg-base-100">
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
                             {portofolios
