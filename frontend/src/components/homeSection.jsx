@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import stateProfile from "../hooks/profile";
-import Slide from "react-reveal/Slide";
+import { Slide } from "react-awesome-reveal";
 
 const HomeSection = () => {
     const { profiles, loadProfiles } = stateProfile();
@@ -17,7 +17,7 @@ const HomeSection = () => {
                     className="container flex items-center h-auto p-5 px-5 py-24 mx-auto"
                 >
                     <>
-                        <Slide bottom>
+                        <Slide direction="down">
                             <div className="flex-row w-full space-y-5 text-center">
                                 <p className="w-auto text-xl font-bold ">
                                     Hello there! 👋🏼

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import statePortofolio from "../hooks/portofolio";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 
 const PortofolioSection = () => {
     const { portofolios, loadPortofolios } = statePortofolio();
@@ -23,12 +23,12 @@ const PortofolioSection = () => {
     return (
         <div className="container flex items-center h-auto px-5 py-24 mx-auto space-y-5">
             <div className="w-full space-y-5">
-                <Fade>
+                <Fade direction="down">
                     <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                         Portofolio <i className="fa-solid fa-file-contract"></i>
                     </h1>
                 </Fade>
-                <Fade right>
+                <Fade direction="right">
                     <div className="w-full p-5 rounded-box bg-base-100">
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
                             {portofolios

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import stateExperience from "../hooks/experience";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 
 const ExperienceSection = () => {
     const { experiences, loadExperiences } = stateExperience();
@@ -30,12 +30,12 @@ const ExperienceSection = () => {
 
     return (
         <div className="container h-auto px-5 py-24 mx-auto space-y-5">
-            <Fade>
+            <Fade direction="down">
                 <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                     Experiences <i className="fa-solid fa-briefcase"></i>
                 </h1>
             </Fade>
-            <Fade right>
+            <Fade direction="right">
                 <div className="w-full h-auto p-5 rounded-box bg-base-300">
                     <div className="flex flex-row justify-end mb-2">
                         <button

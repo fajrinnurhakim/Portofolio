@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import stateProfile from "../hooks/profile";
 import stateSocmed from "../hooks/socmed";
-import Slide from "react-reveal/Slide";
-import Fade from "react-reveal/Fade";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const ProfileSection = () => {
     const { profiles, loadProfiles } = stateProfile();
@@ -24,8 +23,11 @@ const ProfileSection = () => {
 
                 {profiles.map((profile) => (
                     <div key={profile.id} className="flex items-center">
-                        <Slide left>
-                            <div className="hidden w-1/2 justify-left md:inline">
+                        <Slide
+                            direction="left"
+                            className="hidden w-1/2 justify-left md:inline"
+                        >
+                            <div>
                                 <img
                                     src={profile.image_two}
                                     alt="image_two"
@@ -33,8 +35,11 @@ const ProfileSection = () => {
                                 />
                             </div>
                         </Slide>
-                        <Slide right>
-                            <div className="flex-row content-center w-full space-y-3 md:w-1/2">
+                        <Slide
+                            direction="right"
+                            className="flex-row content-center w-full space-y-3 md:w-1/2"
+                        >
+                            <div>
                                 <p className="text-xl font-bold md:text-2xl ">
                                     Hello i'm {profile.name}
                                 </p>

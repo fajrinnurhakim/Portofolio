@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import stateEducation from "../hooks/education";
 import stateAward from "../hooks/award";
-import Slide from "react-reveal/Slide";
-import Fade from "react-reveal/Fade";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const EducationSection = () => {
     const { educations, loadEducations } = stateEducation();
@@ -26,15 +25,15 @@ const EducationSection = () => {
     return (
         <div className="container flex items-center h-auto px-5 py-24 mx-auto space-y-5">
             <div className="w-full space-y-5">
-                <Fade>
+                <Fade direction="down">
                     <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                         Educations <i className="fa-solid fa-user-graduate"></i>
                     </h1>
                 </Fade>
 
                 <div className="flex items-center">
-                    <Slide left>
-                        <div className="hidden w-1/3 md:inline">
+                    <Slide left className="hidden w-1/3 md:inline">
+                        <div>
                             <p className="text-2xl font-semibold ">
                                 Educations{" "}
                                 <i className="fa-solid fa-graduation-cap"></i> &
@@ -48,8 +47,11 @@ const EducationSection = () => {
                             </p>
                         </div>
                     </Slide>
-                    <Slide right>
-                        <div className="w-auto p-5 md:w-2/3 rounded-box bg-base-100">
+                    <Slide
+                        direction="right"
+                        className="w-auto p-5 md:w-2/3 rounded-box bg-base-100"
+                    >
+                        <div>
                             <div className="flex space-x-2">
                                 <div className="w-1/2">
                                     <h3 className="text-2xl font-semibold text-center">

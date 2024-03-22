@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import stateTech from "../hooks/tech";
 import stateTool from "../hooks/tool";
-import Slide from "react-reveal/Slide";
-import Fade from "react-reveal/Fade";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const TechToolSection = () => {
     const { teches, loadTeches } = stateTech();
@@ -16,12 +15,12 @@ const TechToolSection = () => {
     return (
         <div className="container flex items-center h-auto p-5 px-5 py-24 mx-auto">
             <div className="w-full">
-                <Fade>
+                <Fade direction="down">
                     <h1 className="mb-12 text-2xl font-bold text-center md:text-4xl">
                         Skills <i className="fa-solid fa-gears"></i>
                     </h1>
                 </Fade>
-                <Slide bottom>
+                <Slide direction="right">
                     <div role="tablist" className="w-full tabs tabs-lifted">
                         <input
                             type="radio"
