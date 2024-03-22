@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import stateProfile from "../hooks/profile";
-import { motion } from "framer-motion";
 
 function NavbarHome() {
     const { profiles, loadProfiles } = stateProfile();
@@ -38,15 +37,11 @@ function NavbarHome() {
         }
     };
 
-
     return (
-        <motion.div
+        <div
             className={`shadow-lg bg-base-100 ${
                 isScrolled ? "fixed top-0 left-0 right-0 z-10" : ""
             }`}
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
         >
             <div className="container flex mx-auto navbar">
                 <div className="w-1/3 navbar-start">
@@ -65,7 +60,7 @@ function NavbarHome() {
                         ))}
                         Fajrin Nurhakim
                     </a>
-                    
+
                     <details className="inline-flex dropdown md:hidden">
                         <summary className="m-1 btn btn-ghost">
                             <svg
@@ -83,11 +78,8 @@ function NavbarHome() {
                                 />
                             </svg>
                         </summary>
-                        
-                        <motion.ul
-                            className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-96"
-                            transition={{ duration: 1 }}
-                        >
+
+                        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-96">
                             <li>
                                 <a
                                     href="#home"
@@ -102,7 +94,7 @@ function NavbarHome() {
                                     Home
                                 </a>
                             </li>
-                            
+
                             <li>
                                 <a
                                     href="#profiles"
@@ -119,7 +111,7 @@ function NavbarHome() {
                                     Profiles
                                 </a>
                             </li>
-                            
+
                             <li>
                                 <a
                                     href="#skills"
@@ -135,7 +127,7 @@ function NavbarHome() {
                                     Skills
                                 </a>
                             </li>
-                            
+
                             <li>
                                 <a
                                     href="#educations"
@@ -154,7 +146,7 @@ function NavbarHome() {
                                     Educations
                                 </a>
                             </li>
-                            
+
                             <li>
                                 <a
                                     href="#experiences"
@@ -173,7 +165,7 @@ function NavbarHome() {
                                     Experiences
                                 </a>
                             </li>
-                            
+
                             <li>
                                 <a
                                     href="#portofolios"
@@ -192,7 +184,7 @@ function NavbarHome() {
                                     Portofolios
                                 </a>
                             </li>
-                        </motion.ul>
+                        </ul>
                     </details>
                 </div>
 
@@ -209,7 +201,7 @@ function NavbarHome() {
                         ))}
                         Fajrin Nurhakim
                     </a>
-                    
+
                     <ul className="hidden space-x-2 menu menu-horizontal md:inline-flex md:justify-end">
                         <li>
                             <a
@@ -222,7 +214,7 @@ function NavbarHome() {
                                 Home
                             </a>
                         </li>
-                        
+
                         <li>
                             <a
                                 href="#profiles"
@@ -234,7 +226,7 @@ function NavbarHome() {
                                 Profiles
                             </a>
                         </li>
-                        
+
                         <li>
                             <a
                                 href="#skills"
@@ -258,7 +250,7 @@ function NavbarHome() {
                                 Educations
                             </a>
                         </li>
-                        
+
                         <li>
                             <a
                                 href="#experiences"
@@ -270,7 +262,7 @@ function NavbarHome() {
                                 Experiences
                             </a>
                         </li>
-                        
+
                         <li>
                             <a
                                 href="#portofolios"
@@ -285,7 +277,7 @@ function NavbarHome() {
                     </ul>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 }
 
