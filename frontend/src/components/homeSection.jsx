@@ -17,14 +17,17 @@ const HomeSection = () => {
                     className="container flex items-center h-auto p-5 px-5 py-24 mx-auto"
                 >
                     <>
-                        <Slide direction="down">
-                            <div className="flex-row w-full space-y-5 text-center">
+                        <Slide
+                            direction="down"
+                            className="flex-row w-full text-center"
+                        >
+                            <div className="space-y-5">
                                 <p className="w-auto text-xl font-bold ">
                                     Hello there! 👋🏼
                                 </p>
 
                                 <div className="mx-auto w-max">
-                                    <h1 className="pr-5 overflow-hidden text-5xl font-bold text-white border-r-4 md:text-8xl animate-typing whitespace-nowrap border-r-white">
+                                    <h1 className="pr-5 overflow-hidden text-4xl font-bold text-white border-r-4 md:text-8xl animate-typing whitespace-nowrap border-r-white">
                                         {profile.name}
                                     </h1>
                                 </div>

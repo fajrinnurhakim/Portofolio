@@ -13,8 +13,8 @@ const Footer = () => {
 
     return (
         <div className="bg-neutral">
-            <footer class="flex-row items-center text-center md:flex md:justify-between container mx-auto p-2">
-                <p class="flex justify-center">
+            <footer className="container flex-row items-center p-2 mx-auto text-center md:flex md:justify-between">
+                <p className="flex justify-center">
                     {profiles.map((profile, index) => (
                         <span key={index}>
                             <img
@@ -26,8 +26,8 @@ const Footer = () => {
                     ))}
                     Copyright © 2024 - Fajrin Nurhakim
                 </p>
-                
-                <p class="">
+
+                <p className="">
                     {socmeds.map((socmed, index) => (
                         <a
                             key={index}

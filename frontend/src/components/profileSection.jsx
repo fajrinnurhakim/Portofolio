@@ -36,10 +36,12 @@ const ProfileSection = () => {
                             </div>
                         </Slide>
                         <Slide
-                            direction="right"
+                            direction={
+                                window.innerWidth >= 768 ? "right" : "left"
+                            }
                             className="flex-row content-center w-full space-y-3 md:w-1/2"
                         >
-                            <div>
+                            <div className="space-y-4">
                                 <p className="text-xl font-bold md:text-2xl ">
                                     Hello i'm {profile.name}
                                 </p>

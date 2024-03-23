@@ -105,7 +105,7 @@ const PortofolioSection = () => {
                                                     className="w-1/2 btn btn-square"
                                                 >
                                                     Preview{" "}
-                                                    <i class="fa-solid fa-link"></i>
+                                                    <i className="fa-solid fa-link"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -165,7 +165,7 @@ const PortofolioSection = () => {
                                     href={selectedPortofolio.link_demo}
                                     className="w-1/2 btn btn-square"
                                 >
-                                    Preview <i class="fa-solid fa-link"></i>
+                                    Preview <i className="fa-solid fa-link"></i>
                                 </a>
                             </div>
                             <button

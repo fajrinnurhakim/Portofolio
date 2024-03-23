@@ -32,7 +32,7 @@ const EducationSection = () => {
                 </Fade>
 
                 <div className="flex items-center">
-                    <Slide left className="hidden w-1/3 md:inline">
+                    <Slide direction="left" className="hidden w-1/3 md:inline">
                         <div>
                             <p className="text-2xl font-semibold ">
                                 Educations{" "}
@@ -48,7 +48,7 @@ const EducationSection = () => {
                         </div>
                     </Slide>
                     <Slide
-                        direction="right"
+                        direction={window.innerWidth >= 768 ? "right" : "left"}
                         className="w-auto p-5 md:w-2/3 rounded-box bg-base-100"
                     >
                         <div>
