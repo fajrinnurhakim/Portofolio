@@ -14,6 +14,15 @@ function Home() {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Home | Fajrin Nurhakim</title>
+                <meta
+                    name="description"
+                    content="Fajrin Nurhakim's personal website showcasing his profile, skills, education, experiences, and portfolios."
+                />
+                <meta
+                    name="keywords"
+                    content="Fajrin Nurhakim, Fajrin, Nurhakim, Sventh, Fajrin Nurhakim Personal Website, Ajin, fajrin nurhakim, fajrin, nurhakim, fajrin portofolio, fajrin nurhakim portofolio"
+                />
+                <meta name="author" content="Fajrin Nurhakim" />
             </Helmet>
 
             <NavbarHome />
