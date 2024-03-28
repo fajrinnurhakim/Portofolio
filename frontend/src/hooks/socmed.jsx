@@ -18,11 +18,13 @@ function stateSocmed() {
         socmed_image: "",
         socmed_link: "",
     });
-
+    const [loading, setLoading] = useState(false);
     const loadSocmeds = async () => {
         try {
+            setLoading(true);
             const data = await fetchSocmeds();
             setSocmeds(data);
+            setLoading(false);
         } catch (error) {
             console.error("Error loading socmeds:", error);
         }
@@ -100,6 +102,7 @@ function stateSocmed() {
         updateIndex,
         updateSocmedData,
         loadSocmeds,
+        loading,
         handleInputChange,
         handleUpdateInputChange,
         handleCreateSocmed,

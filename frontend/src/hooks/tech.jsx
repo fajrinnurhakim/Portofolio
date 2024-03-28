@@ -21,10 +21,13 @@ function stateTech() {
         tech_level: "",
     });
 
+    const [loading, setLoading] = useState(false);
     const loadTeches = async () => {
         try {
+            setLoading(true);
             const data = await fetchTeches();
             setTeches(data);
+            setLoading(false);
         } catch (error) {
             console.error("Error loading teches:", error);
         }
@@ -105,6 +108,7 @@ function stateTech() {
         updateIndex,
         updateTechData,
         loadTeches,
+        loading,
         handleInputChange,
         handleUpdateInputChange,
         handleCreateTech,

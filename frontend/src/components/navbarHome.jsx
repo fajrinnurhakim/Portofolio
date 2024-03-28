@@ -40,10 +40,10 @@ function NavbarHome() {
     return (
         <div
             className={`shadow-lg bg-base-100 ${
-                isScrolled ? "fixed top-0 left-0 right-0 z-10" : ""
+                isScrolled ? "fixed top-0 left-0 right-0 z-50" : ""
             }`}
         >
-            <div className="container flex mx-auto navbar">
+            <div className="container z-50 flex mx-auto navbar">
                 <div className="w-1/3 navbar-start">
                     <a
                         href="/"
@@ -79,7 +79,7 @@ function NavbarHome() {
                             </svg>
                         </summary>
 
-                        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-96">
+                        <ul className="z-50 w-screen space-y-2 shadow pe-5 me-5 menu dropdown-content bg-base-100 rounded-box">
                             <li>
                                 <a
                                     href="#home"

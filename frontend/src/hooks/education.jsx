@@ -26,11 +26,13 @@ function stateEducation() {
         start_date: "",
         end_date: "",
     });
-
+    const [loading, setLoading] = useState(false);
     const loadEducations = async () => {
         try {
+            setLoading(true);
             const data = await fetchEducations();
             setEducations(data);
+            setLoading(false);
         } catch (error) {
             console.error("Error loading educations:", error);
         }
@@ -120,6 +122,7 @@ function stateEducation() {
         updateIndex,
         updateEducationData,
         loadEducations,
+        loading,
         handleInputChange,
         handleUpdateInputChange,
         handleCreateEducation,

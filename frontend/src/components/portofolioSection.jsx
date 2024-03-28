@@ -124,7 +124,7 @@ const PortofolioSection = () => {
             {selectedPortofolio && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <Fade top>
-                        <div className="p-4 space-y-2 rounded-lg bg-base-300 w-96 card">
+                        <div className="p-4 space-y-2 rounded-lg bg-base-300 w-80 md:w-96 card">
                             <figure>
                                 <img
                                     src={selectedPortofolio.portofolio_image}

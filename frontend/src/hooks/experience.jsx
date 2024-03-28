@@ -33,10 +33,13 @@ function stateExperience() {
         end_date: "",
     });
 
+    const [loading, setLoading] = useState(false);
     const loadExperiences = async () => {
         try {
+            setLoading(true);
             const data = await fetchExperiences();
             setExperiences(data);
+            setLoading(false);
         } catch (error) {
             console.error("Error loading experiences:", error);
         }
@@ -135,6 +138,7 @@ function stateExperience() {
         updateIndex,
         updateExperienceData,
         loadExperiences,
+        loading,
         handleInputChange,
         handleUpdateInputChange,
         handleCreateExperience,

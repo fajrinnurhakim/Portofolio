@@ -18,7 +18,7 @@ const HomeSection = () => {
                 >
                     <>
                         <Slide
-                            direction="down"
+                            direction="up"
                             className="flex-row w-full text-center"
                         >
                             <div className="space-y-5">

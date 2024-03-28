@@ -12,29 +12,49 @@ import Award from "./pages/dashboard/award";
 import PortofolioPage from "./pages/postofolioPage";
 import ExperiencePage from "./pages/experiencePage";
 import NotFound from "./components/notFound";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import Loading from "./components/loading";
+import stateAward from "./hooks/award";
+import stateEducation from "./hooks/education";
+import stateExperience from "./hooks/experience";
+import statePortofolio from "./hooks/portofolio";
+import stateProfile from "./hooks/profile";
+import stateSocmed from "./hooks/socmed";
+import stateTech from "./hooks/tech";
+import stateTool from "./hooks/tool";
 
 function App() {
-    const [loading, setLoading] = useState(false);
-    const [dataFetched, setDataFetched] = useState(false);
+    const { loading: awardLoading, loadAwards } = stateAward();
+    const { loading: educationLoading, loadEducations } = stateEducation();
+    const { loading: experienceLoading, loadExperiences } = stateExperience();
+    const { loading: portofolioLoading, loadPortofolios } = statePortofolio();
+    const { loading: profileLoading, loadProfiles } = stateProfile();
+    const { loading: socmedLoading, loadSocmeds } = stateSocmed();
+    const { loading: techLoading, loadTeches } = stateTech();
+    const { loading: toolLoading, loadTools } = stateTool();
 
     useEffect(() => {
-        fetchData().then(() => {
-            setDataFetched(true);
-            setLoading(false);
-        });
+        loadAwards();
+        loadEducations();
+        loadExperiences();
+        loadPortofolios();
+        loadProfiles();
+        loadSocmeds();
+        loadTeches();
+        loadTools();
     }, []);
-
-    const fetchData = async () => {
-        await new Promise((resolve) => setTimeout(resolve, 3000));
-    };
 
     return (
         <>
-            {loading || !dataFetched ? (
-                <div className="flex flex-col items-center justify-center w-full h-screen bg-base">
-                    <span className="loading loading-ring loading-lg"></span>
-                </div>
+            {awardLoading ||
+            educationLoading ||
+            experienceLoading ||
+            portofolioLoading ||
+            profileLoading ||
+            socmedLoading ||
+            techLoading ||
+            toolLoading ? (
+                <Loading />
             ) : (
                 <Router>
                     <Routes>
