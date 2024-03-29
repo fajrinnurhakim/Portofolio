@@ -26,7 +26,6 @@ function NavbarHome() {
 
     const handleMenuClick = (menu) => {
         setActiveMenu(menu);
-        setIsDropdownOpen(false);
     };
 
     const handleScroll = () => {

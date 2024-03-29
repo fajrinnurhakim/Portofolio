@@ -35,7 +35,7 @@ const PortofolioPage = () => {
                 <div className="w-full p-5 rounded-box bg-base-300">
                     <div className="flex justify-start mb-4">
                         <Link to="/" className="btn">
-                            <i class="fa-solid fa-arrow-left"></i>
+                            <i className="fa-solid fa-arrow-left"></i>
                             Back{" "}
                         </Link>
                     </div>
@@ -106,7 +106,7 @@ const PortofolioPage = () => {
                                             className="w-1/2 btn btn-square"
                                         >
                                             Preview{" "}
-                                            <i class="fa-solid fa-link"></i>
+                                            <i className="fa-solid fa-link"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -164,7 +164,7 @@ const PortofolioPage = () => {
                                 href={selectedPortofolio.link_demo}
                                 className="w-1/2 btn btn-square"
                             >
-                                Preview <i class="fa-solid fa-link"></i>
+                                Preview <i className="fa-solid fa-link"></i>
                             </a>
                         </div>
 

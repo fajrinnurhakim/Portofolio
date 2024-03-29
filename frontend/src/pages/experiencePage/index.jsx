@@ -25,7 +25,7 @@ const ExperiencePage = () => {
             <div className="w-full p-5 rounded-box bg-base-300">
                 <div className="flex justify-start mb-4">
                     <Link to="/" className="btn">
-                        <i class="fa-solid fa-arrow-left"></i>
+                        <i className="fa-solid fa-arrow-left"></i>
                         Back{" "}
                     </Link>
                 </div>
