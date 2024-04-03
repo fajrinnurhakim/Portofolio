@@ -31,7 +31,7 @@ const ProfileSection = () => {
                                 <img
                                     src={profile.image_two}
                                     alt="image_two"
-                                    className="w-80 h-96"
+                                    className="w-80 h-96" // Tetapkan dimensi tetap untuk gambar
                                 />
                             </div>
                         </Slide>

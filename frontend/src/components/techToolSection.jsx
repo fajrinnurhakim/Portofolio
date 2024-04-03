@@ -24,14 +24,17 @@ const TechToolSection = () => {
                     <div role="tablist" className="w-full tabs tabs-lifted">
                         <input
                             type="radio"
+                            id="tab-tech"
                             name="my_tabs_2"
                             role="tab"
                             className="tab"
                             aria-label="Tech"
+                            aria-controls="tabpanel-tech"
                             defaultChecked
                         />
 
                         <div
+                            id="tabpanel-tech"
                             role="tabpanel"
                             className="p-6 tab-content bg-base-300 border-base-300 rounded-box"
                         >
@@ -41,21 +44,21 @@ const TechToolSection = () => {
                                 </p>
 
                                 <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                                    {teches.map((teches, index) => (
+                                    {teches.map((tech, index) => (
                                         <div
                                             key={index}
                                             className="items-center text-center card-body"
                                         >
                                             <img
-                                                src={teches.tech_image}
+                                                src={tech.tech_image}
                                                 alt="tech_image"
                                                 className="h-10 md:h-12"
                                             />
 
                                             <p className="font-bold">
-                                                {teches.tech_name}
+                                                {tech.tech_name}
                                             </p>
-                                            <p>{teches.tech_level}</p>
+                                            <p>{tech.tech_level}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -64,12 +67,15 @@ const TechToolSection = () => {
 
                         <input
                             type="radio"
+                            id="tab-tools"
                             name="my_tabs_2"
                             role="tab"
                             className="tab"
                             aria-label="Tools"
+                            aria-controls="tabpanel-tools"
                         />
                         <div
+                            id="tabpanel-tools"
                             role="tabpanel"
                             className="p-6 tab-content bg-base-300 border-base-300 rounded-box"
                         >
@@ -80,20 +86,20 @@ const TechToolSection = () => {
                                 </p>
 
                                 <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                                    {tools.map((tools, index) => (
+                                    {tools.map((tool, index) => (
                                         <div
                                             key={index}
                                             className="items-center text-center card-body"
                                         >
                                             <img
-                                                src={tools.tool_image}
+                                                src={tool.tool_image}
                                                 alt="tools_image"
                                                 className="w-10 md:w-12"
                                             />
                                             <p className="font-bold">
-                                                {tools.tool_name}
+                                                {tool.tool_name}
                                             </p>
-                                            <p>{tools.tool_level}</p>
+                                            <p>{tool.tool_level}</p>
                                         </div>
                                     ))}
                                 </div>

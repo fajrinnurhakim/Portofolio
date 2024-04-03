@@ -26,11 +26,9 @@ const HomeSection = () => {
                                     Hello there! 👋🏼
                                 </p>
 
-                                <div className="mx-auto w-max">
-                                    <h1 className="pr-5 overflow-hidden text-4xl font-bold text-white border-r-4 md:text-8xl animate-typing whitespace-nowrap border-r-white">
-                                        {profile.name}
-                                    </h1>
-                                </div>
+                                <h1 class="pr-5 overflow-hidden text-4xl font-bold text-white border-r-4 md:text-8xl animate-typing whitespace-nowrap border-r-white">
+                                    Fajrin Nurhakim
+                                </h1>
 
                                 <p className="w-full mx-auto text-base-content md:w-2/3 ">
                                     Combining expertise in developing

@@ -21,13 +21,10 @@ function stateAward() {
         win_date: "",
     });
 
-    const [loading, setLoading] = useState(false);
     const loadAwards = async () => {
         try {
-            setLoading(true);
             const data = await fetchAwards();
             setAwards(data);
-            setLoading(false);
         } catch (error) {
             console.error("Error loading awards:", error);
         }
@@ -108,7 +105,6 @@ function stateAward() {
         updateIndex,
         updateAwardData,
         loadAwards,
-        loading,
         handleInputChange,
         handleUpdateInputChange,
         handleCreateAward,

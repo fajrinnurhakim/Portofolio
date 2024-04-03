@@ -21,13 +21,10 @@ function stateTool() {
         tool_level: "",
     });
 
-    const [loading, setLoading] = useState(false);
     const loadTools = async () => {
         try {
-            setLoading(true);
             const data = await fetchTools();
             setTools(data);
-            setLoading(false);
         } catch (error) {
             console.error("Error loading tools:", error);
         }
@@ -108,7 +105,6 @@ function stateTool() {
         updateIndex,
         updateToolData,
         loadTools,
-        loading,
         handleInputChange,
         handleUpdateInputChange,
         handleCreateTool,

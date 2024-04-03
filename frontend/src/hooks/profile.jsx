@@ -35,13 +35,10 @@ function stateProfile() {
         success_project: "",
     });
 
-    const [loading, setLoading] = useState(false);
     const loadProfiles = async () => {
         try {
-            setLoading(true);
             const data = await fetchProfiles();
             setProfiles(data);
-            setLoading(false);
         } catch (error) {
             console.error("Error loading profiles:", error);
         }
@@ -157,7 +154,6 @@ function stateProfile() {
         updateIndex,
         updateProfileData,
         loadProfiles,
-        loading,
         handleInputChange,
         handleUpdateInputChange,
         handleCreateProfile,

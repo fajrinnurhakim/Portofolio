@@ -31,13 +31,10 @@ function statePortofolio() {
         link_demo: "",
     });
 
-    const [loading, setLoading] = useState(false);
     const loadPortofolios = async () => {
         try {
-            setLoading(true);
             const data = await fetchPortofolios();
             setPortofolios(data);
-            setLoading(false);
         } catch (error) {
             console.error("Error loading portofolios:", error);
         }
@@ -133,7 +130,6 @@ function statePortofolio() {
         updateIndex,
         updatePortofolioData,
         loadPortofolios,
-        loading,
         handleInputChange,
         handleUpdateInputChange,
         handleCreatePortofolio,
