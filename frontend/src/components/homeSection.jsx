@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import stateProfile from "../hooks/profile";
 import { Slide } from "react-awesome-reveal";
+import Type from "./type";
 
 const HomeSection = () => {
     const { profiles, loadProfiles } = stateProfile();
-
     useEffect(() => {
         loadProfiles();
     }, []);
@@ -26,9 +26,7 @@ const HomeSection = () => {
                                     Hello there! 👋🏼
                                 </p>
 
-                                <h1 class="pr-5 overflow-hidden text-4xl font-bold text-white border-r-4 md:text-8xl animate-typing whitespace-nowrap border-r-white">
-                                    Fajrin Nurhakim
-                                </h1>
+                                <Type />
 
                                 <p className="w-full mx-auto text-base-content md:w-2/3 ">
                                     Combining expertise in developing
