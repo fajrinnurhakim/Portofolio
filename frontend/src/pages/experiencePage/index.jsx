@@ -1,12 +1,19 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import stateExperience from "../../hooks/experience";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const ExperiencePage = () => {
     const { experiences, loadExperiences } = stateExperience();
-    const snapContainer = useRef(null);
-
+    const [currentPage, setCurrentPage] = useState(1);
+    const experiencesPerPage = 8;
+    const indexOfLastExperience = currentPage * experiencesPerPage;
+    const indexOfFirstExperience = indexOfLastExperience - experiencesPerPage;
+    const currentExperiences = experiences.slice(
+        indexOfFirstExperience,
+        indexOfLastExperience
+    );
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
     useEffect(() => {
         loadExperiences();
     }, []);
@@ -31,12 +38,11 @@ const ExperiencePage = () => {
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
-                    {experiences
+                    {currentExperiences
                         .sort(
                             (a, b) =>
                                 new Date(b.start_date) - new Date(a.start_date)
                         )
-                        .slice(0, 5)
                         .map((experience, index) => (
                             <div key={index} className="">
                                 <div className="h-64 shadow-xl card bg-base-100">
@@ -93,6 +99,22 @@ const ExperiencePage = () => {
                             </div>
                         ))}
                 </div>
+                <ul className="flex justify-center mt-4 space-x-2">
+                    {Array.from({
+                        length: Math.ceil(
+                            experiences.length / experiencesPerPage
+                        ),
+                    }).map((_, index) => (
+                        <li key={index}>
+                            <button
+                                className="btn btn-secondary"
+                                onClick={() => paginate(index + 1)}
+                            >
+                                {index + 1}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </div>
     );
