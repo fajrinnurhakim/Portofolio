@@ -7,6 +7,18 @@ import { useState } from "react";
 const PortofolioPage = () => {
     const { portofolios, loadPortofolios } = statePortofolio();
     const [selectedPortofolio, setSelectedPortofolio] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const portofoliosPerPage = 8;
+    const indexOfLastPortofolio = currentPage * portofoliosPerPage;
+    const indexOfFirstPortofolio = indexOfLastPortofolio - portofoliosPerPage;
+    const currentPortofolios = portofolios.slice(
+        indexOfFirstPortofolio,
+        indexOfLastPortofolio
+    );
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    useEffect(() => {
+        loadPortofolios();
+    }, []);
 
     useEffect(() => {
         loadPortofolios();
@@ -41,7 +53,7 @@ const PortofolioPage = () => {
                     </div>
 
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
-                        {portofolios.map((portofolio, index) => (
+                        {currentPortofolios.map((portofolio, index) => (
                             <div
                                 key={index}
                                 className="shadow-xl card bg-base-100"
@@ -114,6 +126,22 @@ const PortofolioPage = () => {
                         ))}
                     </div>
                 </div>
+                <ul className="flex justify-center mt-4 space-x-2">
+                    {Array.from({
+                        length: Math.ceil(
+                            portofolios.length / portofoliosPerPage
+                        ),
+                    }).map((_, index) => (
+                        <li key={index}>
+                            <button
+                                className="btn btn-secondary"
+                                onClick={() => paginate(index + 1)}
+                            >
+                                {index + 1}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
             </div>
             {selectedPortofolio && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
