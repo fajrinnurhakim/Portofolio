@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import stateExperience from "../../hooks/experience";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 const ExperiencePage = () => {
     const { experiences, loadExperiences } = stateExperience();
@@ -13,6 +14,16 @@ const ExperiencePage = () => {
         indexOfFirstExperience,
         indexOfLastExperience
     );
+    const [selectedExperience, setSelectedExperience] = useState(null);
+
+    const openModal = (experience) => {
+        setSelectedExperience(experience);
+    };
+
+    const closeModal = () => {
+        setSelectedExperience(null);
+    };
+
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
     useEffect(() => {
         loadExperiences();
@@ -47,13 +58,17 @@ const ExperiencePage = () => {
                             <div key={index} className="">
                                 <div className="h-64 shadow-xl card bg-base-100">
                                     <div className="p-4 card-body">
-                                        <h2 className="card-title">
+                                        <h2
+                                            className="cursor-pointer card-title link link-hover"
+                                            onClick={() =>
+                                                openModal(experience)
+                                            }
+                                        >
                                             {experience.experience_name}
                                             <div className="badge badge-secondary">
                                                 {experience.type}
                                             </div>
                                         </h2>
-
                                         <p className="font-bold">
                                             {experience.institution_name}
                                         </p>
@@ -116,6 +131,50 @@ const ExperiencePage = () => {
                     ))}
                 </ul>
             </div>
+            {selectedExperience && (
+                <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+                    <Fade top>
+                        <div className="p-4 space-y-2 rounded-lg bg-base-300 card w-80 md:w-96">
+                            <h2 className="text-xl font-bold">
+                                {selectedExperience.experience_name}
+                                <div className="badge badge-secondary">
+                                    {selectedExperience.type}
+                                </div>
+                            </h2>
+                            <p className="font-bold">
+                                {selectedExperience.institution_name}
+                            </p>
+
+                            <div className="flex space-x-2">
+                                <img
+                                    src={selectedExperience.tech_stack1}
+                                    alt="experience1"
+                                    className="h-5"
+                                />
+
+                                <img
+                                    src={selectedExperience.tech_stack2}
+                                    alt="experience1"
+                                    className="h-5"
+                                />
+
+                                <img
+                                    src={selectedExperience.tech_stack3}
+                                    alt="experience1"
+                                    className="h-5"
+                                />
+                            </div>
+                            <p>{selectedExperience.experience_description}</p>
+                            <button
+                                onClick={closeModal}
+                                className="w-full btn btn-square"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </Fade>
+                </div>
+            )}
         </div>
     );
 };
