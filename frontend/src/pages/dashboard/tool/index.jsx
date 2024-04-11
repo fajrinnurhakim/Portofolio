@@ -59,38 +59,44 @@ function Tool() {
                             </tr>
                         </thead>
                         <tbody>
-                            {tools.map((tool, index) => (
-                                <tr key={index}>
-                                    <th>{index + 1}</th>
-                                    <td>{tool.tool_name}</td>
-                                    <td>
-                                        <img
-                                            src={tool.tool_image}
-                                            alt="tool_image"
-                                            className="w-12"
-                                        />
-                                    </td>
-                                    <td>{tool.tool_level}</td>
-                                    <td className="flex justify-center space-x-2">
-                                        <button
-                                            className="btn btn-accent"
-                                            onClick={() =>
-                                                handleOpenUpdateModal(index)
-                                            }
-                                        >
-                                            Update
-                                        </button>
-                                        <button
-                                            className="btn btn-secondary"
-                                            onClick={() =>
-                                                handleDeleteTool(tool.id)
-                                            }
-                                        >
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
+                            {tools
+                                .sort(
+                                    (a, b) =>
+                                        new Date(b.updatedAt) -
+                                        new Date(a.updatedAt)
+                                )
+                                .map((tool, index) => (
+                                    <tr key={index}>
+                                        <th>{index + 1}</th>
+                                        <td>{tool.tool_name}</td>
+                                        <td>
+                                            <img
+                                                src={tool.tool_image}
+                                                alt="tool_image"
+                                                className="w-12"
+                                            />
+                                        </td>
+                                        <td>{tool.tool_level}</td>
+                                        <td className="flex justify-center space-x-2">
+                                            <button
+                                                className="btn btn-accent"
+                                                onClick={() =>
+                                                    handleOpenUpdateModal(index)
+                                                }
+                                            >
+                                                Update
+                                            </button>
+                                            <button
+                                                className="btn btn-secondary"
+                                                onClick={() =>
+                                                    handleDeleteTool(tool.id)
+                                                }
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
                         </tbody>
                     </table>
                 </div>

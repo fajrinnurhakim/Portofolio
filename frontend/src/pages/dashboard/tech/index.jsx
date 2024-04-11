@@ -35,13 +35,13 @@ function Tech() {
             </Helmet>
 
             <NavbarDashboard />
-            
+
             <section
                 id="title"
                 className="container flex justify-between mx-auto mt-2"
             >
                 <h3 className="text-4xl font-bold">Teches</h3>
-                
+
                 <button
                     className="btn btn-primary"
                     onClick={() => setShowModal(true)}
@@ -49,7 +49,7 @@ function Tech() {
                     Create
                 </button>
             </section>
-            
+
             <section id="table" className="container mx-auto">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
@@ -62,45 +62,51 @@ function Tech() {
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        
+
                         <tbody>
-                            {teches.map((tech, index) => (
-                                <tr key={index}>
-                                    <th>{index + 1}</th>                                  
-                                    <td>{tech.tech_name}</td>                                 
-                                    <td>
-                                        <img
-                                            src={tech.tech_image}
-                                            alt="techImage"
-                                            className="w-12"
-                                        />
-                                    </td>                                  
-                                    <td>{tech.tech_level}</td>                                  
-                                    <td className="flex justify-center space-x-2">
-                                        <button
-                                            className="btn btn-accent"
-                                            onClick={() =>
-                                                handleOpenUpdateModal(index)
-                                            }
-                                        >
-                                            Update
-                                        </button>                                       
-                                        <button
-                                            className="btn btn-secondary"
-                                            onClick={() =>
-                                                handleDeleteTech(tech.id)
-                                            }
-                                        >
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
+                            {teches
+                                .sort(
+                                    (a, b) =>
+                                        new Date(b.updatedAt) -
+                                        new Date(a.updatedAt)
+                                )
+                                .map((tech, index) => (
+                                    <tr key={index}>
+                                        <th>{index + 1}</th>
+                                        <td>{tech.tech_name}</td>
+                                        <td>
+                                            <img
+                                                src={tech.tech_image}
+                                                alt="techImage"
+                                                className="w-12"
+                                            />
+                                        </td>
+                                        <td>{tech.tech_level}</td>
+                                        <td className="flex justify-center space-x-2">
+                                            <button
+                                                className="btn btn-accent"
+                                                onClick={() =>
+                                                    handleOpenUpdateModal(index)
+                                                }
+                                            >
+                                                Update
+                                            </button>
+                                            <button
+                                                className="btn btn-secondary"
+                                                onClick={() =>
+                                                    handleDeleteTech(tech.id)
+                                                }
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
                         </tbody>
                     </table>
                 </div>
             </section>
-            
+
             {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="p-6 bg-white rounded-lg">
@@ -109,7 +115,7 @@ function Tech() {
                                 ? "Update Tech"
                                 : "Create New Tech"}
                         </h2>
-                        
+
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -117,7 +123,7 @@ function Tech() {
                             >
                                 Tech Name
                             </label>
-                            
+
                             <input
                                 type="text"
                                 id="tech_name"
@@ -136,7 +142,7 @@ function Tech() {
                                 required
                             />
                         </div>
-                        
+
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -144,7 +150,7 @@ function Tech() {
                             >
                                 Tech Image
                             </label>
-                            
+
                             <input
                                 type="text"
                                 id="tech_image"
@@ -170,7 +176,7 @@ function Tech() {
                             >
                                 Tech Level
                             </label>
-                            
+
                             <input
                                 type="text"
                                 id="tech_level"
@@ -191,7 +197,6 @@ function Tech() {
                         </div>
 
                         <div className="flex justify-end">
-                            
                             <button
                                 className="btn btn-primary"
                                 onClick={
@@ -202,7 +207,7 @@ function Tech() {
                             >
                                 {updateIndex !== null ? "Update" : "Create"}
                             </button>
-                            
+
                             <button
                                 className="ml-2 btn btn-secondary"
                                 onClick={() => {

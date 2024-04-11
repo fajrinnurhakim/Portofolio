@@ -63,32 +63,38 @@ function Award() {
                         </thead>
 
                         <tbody>
-                            {awards.map((award, index) => (
-                                <tr key={index}>
-                                    <th>{index + 1}</th>
-                                    <td>{award.award_name}</td>
-                                    <td>{award.institution_award}</td>
-                                    <td>{award.win_date}</td>
-                                    <td className="flex justify-center space-x-2">
-                                        <button
-                                            className="btn btn-accent"
-                                            onClick={() =>
-                                                handleOpenUpdateModal(index)
-                                            }
-                                        >
-                                            Update
-                                        </button>
-                                        <button
-                                            className="btn btn-secondary"
-                                            onClick={() =>
-                                                handleDeleteAward(award.id)
-                                            }
-                                        >
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
+                            {awards
+                                .sort(
+                                    (a, b) =>
+                                        new Date(b.updatedAt) -
+                                        new Date(a.updatedAt)
+                                )
+                                .map((award, index) => (
+                                    <tr key={index}>
+                                        <th>{index + 1}</th>
+                                        <td>{award.award_name}</td>
+                                        <td>{award.institution_award}</td>
+                                        <td>{award.win_date}</td>
+                                        <td className="flex justify-center space-x-2">
+                                            <button
+                                                className="btn btn-accent"
+                                                onClick={() =>
+                                                    handleOpenUpdateModal(index)
+                                                }
+                                            >
+                                                Update
+                                            </button>
+                                            <button
+                                                className="btn btn-secondary"
+                                                onClick={() =>
+                                                    handleDeleteAward(award.id)
+                                                }
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
                         </tbody>
                     </table>
                 </div>

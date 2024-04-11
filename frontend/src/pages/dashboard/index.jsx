@@ -9,7 +9,7 @@ function Dashboard() {
                 <meta charSet="utf-8" />
                 <title>Dashboard | Fajrin Nurhakim</title>
             </Helmet>
-            
+
             <div>
                 <NavbarDashboard />
                 <Footer />

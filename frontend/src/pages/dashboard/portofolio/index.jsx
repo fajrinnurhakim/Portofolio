@@ -33,15 +33,15 @@ function Portofolio() {
                 <meta charSet="utf-8" />
                 <title>Portofolio | Fajrin Nurhakim</title>
             </Helmet>
-            
+
             <NavbarDashboard />
-            
+
             <section
                 id="title"
                 className="container flex justify-between mx-auto mt-2"
             >
                 <h3 className="text-4xl font-bold">Portofolios</h3>
-                
+
                 <button
                     className="btn btn-primary"
                     onClick={() => setShowModal(true)}
@@ -49,7 +49,7 @@ function Portofolio() {
                     Create
                 </button>
             </section>
-            
+
             <section id="table" className="container mx-auto">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
@@ -67,47 +67,53 @@ function Portofolio() {
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        
+
                         <tbody>
-                            {portofolios.map((portofolio, index) => (
-                                <tr key={index}>
-                                    <th>{index + 1}</th>
-                                    <td>{portofolio.portofolio_name}</td>
-                                    <td>{portofolio.portofolio_image}</td>
-                                    <td>{portofolio.tech_stack1}</td>
-                                    <td>{portofolio.tech_stack2}</td>
-                                    <td>{portofolio.tech_stack3}</td>
-                                    <td>{portofolio.description}</td>
-                                    <td>{portofolio.link_github}</td>
-                                    <td>{portofolio.link_demo}</td>
-                                    <td className="flex justify-center space-x-2">
-                                        <button
-                                            className="btn btn-accent"
-                                            onClick={() =>
-                                                handleOpenUpdateModal(index)
-                                            }
-                                        >
-                                            Update
-                                        </button>
-                                        
-                                        <button
-                                            className="btn btn-secondary"
-                                            onClick={() =>
-                                                handleDeletePortofolio(
-                                                    portofolio.id
-                                                )
-                                            }
-                                        >
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
+                            {portofolios
+                                .sort(
+                                    (a, b) =>
+                                        new Date(b.updatedAt) -
+                                        new Date(a.updatedAt)
+                                )
+                                .map((portofolio, index) => (
+                                    <tr key={index}>
+                                        <th>{index + 1}</th>
+                                        <td>{portofolio.portofolio_name}</td>
+                                        <td>{portofolio.portofolio_image}</td>
+                                        <td>{portofolio.tech_stack1}</td>
+                                        <td>{portofolio.tech_stack2}</td>
+                                        <td>{portofolio.tech_stack3}</td>
+                                        <td>{portofolio.description}</td>
+                                        <td>{portofolio.link_github}</td>
+                                        <td>{portofolio.link_demo}</td>
+                                        <td className="flex justify-center space-x-2">
+                                            <button
+                                                className="btn btn-accent"
+                                                onClick={() =>
+                                                    handleOpenUpdateModal(index)
+                                                }
+                                            >
+                                                Update
+                                            </button>
+
+                                            <button
+                                                className="btn btn-secondary"
+                                                onClick={() =>
+                                                    handleDeletePortofolio(
+                                                        portofolio.id
+                                                    )
+                                                }
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
                         </tbody>
                     </table>
                 </div>
             </section>
-            
+
             {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="w-6/12 p-6 bg-white rounded-lg">
@@ -116,7 +122,7 @@ function Portofolio() {
                                 ? "Update Portofolio"
                                 : "Create New Portofolio"}
                         </h2>
-                        
+
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -124,7 +130,7 @@ function Portofolio() {
                             >
                                 Portofolio Name
                             </label>
-                            
+
                             <input
                                 type="text"
                                 id="portofolio_name"
@@ -143,7 +149,7 @@ function Portofolio() {
                                 required
                             />
                         </div>
-                        
+
                         <div className="mb-4">
                             <label
                                 className="block mb-2 text-sm font-bold"
@@ -151,7 +157,7 @@ function Portofolio() {
                             >
                                 Portofolio Image
                             </label>
-                            
+
                             <input
                                 type="text"
                                 id="portofolio_image"
@@ -170,7 +176,7 @@ function Portofolio() {
                                 required
                             />
                         </div>
-                        
+
                         <div className="flex mb-4 space-x-2">
                             <div className="w-1/3">
                                 <label
@@ -179,7 +185,7 @@ function Portofolio() {
                                 >
                                     Tech Stack
                                 </label>
-                                
+
                                 <input
                                     type="text"
                                     id="tech_stack1"
@@ -198,7 +204,7 @@ function Portofolio() {
                                     required
                                 />
                             </div>
-                            
+
                             <div className="w-1/3">
                                 <label
                                     className="block mb-2 text-sm font-bold"
@@ -206,7 +212,7 @@ function Portofolio() {
                                 >
                                     Tech Stack 2
                                 </label>
-                                
+
                                 <input
                                     type="text"
                                     id="tech_stack2"
@@ -233,7 +239,7 @@ function Portofolio() {
                                 >
                                     Tech Stack 3
                                 </label>
-                                
+
                                 <input
                                     type="text"
                                     id="tech_stack3"
@@ -261,7 +267,7 @@ function Portofolio() {
                             >
                                 Deskripsi
                             </label>
-                            
+
                             <input
                                 type="text"
                                 id="description"
@@ -314,7 +320,7 @@ function Portofolio() {
                             >
                                 Link Demo
                             </label>
-                            
+
                             <input
                                 type="text"
                                 id="link_demo"
@@ -345,7 +351,7 @@ function Portofolio() {
                             >
                                 {updateIndex !== null ? "Update" : "Create"}
                             </button>
-                            
+
                             <button
                                 className="ml-2 btn btn-secondary"
                                 onClick={() => {

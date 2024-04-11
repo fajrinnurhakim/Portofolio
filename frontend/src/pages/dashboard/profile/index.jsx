@@ -71,56 +71,64 @@ function Profile() {
                         </thead>
 
                         <tbody>
-                            {profiles.map((profile, index) => (
-                                <tr key={index}>
-                                    <th>{index + 1}</th>
-                                    <td>{profile.name}</td>
-                                    <td>{profile.address}</td>
-                                    <td>{profile.main_role}</td>
-                                    <td>{profile.description}</td>
-                                    <td>
-                                        <a
-                                            href={profile.link_cv}
-                                            className="btn btn-sm btn-primary"
-                                        ></a>
-                                    </td>
-                                    <td>
-                                        <img
-                                            src={profile.image}
-                                            alt="image1"
-                                            className="w-10 h-12"
-                                        />
-                                    </td>
-                                    <td>
-                                        <img
-                                            src={profile.image_two}
-                                            alt="image2"
-                                            className="w-10 h-12"
-                                        />
-                                    </td>
-                                    <td>{profile.year_experience}</td>
-                                    <td>{profile.tech_stack}</td>
-                                    <td>{profile.success_project}</td>
-                                    <td className="flex justify-center space-x-2">
-                                        <button
-                                            className="btn btn-accent"
-                                            onClick={() =>
-                                                handleOpenUpdateModal(index)
-                                            }
-                                        >
-                                            Update
-                                        </button>
-                                        <button
-                                            className="btn btn-secondary"
-                                            onClick={() =>
-                                                handleDeleteProfile(profile.id)
-                                            }
-                                        >
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
+                            {profiles
+                                .sort(
+                                    (a, b) =>
+                                        new Date(b.updatedAt) -
+                                        new Date(a.updatedAt)
+                                )
+                                .map((profile, index) => (
+                                    <tr key={index}>
+                                        <th>{index + 1}</th>
+                                        <td>{profile.name}</td>
+                                        <td>{profile.address}</td>
+                                        <td>{profile.main_role}</td>
+                                        <td>{profile.description}</td>
+                                        <td>
+                                            <a
+                                                href={profile.link_cv}
+                                                className="btn btn-sm btn-primary"
+                                            ></a>
+                                        </td>
+                                        <td>
+                                            <img
+                                                src={profile.image}
+                                                alt="image1"
+                                                className="w-10 h-12"
+                                            />
+                                        </td>
+                                        <td>
+                                            <img
+                                                src={profile.image_two}
+                                                alt="image2"
+                                                className="w-10 h-12"
+                                            />
+                                        </td>
+                                        <td>{profile.year_experience}</td>
+                                        <td>{profile.tech_stack}</td>
+                                        <td>{profile.success_project}</td>
+                                        <td className="flex justify-center space-x-2">
+                                            <button
+                                                className="btn btn-accent"
+                                                onClick={() =>
+                                                    handleOpenUpdateModal(index)
+                                                }
+                                            >
+                                                Update
+                                            </button>
+                                            <button
+                                                className="btn btn-secondary"
+                                                onClick={() =>
+                                                    handleDeleteProfile(
+                                                        profile.id
+                                                    )
+                                                }
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
                         </tbody>
                     </table>
                 </div>
