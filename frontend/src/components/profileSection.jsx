@@ -80,7 +80,7 @@ const ProfileSection = () => {
                                         <div className="text-center text-black card-body">
                                             <i className="fa-solid fa-sheet-plastic"></i>
                                             <h2 className="text-xl font-bold">
-                                                {profile.year_experience} +
+                                                {profile.success_project} +
                                             </h2>
                                             <p>Successed Projects</p>
                                         </div>
