@@ -24,7 +24,7 @@ const Footer = () => {
                             />
                         </span>
                     ))}
-                    Copyright © 2024 - Fajrin Nurhakim
+                    Created by Fajrin Nurhakim
                 </p>
 
                 <p className="">
