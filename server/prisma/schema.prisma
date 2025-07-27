@@ -105,3 +105,19 @@ model Tool {
   updatedAt DateTime   @default(now()) @updatedAt
 }
 
+model Blog {
+  id          Int      @id @default(autoincrement())
+  title   String
+  hero   String
+  date    String
+  description   String
+  image   String
+  image2  String
+  image3  String
+  image4  String
+  image5  String
+  image6  String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now()) @updatedAt
+}
+

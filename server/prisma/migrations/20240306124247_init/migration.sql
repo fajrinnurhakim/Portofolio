@@ -113,3 +113,23 @@ CREATE TABLE "Tool" (
 
     CONSTRAINT "Tool_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateTable
+CREATE TABLE "Blog" (
+    "id" SERIAL NOT NULL,
+    "title" TEXT NOT NULL,
+    "hero" TEXT NOT NULL,
+    "date" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "image" TEXT NOT NULL,
+    "image2" TEXT NOT NULL,
+    "image3" TEXT NOT NULL,
+    "image4" TEXT NOT NULL,
+    "image5" TEXT NOT NULL,
+    "image6" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "Blog_pkey" PRIMARY KEY ("id")
+);
+
