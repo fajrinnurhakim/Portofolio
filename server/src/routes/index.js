@@ -8,6 +8,7 @@ const profileRouter = require('./profile.js');
 const socmedRouter = require('./socmed.js');
 const techRouter = require('./tech.js');
 const toolRouter = require('./tool.js');
+const blogRouter = require('./blog.js');
 
 router.use('/awards', awardRouter);
 router.use('/educations', educationRouter);
@@ -17,5 +18,6 @@ router.use('/profiles', profileRouter);
 router.use('/socmeds', socmedRouter);
 router.use('/teches', techRouter);
 router.use('/tools', toolRouter);
+router.use('/blogs', blogRouter);
 
 module.exports = router;

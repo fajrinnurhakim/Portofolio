@@ -107,16 +107,9 @@ model Tool {
 
 model Blog {
   id          Int      @id @default(autoincrement())
-  title   String
-  hero   String
-  date    String
-  description   String
-  image1   String
-  image2  String
-  image3  String
-  image4  String
-  image5  String
-  image6  String
+  title_blog   String
+  date_blog    String
+  description_blog   String
   createdAt DateTime   @default(now())
   updatedAt DateTime   @default(now()) @updatedAt
 }
