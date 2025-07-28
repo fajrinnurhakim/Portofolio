@@ -1,21 +1,17 @@
 {
-  "dependencies": {
-    "@prisma/client": "^5.10.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.18.3",
-    "multer": "^2.0.2",
-    "pg": "^8.11.3",
-    "prisma": "^5.10.2",
-    "save": "^2.9.0"
-  },
-  "scripts": {
-    "dev": "nodemon app.js",
-    "migrate": "npx prisma migrate dev --name init",
-    "prisma": "prisma",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:seed": "prisma db seed",
-    "prisma:seed:dev": "prisma db seed -- --environment development",
-    "vercel-build": "prisma generate && prisma migrate dev"
-  }
+    "dependencies": {
+        "@prisma/client": "^5.10.2",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.18.3",
+        "multer": "^2.0.2",
+        "pg": "^8.11.3",
+        "prisma": "^5.10.2",
+        "save": "^2.9.0"
+    },
+    "scripts": {
+        "dev": "nodemon app.js",
+        "migrate": "npx prisma migrate dev --name init",
+        "vercel-build": "prisma generate && prisma migrate dev"
+    }
 }
