@@ -126,6 +126,7 @@ function Blog() {
                                 <th>Hero</th>
                                 <th>Title</th>
                                 <th>Description</th>
+                                <th>Content</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
@@ -149,6 +150,7 @@ function Blog() {
                                         </td>
                                         <td>{blog.title}</td>
                                         <td>{blog.description}</td>
+                                        <td>{blog.content}</td>
                                         <td>{blog.date}</td>
                                         <td className="flex justify-center space-x-2">
                                             <button
@@ -262,6 +264,30 @@ function Blog() {
                                     updateIndex !== null
                                         ? updateBlogData.description
                                         : newBlogData.description
+                                }
+                                onChange={
+                                    updateIndex !== null
+                                        ? handleUpdateInputChange
+                                        : handleInputChange
+                                }
+                                className="w-full px-3 py-2 input input-bordered min-h-[100px]"
+                                required
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label
+                                className="block mb-2 text-sm font-bold"
+                                htmlFor="content"
+                            >
+                                Blog Content
+                            </label>
+                            <textarea
+                                id="content"
+                                name="content"
+                                value={
+                                    updateIndex !== null
+                                        ? updateBlogData.content
+                                        : newBlogData.content
                                 }
                                 onChange={
                                     updateIndex !== null
@@ -518,6 +544,7 @@ function Blog() {
                                         hero: "",
                                         date: "",
                                         description: "",
+                                        content: "",
                                         image1: "",
                                         image2: "",
                                         image3: "",
