@@ -27,6 +27,7 @@ class BlogService {
       const {
         title,
         description,
+        content,
         date,
         hero,
         image1,
@@ -41,6 +42,7 @@ class BlogService {
         data: {
           title,
           description,
+          content,
           date,
           hero,
           image1,
@@ -62,6 +64,7 @@ class BlogService {
       const {
         title,
         description,
+        content,
         date,
         hero,
         image1,
@@ -77,6 +80,7 @@ class BlogService {
         data: {
           title,
           description,
+          content,
           date,
           hero,
           image1,

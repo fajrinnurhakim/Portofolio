@@ -121,6 +121,7 @@ CREATE TABLE "Blog" (
     "hero" TEXT NOT NULL,
     "date" TEXT NOT NULL,
     "description" TEXT NOT NULL,
+    "content" TEXT NOT NULL,
     "image1" TEXT NOT NULL,
     "image2" TEXT NOT NULL,
     "image3" TEXT NOT NULL,
