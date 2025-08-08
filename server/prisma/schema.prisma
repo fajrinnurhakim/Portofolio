@@ -111,7 +111,7 @@ model Blog {
   hero   String
   date    String
   description   String
-  conten String
+  content String
   image1   String
   image2  String
   image3  String
