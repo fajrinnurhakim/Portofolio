@@ -15,8 +15,8 @@ class BlogService {
   static findUnique = async (params, next) => {
     try {
       const { id } = params;
-      const blogs = await prisma.blog.findUnique(id, next);
-      return blogs;
+      const blog = await prisma.blog.findUnique({where:{id:Number(id)}}, next);
+      return blog;
     } catch (err) {
       next(err);
     }
@@ -24,13 +24,31 @@ class BlogService {
 
   static create = async (params) => {
     try {
-      const { title_blog, date_blog, description_blog } = params;
+      const {
+        title,
+        description,
+        date,
+        hero,
+        image1,
+        image2,
+        image3,
+        image4,
+        image5,
+        image6
+      } = params;
 
       const blog = await prisma.blog.create({
         data: {
-          title_blog: title_blog,
-          date_blog: date_blog,
-          description_blog: description_blog,
+          title,
+          description,
+          date,
+          hero,
+          image1,
+          image2,
+          image3,
+          image4,
+          image5,
+          image6
         },
       });
       return blog;
@@ -41,14 +59,32 @@ class BlogService {
 
   static update = async (id, params) => {
     try {
-      const { title_blog, date_blog, description_blog } = params;
+      const {
+        title,
+        description,
+        date,
+        hero,
+        image1,
+        image2,
+        image3,
+        image4,
+        image5,
+        image6
+      } = params;
 
       const updatedBlog = await prisma.blog.update({
         where: { id: +id },
         data: {
-          title_blog: title_blog,
-          date_blog: date_blog,
-          description_blog: description_blog,
+          title,
+          description,
+          date,
+          hero,
+          image1,
+          image2,
+          image3,
+          image4,
+          image5,
+          image6
         },
       });
 
