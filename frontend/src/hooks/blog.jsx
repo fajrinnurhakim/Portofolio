@@ -10,15 +10,29 @@ function stateBlog() {
   const [blogs, setBlogs] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [newBlogData, setNewBlogData] = useState({
-    title_blog: '',
-    description_blog: '',
-    date_blog: '',
+    title: '',
+    hero: '',
+    date: '',
+    description: '',
+    image1: '',
+    image2: '',
+    image3: '',
+    image4: '',
+    image5: '',
+    image6: '',
   });
   const [updateIndex, setUpdateIndex] = useState(null);
   const [updateBlogData, setUpdateBlogData] = useState({
-    title_blog: '',
-    description_blog: '',
-    date_blog: '',
+    title: '',
+    hero: '',
+    date: '',
+    description: '',
+    image1: '',
+    image2: '',
+    image3: '',
+    image4: '',
+    image5: '',
+    image6: '',
   });
 
   const loadBlogs = async () => {
@@ -31,7 +45,13 @@ function stateBlog() {
   };
 
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, files } = event.target;
+    if (event.target.type === 'file') {
+      return setNewBlogData({
+        ...newBlogData,
+        [name]: files[0],
+      });
+    }
     setNewBlogData({
       ...newBlogData,
       [name]: value,
@@ -39,7 +59,13 @@ function stateBlog() {
   };
 
   const handleUpdateInputChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, files } = event.target;
+    if (event.target.type === 'file') {
+      return setUpdateBlogData({
+        ...updateBlogData,
+        [name]: files[0],
+      });
+    }
     setUpdateBlogData({
       ...updateBlogData,
       [name]: value,
@@ -52,9 +78,16 @@ function stateBlog() {
       setShowModal(false);
       loadBlogs();
       setNewBlogData({
-        title_blog: '',
-        description_blog: '',
-        date_blog: '',
+        title: '',
+        hero: '',
+        date: '',
+        description: '',
+        image1: '',
+        image2: '',
+        image3: '',
+        image4: '',
+        image5: '',
+        image6: '',
       });
     } catch (error) {
       console.error('Error creating blog:', error);
@@ -70,9 +103,16 @@ function stateBlog() {
       loadBlogs();
       setUpdateIndex(null);
       setUpdateBlogData({
-        title_blog: '',
-        description_blog: '',
-        date_blog: '',
+        title: '',
+        hero: '',
+        date: '',
+        description: '',
+        image1: '',
+        image2: '',
+        image3: '',
+        image4: '',
+        image5: '',
+        image6: '',
       });
     } catch (error) {
       console.error('Error updating blog:', error);
@@ -83,9 +123,16 @@ function stateBlog() {
     setUpdateIndex(index);
     setShowModal(true);
     setUpdateBlogData({
-      title_blog: blogs[index].title_blog,
-      description_blog: blogs[index].description_blog,
-      date_blog: blogs[index].date_blog,
+      title: blogs[index].title,
+      hero: blogs[index].hero,
+      date: blogs[index].date,
+      description: blogs[index].description,
+      image1: blogs[index].image1,
+      image2: blogs[index].image2,
+      image3: blogs[index].image3,
+      image4: blogs[index].image4,
+      image5: blogs[index].image5,
+      image6: blogs[index].image6,
     });
   };
 
